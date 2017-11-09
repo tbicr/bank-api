@@ -1,0 +1,1039 @@
+
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>NBRB API v1.0.0</title>
+
+    <style>
+    </style>
+    <link rel="stylesheet" media="screen" href="pub/css/screen.css">
+    <link rel="stylesheet" media="print" href="pub/css/print.css">
+    <link rel="stylesheet" media="screen" href="pub/css/darkula.css">
+    
+      <script src="source/javascripts/lib/_jquery.js"></script>
+<script src="source/javascripts/lib/_jquery.highlight.js"></script>
+<script src="source/javascripts/lib/_lunr.js"></script>
+<script src="source/javascripts/lib/_imagesloaded.min.js"></script>
+<script src="source/javascripts/lib/_energize.js"></script>
+<script src="source/javascripts/app/_lang.js"></script>
+<script src="source/javascripts/app/_search.js"></script>
+<script src="source/javascripts/app/_toc.js"></script>
+<script type="text/javascript">
+$(function() {
+  loadToc($('#toc'), '.toc-link', '.toc-list-h2, .toc-list-h3, .toc-list-h4, .toc-list-h5, .toc-list-h6', 10);
+  setupLanguages($('body').data('languages'));
+  $('.content').imagesLoaded( function() {
+    recacheHeights();
+    refreshToc();
+  });
+});
+
+window.onpopstate = function() {
+  activateLanguage(getLanguageFromQueryString());
+};
+</script>
+
+    
+    <!-- shins; content for the head element from source/includes/_head.md -->
+
+  </head>
+
+  <body data-languages="[&quot;shell&quot;,&quot;http&quot;,&quot;javascript&quot;,&quot;javascript--nodejs&quot;,&quot;ruby&quot;,&quot;python&quot;,&quot;java&quot;]">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="source/images/navbar.png" class="undefined" alt="Navigation">
+      </span>
+    </a>
+    <div class="toc-wrapper">
+      <img src="source/images/logo.png" class="logo" alt="Logo">
+      
+        <div class="lang-selector">
+          
+            
+              <a href="#" data-language-name="shell">Shell</a>
+            
+          
+            
+              <a href="#" data-language-name="http">HTTP</a>
+            
+          
+            
+              <a href="#" data-language-name="javascript">JavaScript</a>
+            
+          
+            
+              <a href="#" data-language-name="javascript--nodejs">Node.JS</a>
+            
+          
+            
+              <a href="#" data-language-name="ruby">Ruby</a>
+            
+          
+            
+              <a href="#" data-language-name="python">Python</a>
+            
+          
+            
+              <a href="#" data-language-name="java">Java</a>
+            
+          
+        </div>
+      
+      
+        <div class="search">
+          <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
+      
+      <div id="toc" class="toc-list-h1">
+	  	<ul class="toc-list-h1">
+        
+          <li>
+            <a href="#nbrb-api-v1-0-0" class="toc-h1 toc-link" data-title="NBRB API v1.0.0">NBRB API v1.0.0</a>
+            
+          </li>
+        
+          <li>
+            <a href="#NBRB-API-default" class="toc-h1 toc-link" data-title="Default">Default</a>
+            
+              <ul class="toc-list-h2">
+                
+                  <li>
+                    <a href="#get--banks" class="toc-h2 toc-link" data-title="GET /banks">GET /banks</a>
+                    
+                  </li>
+                
+                  <li>
+                    <a href="#get--currencies" class="toc-h2 toc-link" data-title="GET /currencies">GET /currencies</a>
+                    
+                  </li>
+                
+              </ul>
+            
+          </li>
+        
+          <li>
+            <a href="#schemas" class="toc-h1 toc-link" data-title="Schemas">Schemas</a>
+            
+              <ul class="toc-list-h2">
+                
+                  <li>
+                    <a href="#bank" class="toc-h2 toc-link" data-title="Bank">Bank</a>
+                    
+                  </li>
+                
+                  <li>
+                    <a href="#banklist" class="toc-h2 toc-link" data-title="BankList">BankList</a>
+                    
+                  </li>
+                
+                  <li>
+                    <a href="#currencyrate" class="toc-h2 toc-link" data-title="CurrencyRate">CurrencyRate</a>
+                    
+                  </li>
+                
+                  <li>
+                    <a href="#currencyratelist" class="toc-h2 toc-link" data-title="CurrencyRateList">CurrencyRateList</a>
+                    
+                  </li>
+                
+                  <li>
+                    <a href="#error" class="toc-h2 toc-link" data-title="Error">Error</a>
+                    
+                  </li>
+                
+              </ul>
+            
+          </li>
+        
+		</ul>
+      </div>
+      
+        <ul class="toc-footer">
+          
+        </ul>
+      
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id="nbrb-api-v1-0-0">NBRB API v1.0.0</h1>
+<blockquote>
+<p>Scroll down for code samples, example requests and responses. Select a language for code samples from the tabs above or the mobile navigation menu.</p>
+</blockquote>
+<p>NBRB API.</p>
+<p>Base URLs:</p>
+<ul>
+<li>
+<p><a href="https://api.nbrb.by/">https://api.nbrb.by/</a></p>
+</li>
+<li>
+<p><a href="https://sandbox.nbrb.by/">https://sandbox.nbrb.by/</a></p>
+</li>
+</ul>
+<h1 id="NBRB-API-default">Default</h1>
+<h2 id="get--banks">GET /banks</h2>
+<blockquote>
+<p>Code samples</p>
+</blockquote>
+<pre class="highlight tab tab-shell"><code><span class="hljs-comment"># You can also use wget</span>
+curl -X GET https://api.nbrb.by/banks \
+  -H <span class="hljs-string">'Api-Version: string'</span> \
+  -H <span class="hljs-string">'Accept: application/json'</span>
+
+</code></pre>
+<pre class="highlight tab tab-http"><code><span class="hljs-keyword">GET</span> <span class="hljs-string">https://api.nbrb.by/banks</span> HTTP/1.1
+<span class="hljs-attribute">Host</span>: api.nbrb.by
+
+<span class="http"><span class="hljs-attribute">Accept</span>: application/json
+<span class="hljs-attribute">Api-Version</span>: string
+
+<span class="undefined"></span></span></code></pre>
+<pre class="highlight tab tab-javascript"><code><span class="hljs-keyword">var</span> headers = {
+  <span class="hljs-string">'Api-Version'</span>:<span class="hljs-string">'string'</span>,
+  <span class="hljs-string">'Accept'</span>:<span class="hljs-string">'application/json'</span>
+
+};
+
+$.ajax({
+  <span class="hljs-attr">url</span>: <span class="hljs-string">'https://api.nbrb.by/banks'</span>,
+  <span class="hljs-attr">method</span>: <span class="hljs-string">'get'</span>,
+
+  <span class="hljs-attr">headers</span>: headers,
+  <span class="hljs-attr">success</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">data</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">JSON</span>.stringify(data));
+  }
+})
+</code></pre>
+<pre class="highlight tab tab-javascript--nodejs"><code><span class="hljs-keyword">const</span> request = <span class="hljs-built_in">require</span>(<span class="hljs-string">'node-fetch'</span>);
+
+<span class="hljs-keyword">const</span> headers = {
+  <span class="hljs-string">'Api-Version'</span>:<span class="hljs-string">'string'</span>,
+  <span class="hljs-string">'Accept'</span>:<span class="hljs-string">'application/json'</span>
+
+};
+
+fetch(<span class="hljs-string">'https://api.nbrb.by/banks'</span>,
+{
+  <span class="hljs-attr">method</span>: <span class="hljs-string">'GET'</span>,
+
+  <span class="hljs-attr">headers</span>: headers
+})
+.then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">res</span>) </span>{
+    <span class="hljs-keyword">return</span> res.json();
+}).then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">body</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(body);
+});
+</code></pre>
+<pre class="highlight tab tab-ruby"><code><span class="hljs-keyword">require</span> <span class="hljs-string">'rest-client'</span>
+<span class="hljs-keyword">require</span> <span class="hljs-string">'json'</span>
+
+headers = {
+  <span class="hljs-string">'Api-Version'</span> =&gt; <span class="hljs-string">'string'</span>,
+  <span class="hljs-string">'Accept'</span> =&gt; <span class="hljs-string">'application/json'</span>
+}
+
+result = RestClient.get <span class="hljs-string">'https://api.nbrb.by/banks'</span>,
+  <span class="hljs-symbol">params:</span> {
+  }, <span class="hljs-symbol">headers:</span> headers
+
+p JSON.parse(result)
+</code></pre>
+<pre class="highlight tab tab-python"><code><span class="hljs-keyword">import</span> requests
+headers = {
+  <span class="hljs-string">'Api-Version'</span>: <span class="hljs-string">'string'</span>,
+  <span class="hljs-string">'Accept'</span>: <span class="hljs-string">'application/json'</span>
+}
+
+r = requests.get(<span class="hljs-string">'https://api.nbrb.by/banks'</span>, params={
+
+}, headers = headers)
+
+<span class="hljs-keyword">print</span> r.json()
+</code></pre>
+<pre class="highlight tab tab-java"><code>URL obj = <span class="hljs-keyword">new</span> URL(<span class="hljs-string">"https://api.nbrb.by/banks"</span>);
+HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestMethod(<span class="hljs-string">"GET"</span>);
+<span class="hljs-keyword">int</span> responseCode = con.getResponseCode();
+BufferedReader in = <span class="hljs-keyword">new</span> BufferedReader(
+    <span class="hljs-keyword">new</span> InputStreamReader(con.getInputStream()));
+String inputLine;
+StringBuffer response = <span class="hljs-keyword">new</span> StringBuffer();
+<span class="hljs-keyword">while</span> ((inputLine = in.readLine()) != <span class="hljs-keyword">null</span>) {
+    response.append(inputLine);
+}
+in.close();
+System.out.println(response.toString());
+</code></pre>
+<p><em>Banks</em></p>
+<p>Bank.</p>
+<h3 id="GET-/banks-parameters">Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>In</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Api-Version</td>
+<td>header</td>
+<td>string</td>
+<td>false</td>
+<td>API version (default latest).</td>
+</tr>
+<tr>
+<td>lang</td>
+<td>path</td>
+<td>string</td>
+<td>true</td>
+<td>Language of text data.</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>Example responses</p>
+</blockquote>
+<pre class="highlight tab tab-json"><code>{
+  <span class="hljs-attr">"items"</span>: [
+    {
+      <span class="hljs-attr">"type"</span>: <span class="hljs-string">"string"</span>,
+      <span class="hljs-attr">"handle"</span>: <span class="hljs-string">"string"</span>,
+      <span class="hljs-attr">"name"</span>: <span class="hljs-string">"string"</span>,
+      <span class="hljs-attr">"full_name"</span>: <span class="hljs-string">"string"</span>,
+      <span class="hljs-attr">"bik"</span>: <span class="hljs-string">"string"</span>,
+      <span class="hljs-attr">"unp"</span>: <span class="hljs-string">"string"</span>,
+      <span class="hljs-attr">"okpo"</span>: <span class="hljs-string">"string"</span>,
+      <span class="hljs-attr">"swift"</span>: <span class="hljs-string">"string"</span>,
+      <span class="hljs-attr">"adress"</span>: <span class="hljs-string">"string"</span>,
+      <span class="hljs-attr">"phone"</span>: <span class="hljs-string">"string"</span>,
+      <span class="hljs-attr">"fax"</span>: <span class="hljs-string">"string"</span>,
+      <span class="hljs-attr">"telex"</span>: <span class="hljs-string">"string"</span>,
+      <span class="hljs-attr">"email"</span>: <span class="hljs-string">"user@example.com"</span>,
+      <span class="hljs-attr">"website"</span>: <span class="hljs-string">"http://example.com"</span>,
+      <span class="hljs-attr">"presedent"</span>: <span class="hljs-string">"string"</span>,
+      <span class="hljs-attr">"registration_number"</span>: <span class="hljs-string">"string"</span>,
+      <span class="hljs-attr">"registration_date"</span>: <span class="hljs-literal">null</span>
+    }
+  ]
+}
+</code></pre>
+<pre class="highlight tab tab-json"><code>{
+  <span class="hljs-attr">"code"</span>: <span class="hljs-string">"string"</span>,
+  <span class="hljs-attr">"message"</span>: <span class="hljs-string">"string"</span>,
+  <span class="hljs-attr">"fields"</span>: <span class="hljs-string">"string"</span>
+}
+</code></pre>
+<h3 id="GET-/banks-responses">Responses</h3>
+<table>
+<thead>
+<tr>
+<th>Status</th>
+<th>Meaning</th>
+<th>Description</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.1">OK</a></td>
+<td>An array of banks.</td>
+<td><a href="#schemabanklist">BankList</a></td>
+</tr>
+<tr>
+<td>default</td>
+<td>Default</td>
+<td>Unexpected error</td>
+<td><a href="#schemaerror">Error</a></td>
+</tr>
+</tbody>
+</table>
+<aside class="success">
+This operation does not require authentication
+</aside>
+<h2 id="get--currencies">GET /currencies</h2>
+<blockquote>
+<p>Code samples</p>
+</blockquote>
+<pre class="highlight tab tab-shell"><code><span class="hljs-comment"># You can also use wget</span>
+curl -X GET https://api.nbrb.by/currencies?lang=string \
+  -H <span class="hljs-string">'Api-Version: string'</span> \
+  -H <span class="hljs-string">'Accept: application/json'</span>
+
+</code></pre>
+<pre class="highlight tab tab-http"><code><span class="hljs-keyword">GET</span> <span class="hljs-string">https://api.nbrb.by/currencies?lang=string</span> HTTP/1.1
+<span class="hljs-attribute">Host</span>: api.nbrb.by
+
+<span class="http"><span class="hljs-attribute">Accept</span>: application/json
+<span class="hljs-attribute">Api-Version</span>: string
+
+<span class="undefined"></span></span></code></pre>
+<pre class="highlight tab tab-javascript"><code><span class="hljs-keyword">var</span> headers = {
+  <span class="hljs-string">'Api-Version'</span>:<span class="hljs-string">'string'</span>,
+  <span class="hljs-string">'Accept'</span>:<span class="hljs-string">'application/json'</span>
+
+};
+
+$.ajax({
+  <span class="hljs-attr">url</span>: <span class="hljs-string">'https://api.nbrb.by/currencies'</span>,
+  <span class="hljs-attr">method</span>: <span class="hljs-string">'get'</span>,
+  <span class="hljs-attr">data</span>: <span class="hljs-string">'?lang=string'</span>,
+  <span class="hljs-attr">headers</span>: headers,
+  <span class="hljs-attr">success</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">data</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">JSON</span>.stringify(data));
+  }
+})
+</code></pre>
+<pre class="highlight tab tab-javascript--nodejs"><code><span class="hljs-keyword">const</span> request = <span class="hljs-built_in">require</span>(<span class="hljs-string">'node-fetch'</span>);
+
+<span class="hljs-keyword">const</span> headers = {
+  <span class="hljs-string">'Api-Version'</span>:<span class="hljs-string">'string'</span>,
+  <span class="hljs-string">'Accept'</span>:<span class="hljs-string">'application/json'</span>
+
+};
+
+fetch(<span class="hljs-string">'https://api.nbrb.by/currencies?lang=string'</span>,
+{
+  <span class="hljs-attr">method</span>: <span class="hljs-string">'GET'</span>,
+
+  <span class="hljs-attr">headers</span>: headers
+})
+.then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">res</span>) </span>{
+    <span class="hljs-keyword">return</span> res.json();
+}).then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">body</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(body);
+});
+</code></pre>
+<pre class="highlight tab tab-ruby"><code><span class="hljs-keyword">require</span> <span class="hljs-string">'rest-client'</span>
+<span class="hljs-keyword">require</span> <span class="hljs-string">'json'</span>
+
+headers = {
+  <span class="hljs-string">'Api-Version'</span> =&gt; <span class="hljs-string">'string'</span>,
+  <span class="hljs-string">'Accept'</span> =&gt; <span class="hljs-string">'application/json'</span>
+}
+
+result = RestClient.get <span class="hljs-string">'https://api.nbrb.by/currencies'</span>,
+  <span class="hljs-symbol">params:</span> {
+  <span class="hljs-string">'lang'</span> =&gt; <span class="hljs-string">'string'</span>
+}, <span class="hljs-symbol">headers:</span> headers
+
+p JSON.parse(result)
+</code></pre>
+<pre class="highlight tab tab-python"><code><span class="hljs-keyword">import</span> requests
+headers = {
+  <span class="hljs-string">'Api-Version'</span>: <span class="hljs-string">'string'</span>,
+  <span class="hljs-string">'Accept'</span>: <span class="hljs-string">'application/json'</span>
+}
+
+r = requests.get(<span class="hljs-string">'https://api.nbrb.by/currencies'</span>, params={
+  <span class="hljs-string">'lang'</span>: <span class="hljs-string">'string'</span>
+}, headers = headers)
+
+<span class="hljs-keyword">print</span> r.json()
+</code></pre>
+<pre class="highlight tab tab-java"><code>URL obj = <span class="hljs-keyword">new</span> URL(<span class="hljs-string">"https://api.nbrb.by/currencies?lang=string"</span>);
+HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestMethod(<span class="hljs-string">"GET"</span>);
+<span class="hljs-keyword">int</span> responseCode = con.getResponseCode();
+BufferedReader in = <span class="hljs-keyword">new</span> BufferedReader(
+    <span class="hljs-keyword">new</span> InputStreamReader(con.getInputStream()));
+String inputLine;
+StringBuffer response = <span class="hljs-keyword">new</span> StringBuffer();
+<span class="hljs-keyword">while</span> ((inputLine = in.readLine()) != <span class="hljs-keyword">null</span>) {
+    response.append(inputLine);
+}
+in.close();
+System.out.println(response.toString());
+</code></pre>
+<p><em>Currencies</em></p>
+<p>Currencies.</p>
+<h3 id="GET-/currencies-parameters">Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>In</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Api-Version</td>
+<td>header</td>
+<td>string</td>
+<td>false</td>
+<td>API version (default latest).</td>
+</tr>
+<tr>
+<td>lang</td>
+<td>query</td>
+<td>string</td>
+<td>true</td>
+<td>Language of text data.</td>
+</tr>
+<tr>
+<td>at</td>
+<td>query</td>
+<td>dateTime</td>
+<td>false</td>
+<td>Currancy rate at specific date. Current time used by default.</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>Example responses</p>
+</blockquote>
+<pre class="highlight tab tab-json"><code>{
+  <span class="hljs-attr">"items"</span>: [
+    {
+      <span class="hljs-attr">"type"</span>: <span class="hljs-string">"string"</span>,
+      <span class="hljs-attr">"currency_from"</span>: <span class="hljs-string">"string"</span>,
+      <span class="hljs-attr">"currency_from_name"</span>: <span class="hljs-string">"string"</span>,
+      <span class="hljs-attr">"currency_to"</span>: <span class="hljs-string">"string"</span>,
+      <span class="hljs-attr">"currency_to_name"</span>: <span class="hljs-string">"string"</span>,
+      <span class="hljs-attr">"exchange_rate"</span>: <span class="hljs-string">"string"</span>
+    }
+  ]
+}
+</code></pre>
+<pre class="highlight tab tab-json"><code>{
+  <span class="hljs-attr">"code"</span>: <span class="hljs-string">"string"</span>,
+  <span class="hljs-attr">"message"</span>: <span class="hljs-string">"string"</span>,
+  <span class="hljs-attr">"fields"</span>: <span class="hljs-string">"string"</span>
+}
+</code></pre>
+<h3 id="GET-/currencies-responses">Responses</h3>
+<table>
+<thead>
+<tr>
+<th>Status</th>
+<th>Meaning</th>
+<th>Description</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.1">OK</a></td>
+<td>An array of currencies.</td>
+<td><a href="#schemacurrencyratelist">CurrencyRateList</a></td>
+</tr>
+<tr>
+<td>default</td>
+<td>Default</td>
+<td>Unexpected error</td>
+<td><a href="#schemaerror">Error</a></td>
+</tr>
+</tbody>
+</table>
+<aside class="success">
+This operation does not require authentication
+</aside>
+<h1 id="schemas">Schemas</h1>
+<h2 id="bank">Bank</h2>
+<p><a name="schemabank"></a></p>
+<pre class="highlight tab tab-json"><code>{
+  <span class="hljs-attr">"type"</span>: <span class="hljs-string">"string"</span>,
+  <span class="hljs-attr">"handle"</span>: <span class="hljs-string">"string"</span>,
+  <span class="hljs-attr">"name"</span>: <span class="hljs-string">"string"</span>,
+  <span class="hljs-attr">"full_name"</span>: <span class="hljs-string">"string"</span>,
+  <span class="hljs-attr">"bik"</span>: <span class="hljs-string">"string"</span>,
+  <span class="hljs-attr">"unp"</span>: <span class="hljs-string">"string"</span>,
+  <span class="hljs-attr">"okpo"</span>: <span class="hljs-string">"string"</span>,
+  <span class="hljs-attr">"swift"</span>: <span class="hljs-string">"string"</span>,
+  <span class="hljs-attr">"adress"</span>: <span class="hljs-string">"string"</span>,
+  <span class="hljs-attr">"phone"</span>: <span class="hljs-string">"string"</span>,
+  <span class="hljs-attr">"fax"</span>: <span class="hljs-string">"string"</span>,
+  <span class="hljs-attr">"telex"</span>: <span class="hljs-string">"string"</span>,
+  <span class="hljs-attr">"email"</span>: <span class="hljs-string">"user@example.com"</span>,
+  <span class="hljs-attr">"website"</span>: <span class="hljs-string">"http://example.com"</span>,
+  <span class="hljs-attr">"presedent"</span>: <span class="hljs-string">"string"</span>,
+  <span class="hljs-attr">"registration_number"</span>: <span class="hljs-string">"string"</span>,
+  <span class="hljs-attr">"registration_date"</span>: <span class="hljs-literal">null</span>
+}
+</code></pre>
+<h3 id="properties">Properties</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>type</td>
+<td>string</td>
+<td>false</td>
+<td>Type <code>Bank</code>.</td>
+</tr>
+<tr>
+<td>handle</td>
+<td>string</td>
+<td>false</td>
+<td>Unique identifier of bank.</td>
+</tr>
+<tr>
+<td>name</td>
+<td>string</td>
+<td>false</td>
+<td>Short bank name (localisation).</td>
+</tr>
+<tr>
+<td>full_name</td>
+<td>string</td>
+<td>false</td>
+<td>Full bank name (localisation).</td>
+</tr>
+<tr>
+<td>bik</td>
+<td>string</td>
+<td>false</td>
+<td>Bank BIK</td>
+</tr>
+<tr>
+<td>unp</td>
+<td>string</td>
+<td>false</td>
+<td>Bank UNP</td>
+</tr>
+<tr>
+<td>okpo</td>
+<td>string</td>
+<td>false</td>
+<td>Bank OKPO</td>
+</tr>
+<tr>
+<td>swift</td>
+<td>string</td>
+<td>false</td>
+<td>Bank S.W.I.F.T.</td>
+</tr>
+<tr>
+<td>adress</td>
+<td>string</td>
+<td>false</td>
+<td>Bank adress (localisation).</td>
+</tr>
+<tr>
+<td>phone</td>
+<td>string(phone)</td>
+<td>false</td>
+<td>Bank phone.</td>
+</tr>
+<tr>
+<td>fax</td>
+<td>string(phone)</td>
+<td>false</td>
+<td>Bank fax.</td>
+</tr>
+<tr>
+<td>telex</td>
+<td>string</td>
+<td>false</td>
+<td>Bank telex.</td>
+</tr>
+<tr>
+<td>email</td>
+<td>string(email)</td>
+<td>false</td>
+<td>Bank email.</td>
+</tr>
+<tr>
+<td>website</td>
+<td>string(uri)</td>
+<td>false</td>
+<td>Bank web site (localisation).</td>
+</tr>
+<tr>
+<td>presedent</td>
+<td>string</td>
+<td>false</td>
+<td>Bank president (localisation).</td>
+</tr>
+<tr>
+<td>registration_number</td>
+<td>string</td>
+<td>false</td>
+<td>Registration number.</td>
+</tr>
+<tr>
+<td>registration_date</td>
+<td>date</td>
+<td>false</td>
+<td>Registration date.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="banklist">BankList</h2>
+<p><a name="schemabanklist"></a></p>
+<pre class="highlight tab tab-json"><code>{
+  <span class="hljs-attr">"items"</span>: [
+    {
+      <span class="hljs-attr">"type"</span>: <span class="hljs-string">"string"</span>,
+      <span class="hljs-attr">"handle"</span>: <span class="hljs-string">"string"</span>,
+      <span class="hljs-attr">"name"</span>: <span class="hljs-string">"string"</span>,
+      <span class="hljs-attr">"full_name"</span>: <span class="hljs-string">"string"</span>,
+      <span class="hljs-attr">"bik"</span>: <span class="hljs-string">"string"</span>,
+      <span class="hljs-attr">"unp"</span>: <span class="hljs-string">"string"</span>,
+      <span class="hljs-attr">"okpo"</span>: <span class="hljs-string">"string"</span>,
+      <span class="hljs-attr">"swift"</span>: <span class="hljs-string">"string"</span>,
+      <span class="hljs-attr">"adress"</span>: <span class="hljs-string">"string"</span>,
+      <span class="hljs-attr">"phone"</span>: <span class="hljs-string">"string"</span>,
+      <span class="hljs-attr">"fax"</span>: <span class="hljs-string">"string"</span>,
+      <span class="hljs-attr">"telex"</span>: <span class="hljs-string">"string"</span>,
+      <span class="hljs-attr">"email"</span>: <span class="hljs-string">"user@example.com"</span>,
+      <span class="hljs-attr">"website"</span>: <span class="hljs-string">"http://example.com"</span>,
+      <span class="hljs-attr">"presedent"</span>: <span class="hljs-string">"string"</span>,
+      <span class="hljs-attr">"registration_number"</span>: <span class="hljs-string">"string"</span>,
+      <span class="hljs-attr">"registration_date"</span>: <span class="hljs-literal">null</span>
+    }
+  ]
+}
+</code></pre>
+<h3 id="properties">Properties</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>items</td>
+<td>[<a href="#schemabank">Bank</a>]</td>
+<td>false</td>
+<td>Contains the list of banks.</td>
+</tr>
+<tr>
+<td>» type</td>
+<td>string</td>
+<td>false</td>
+<td>Type <code>Bank</code>.</td>
+</tr>
+<tr>
+<td>» handle</td>
+<td>string</td>
+<td>false</td>
+<td>Unique identifier of bank.</td>
+</tr>
+<tr>
+<td>» name</td>
+<td>string</td>
+<td>false</td>
+<td>Short bank name (localisation).</td>
+</tr>
+<tr>
+<td>» full_name</td>
+<td>string</td>
+<td>false</td>
+<td>Full bank name (localisation).</td>
+</tr>
+<tr>
+<td>» bik</td>
+<td>string</td>
+<td>false</td>
+<td>Bank BIK</td>
+</tr>
+<tr>
+<td>» unp</td>
+<td>string</td>
+<td>false</td>
+<td>Bank UNP</td>
+</tr>
+<tr>
+<td>» okpo</td>
+<td>string</td>
+<td>false</td>
+<td>Bank OKPO</td>
+</tr>
+<tr>
+<td>» swift</td>
+<td>string</td>
+<td>false</td>
+<td>Bank S.W.I.F.T.</td>
+</tr>
+<tr>
+<td>» adress</td>
+<td>string</td>
+<td>false</td>
+<td>Bank adress (localisation).</td>
+</tr>
+<tr>
+<td>» phone</td>
+<td>string(phone)</td>
+<td>false</td>
+<td>Bank phone.</td>
+</tr>
+<tr>
+<td>» fax</td>
+<td>string(phone)</td>
+<td>false</td>
+<td>Bank fax.</td>
+</tr>
+<tr>
+<td>» telex</td>
+<td>string</td>
+<td>false</td>
+<td>Bank telex.</td>
+</tr>
+<tr>
+<td>» email</td>
+<td>string(email)</td>
+<td>false</td>
+<td>Bank email.</td>
+</tr>
+<tr>
+<td>» website</td>
+<td>string(uri)</td>
+<td>false</td>
+<td>Bank web site (localisation).</td>
+</tr>
+<tr>
+<td>» presedent</td>
+<td>string</td>
+<td>false</td>
+<td>Bank president (localisation).</td>
+</tr>
+<tr>
+<td>» registration_number</td>
+<td>string</td>
+<td>false</td>
+<td>Registration number.</td>
+</tr>
+<tr>
+<td>» registration_date</td>
+<td>date</td>
+<td>false</td>
+<td>Registration date.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="currencyrate">CurrencyRate</h2>
+<p><a name="schemacurrencyrate"></a></p>
+<pre class="highlight tab tab-json"><code>{
+  <span class="hljs-attr">"type"</span>: <span class="hljs-string">"string"</span>,
+  <span class="hljs-attr">"currency_from"</span>: <span class="hljs-string">"string"</span>,
+  <span class="hljs-attr">"currency_from_name"</span>: <span class="hljs-string">"string"</span>,
+  <span class="hljs-attr">"currency_to"</span>: <span class="hljs-string">"string"</span>,
+  <span class="hljs-attr">"currency_to_name"</span>: <span class="hljs-string">"string"</span>,
+  <span class="hljs-attr">"exchange_rate"</span>: <span class="hljs-string">"string"</span>
+}
+</code></pre>
+<h3 id="properties">Properties</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>type</td>
+<td>string</td>
+<td>false</td>
+<td>Type <code>CurrencyRate</code>.</td>
+</tr>
+<tr>
+<td>currency_from</td>
+<td>string(iso-4217)</td>
+<td>false</td>
+<td>Currency ISO 4217 code.</td>
+</tr>
+<tr>
+<td>currency_from_name</td>
+<td>string</td>
+<td>false</td>
+<td>Currency name (localisation).</td>
+</tr>
+<tr>
+<td>currency_to</td>
+<td>string(iso-4217)</td>
+<td>false</td>
+<td>Currency ISO 4217 code.</td>
+</tr>
+<tr>
+<td>currency_to_name</td>
+<td>string</td>
+<td>false</td>
+<td>Currency name (localisation).</td>
+</tr>
+<tr>
+<td>exchange_rate</td>
+<td>string(decimal)</td>
+<td>false</td>
+<td>Currency echange rate.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="currencyratelist">CurrencyRateList</h2>
+<p><a name="schemacurrencyratelist"></a></p>
+<pre class="highlight tab tab-json"><code>{
+  <span class="hljs-attr">"items"</span>: [
+    {
+      <span class="hljs-attr">"type"</span>: <span class="hljs-string">"string"</span>,
+      <span class="hljs-attr">"currency_from"</span>: <span class="hljs-string">"string"</span>,
+      <span class="hljs-attr">"currency_from_name"</span>: <span class="hljs-string">"string"</span>,
+      <span class="hljs-attr">"currency_to"</span>: <span class="hljs-string">"string"</span>,
+      <span class="hljs-attr">"currency_to_name"</span>: <span class="hljs-string">"string"</span>,
+      <span class="hljs-attr">"exchange_rate"</span>: <span class="hljs-string">"string"</span>
+    }
+  ]
+}
+</code></pre>
+<h3 id="properties">Properties</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>items</td>
+<td>[<a href="#schemacurrencyrate">CurrencyRate</a>]</td>
+<td>false</td>
+<td>Contains the list of currencies.</td>
+</tr>
+<tr>
+<td>» type</td>
+<td>string</td>
+<td>false</td>
+<td>Type <code>CurrencyRate</code>.</td>
+</tr>
+<tr>
+<td>» currency_from</td>
+<td>string(iso-4217)</td>
+<td>false</td>
+<td>Currency ISO 4217 code.</td>
+</tr>
+<tr>
+<td>» currency_from_name</td>
+<td>string</td>
+<td>false</td>
+<td>Currency name (localisation).</td>
+</tr>
+<tr>
+<td>» currency_to</td>
+<td>string(iso-4217)</td>
+<td>false</td>
+<td>Currency ISO 4217 code.</td>
+</tr>
+<tr>
+<td>» currency_to_name</td>
+<td>string</td>
+<td>false</td>
+<td>Currency name (localisation).</td>
+</tr>
+<tr>
+<td>» exchange_rate</td>
+<td>string(decimal)</td>
+<td>false</td>
+<td>Currency echange rate.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="error">Error</h2>
+<p><a name="schemaerror"></a></p>
+<pre class="highlight tab tab-json"><code>{
+  <span class="hljs-attr">"code"</span>: <span class="hljs-string">"string"</span>,
+  <span class="hljs-attr">"message"</span>: <span class="hljs-string">"string"</span>,
+  <span class="hljs-attr">"fields"</span>: <span class="hljs-string">"string"</span>
+}
+</code></pre>
+<h3 id="properties">Properties</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>code</td>
+<td>string</td>
+<td>false</td>
+<td>No description</td>
+</tr>
+<tr>
+<td>message</td>
+<td>string</td>
+<td>false</td>
+<td>No description</td>
+</tr>
+<tr>
+<td>fields</td>
+<td>string</td>
+<td>false</td>
+<td>No description</td>
+</tr>
+</tbody>
+</table>
+
+        
+      </div>
+      <div class="dark-box">
+        
+          <div class="lang-selector">
+            
+              
+                <a href="#" data-language-name="shell">Shell</a>
+              
+            
+              
+                <a href="#" data-language-name="http">HTTP</a>
+              
+            
+              
+                <a href="#" data-language-name="javascript">JavaScript</a>
+              
+            
+              
+                <a href="#" data-language-name="javascript--nodejs">Node.JS</a>
+              
+            
+              
+                <a href="#" data-language-name="ruby">Ruby</a>
+              
+            
+              
+                <a href="#" data-language-name="python">Python</a>
+              
+            
+              
+                <a href="#" data-language-name="java">Java</a>
+              
+            
+          </div>
+        
+      </div>
+    </div>
+  </body>
+</html>
