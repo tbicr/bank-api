@@ -1,0 +1,181 @@
+openapi: "3.0.1"
+info:
+  title: NBRB API
+  description: NBRB API.
+  version: "1.0.0"
+servers:
+  - url: https://api.nbrb.by/
+    description: NBRB production API.
+  - url: https://sandbox.nbrb.by/
+    description: Sandbox API.
+paths:
+  /banks:
+    get:
+      summary: Banks
+      description: Bank.
+      parameters:
+        - name: Api-Version
+          in: header
+          description: API version (default latest).
+          required: false
+          schema:
+            type: string
+        - name: lang
+          in: path
+          description: Language of text data.
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: An array of banks.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/BankList"
+        default:
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+  /currencies:
+    get:
+      summary: Currencies
+      description: Currencies.
+      parameters:
+        - name: Api-Version
+          in: header
+          description: API version (default latest).
+          required: false
+          schema:
+            type: string
+        - name: lang
+          in: query
+          description: Language of text data.
+          required: true
+          schema:
+            type: string
+        - name: at
+          in: query
+          description: Currancy rate at specific date. Current time used by default.
+          required: false
+          schema:
+            type: dateTime
+      responses:
+        '200':
+          description: An array of currencies.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CurrencyRateList"
+        default:
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+components:
+  schemas:
+    Bank:
+      properties:
+        type:
+          type: string
+          description: Type `Bank`.
+        handle:
+          type: string
+          description: Unique identifier of bank.
+        name:
+          type: string
+          description: Short bank name (localisation).
+        full_name:
+          type: string
+          description: Full bank name (localisation).
+        bik:
+          type: string
+          description: Bank BIK
+        unp:
+          type: string
+          description: Bank UNP
+        okpo:
+          type: string
+          description: Bank OKPO
+        swift:
+          type: string
+          description: Bank S.W.I.F.T.
+        adress:
+          type: string
+          description: Bank adress (localisation).
+        phone:
+          type: string
+          format: phone
+          description: Bank phone.
+        fax:
+          type: string
+          format: phone
+          description: Bank fax.
+        telex:
+          type: string
+          description: Bank telex.
+        email:
+          type: string
+          format: email
+          description: Bank email.
+        website:
+          type: string
+          format: uri
+          description: Bank web site (localisation).
+        presedent:
+          type: string
+          description: Bank president (localisation).
+        registration_number:
+          type: string
+          description: Registration number.
+        registration_date:
+          type: date
+          description: Registration date.
+    BankList:
+      properties:
+        items:
+          description: Contains the list of banks.
+          type: array
+          items:
+            $ref: "#/components/schemas/Bank"
+    CurrencyRate:
+      properties:
+        type:
+          type: string
+          description: Type `CurrencyRate`.
+        currency_from:
+          type: string
+          format: iso-4217
+          description: Currency ISO 4217 code.
+        currency_from_name:
+          type: string
+          description: Currency name (localisation).
+        currency_to:
+          type: string
+          format: iso-4217
+          description: Currency ISO 4217 code.
+        currency_to_name:
+          type: string
+          description: Currency name (localisation).
+        exchange_rate:
+          type: string
+          format: decimal
+          description: Currency echange rate.
+    CurrencyRateList:
+      properties:
+        items:
+          description:  Contains the list of currencies.
+          type: array
+          items:
+            $ref: "#/components/schemas/CurrencyRate"
+    Error:
+      properties:
+        code:
+          type: string
+        message:
+          type: string
+        fields:
+          type: string

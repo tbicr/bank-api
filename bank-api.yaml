@@ -1,0 +1,334 @@
+openapi: "3.0.1"
+info:
+  title: Bank API
+  description: Bank API.
+  version: "1.0.0"
+servers:
+  - url: https://api.bank.by/
+    description: Bank production API.
+  - url: https://sandbox.nbrb.by/
+    description: Sandbox API.
+paths:
+  /currencies:
+    get:
+      summary: Currencies
+      description: Currencies.
+      parameters:
+        - name: Api-Version
+          in: header
+          description: API version (default latest).
+          required: false
+          schema:
+            type: string
+      responses:
+        '200':
+          description: An array of currencies.
+          content:
+            applicaiton/json:
+              schema:
+                $ref: "#/components/schemas/CurrencyRateList"
+        default:
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+  /objects:
+    get:
+      summary: Bank Objects
+      description: Bank objects.
+      parameters:
+        - name: Api-Version
+          in: header
+          description: API version (default latest).
+          required: false
+          schema:
+            type: string
+      responses:
+        '200':
+          description: An array of bank objects.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/BankObjectList"
+        default:
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+  /accounts:
+    get:
+      summary: Accounts
+      description: List of accounts.
+      security:
+        - oauth2:
+          - read:accounts
+      parameters:
+        - name: Api-Version
+          in: header
+          description: API version (default latest).
+          required: false
+          schema:
+            type: string
+      responses:
+        '200':
+          description: An array of accounts.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/AccountList"
+        default:
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+  /account/{account_id}/payments:
+    get:
+      summary: Operations History
+      description: Operations history.
+      security:
+        - oauth2:
+          - read:transactions
+      parameters:
+        - name: Api-Version
+          in: header
+          description: API version (default latest).
+          required: false
+          schema:
+            type: string
+        - name: account_id
+          in: path
+          required: true
+          schema:
+            type: string
+            format: object-uuid
+      responses:
+        '200':
+          description: An array of operations.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/TransactionList"
+        default:
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+    post:
+      summary: Make Operation
+      description: Make operation.
+      security:
+        - oauth2:
+          - create:transactions
+      parameters:
+        - name: Api-Version
+          in: header
+          description: API version (default latest).
+          required: false
+          schema:
+            type: string
+        - name: account_id
+          in: path
+          required: true
+          schema:
+            type: string
+            format: object-uuid
+      requestBody:
+        description: Make opeation.
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TransactionCreate'
+      responses:
+        '201':
+          description: Operation.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Transaction"
+        default:
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+      callbacks:
+        webhook:
+          'https://3th-party-provider.by/webhooks':
+            post:
+              requestBody:
+                description: Webhook payload.
+                content:
+                  applicaiton/json:
+                    schema:
+                      $ref: "#/components/schemas/Transaction"
+              responses:
+                '200':
+                  description: Webhook successfully processed.
+components:
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      in: header
+      flows:
+        authorizationCode:
+          authorizationUrl: https://api.bank.by/oauth2/authorize
+          tokenUrl: https://api.bank.by/oauth2/access_token
+          refreshUrl: https://api.bank.by/oauth2/refresh_token
+          scopes:
+            read:accounts: Grant read accounts access.
+            read:transactions: Grant read transactions access.
+            create:transactions: Grant create transactions access.
+        implicit:
+          authorizationUrl: https://api.bank.by/auth/login
+          refreshUrl: https://api.bank.by/oauth2/refresh_token
+          scopes:
+            read:accounts: Grant read accounts access.
+            read:transactions: Grant read transactions access.
+            create:transactions: Grant create transactions access.
+  schemas:
+    BankObject:
+      properties:
+        type:
+          type: string
+          description: Type `BankObject`.
+        bank_object_id:
+          type: string
+          description: Unique identifier of bank object.
+    BankObjectList:
+      properties:
+        items:
+          description: Contains the list of bank objects.
+          type: array
+          items:
+            $ref: "#/components/schemas/BankObject"
+    CurrencyRate:
+      properties:
+        type:
+          type: string
+          description: Type `CurrencyRate`.
+        currency_from:
+          type: string
+          format: iso-4217
+          description: Currency ISO 4217 code.
+        currency_from_name:
+          type: string
+          description: Currency name (localisation).
+        currency_to:
+          type: string
+          format: iso-4217
+          description: Currency ISO 4217 code.
+        currency_to_name:
+          type: string
+          description: Currency name (localisation).
+        exchange_rate:
+          type: string
+          format: decimal
+          description: Currency echange rate.
+    CurrencyRateList:
+      properties:
+        items:
+          description:  Contains the list of currencies.
+          type: array
+          items:
+            $ref: "#/components/schemas/CurrencyRate"
+    Account:
+      properties:
+        type:
+          type: string
+          description: Type `Account`
+        id:
+          type: string
+          format: object-uuid
+          description: Account identificator.
+        balance:
+          type: string
+          format: decimal
+          description: Balance.
+        currency:
+          type: string
+          format: iso-4217
+          description: Currency ISO 4217 code.
+    AccountList:
+      properties:
+        items:
+          description: Countains the list of accounts.
+          type: array
+          items:
+            $ref: "#/components/schemas/Account"
+    TransactionCreate:
+      properties:
+        amount:
+          type: string
+          format: decimal
+          description: Transaction amount.
+        currency:
+          type: string
+          format: iso-4217
+          description: Currency ISO 4217 code.
+        beneficiar:
+          type: string
+          description: Beneficiar.
+        description:
+          type: string
+          description: Description (optional).
+        idempotent_key:
+          type: string
+          description: Idempotent key (optional).
+        metadata:
+          type: object
+          additionalProperties:
+            type: string
+          description: Metadata (optional).
+      required:
+        - amount
+        - currency
+        - beneficiar
+    Transaction:
+      properties:
+        type:
+          type: string
+          description: Type `Transaction`
+        id:
+          type: string
+          format: object-uuid
+          description: Operation identificator.
+        amount:
+          type: string
+          format: decimal
+          description: Transaction amount
+        currency:
+          type: string
+          format: iso-4217
+          description: Currency ISO 4217 code.
+        description:
+          type: string
+          description: Description.
+        metadata:
+          type: object
+          additionalProperties:
+            type: string
+          description: Metadata.
+        created_at:
+          type: string
+          format: date-time
+          description: Time when transaction was created.
+    TransactionList:
+      properties:
+        items:
+          description: Countains the list of transactions.
+          type: string
+          items:
+            $ref: "#/components/schemas/Transaction"
+    Error:
+      properties:
+        code:
+          type: string
+        message:
+          type: string
+        fields:
+          type: string
