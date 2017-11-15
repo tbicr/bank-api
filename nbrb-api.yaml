@@ -13,19 +13,13 @@ paths:
     get:
       summary: Banks
       description: Bank.
+      tags:
+        - Public
       parameters:
-        - name: Api-Version
-          in: header
-          description: API version (default latest).
-          required: false
-          schema:
-            type: string
-        - name: lang
-          in: path
-          description: Language of text data.
-          required: true
-          schema:
-            type: string
+        - $ref: '#/components/parameters/AcceptParameter'
+        - $ref: '#/components/parameters/ContentTypeParameter'
+        - $ref: '#/components/parameters/ApiVersionParameter'
+        - $ref: '#/components/parameters/LocalisationParameter'
       responses:
         '200':
           description: An array of banks.
@@ -33,6 +27,18 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/BankList"
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        '429':
+          description: Too Many Requests
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
         default:
           description: Unexpected error
           content:
@@ -43,19 +49,13 @@ paths:
     get:
       summary: Currencies
       description: Currencies.
+      tags:
+        - Public
       parameters:
-        - name: Api-Version
-          in: header
-          description: API version (default latest).
-          required: false
-          schema:
-            type: string
-        - name: lang
-          in: query
-          description: Language of text data.
-          required: true
-          schema:
-            type: string
+        - $ref: '#/components/parameters/AcceptParameter'
+        - $ref: '#/components/parameters/ContentTypeParameter'
+        - $ref: '#/components/parameters/ApiVersionParameter'
+        - $ref: '#/components/parameters/LocalisationParameter'
         - name: at
           in: query
           description: Currancy rate at specific date. Current time used by default.
@@ -69,6 +69,18 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/CurrencyRateList"
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        '429':
+          description: Too Many Requests
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
         default:
           description: Unexpected error
           content:
@@ -91,9 +103,9 @@ components:
         full_name:
           type: string
           description: Full bank name (localisation).
-        bik:
+        bic:
           type: string
-          description: Bank BIK
+          description: Bank BIC
         unp:
           type: string
           description: Bank UNP
@@ -179,3 +191,36 @@ components:
           type: string
         fields:
           type: string
+  parameters:
+    AcceptParameter:
+      name: Accept
+      in: header
+      description: Accept response body content type (default application/json).
+      required: false
+      schema:
+        type: string
+        enum:
+          - application/json
+    ContentTypeParameter:
+      name: Content-Type
+      in: header
+      description: Request body content type (default application/json).
+      required: false
+      schema:
+        type: string
+        enum:
+          - application/json
+    ApiVersionParameter:
+      name: Api-Version
+      in: header
+      description: API version (default latest).
+      required: false
+      schema:
+        type: string
+    LocalisationParameter:
+      name: lang
+      in: query
+      description: Language of text data (default belarusan).
+      required: false
+      schema:
+        type: string

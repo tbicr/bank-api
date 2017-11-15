@@ -13,13 +13,13 @@ paths:
     get:
       summary: Currencies
       description: Currencies.
+      tags:
+        - Public
       parameters:
-        - name: Api-Version
-          in: header
-          description: API version (default latest).
-          required: false
-          schema:
-            type: string
+        - $ref: '#/components/parameters/AcceptParameter'
+        - $ref: '#/components/parameters/ContentTypeParameter'
+        - $ref: '#/components/parameters/ApiVersionParameter'
+        - $ref: '#/components/parameters/LocalisationParameter'
       responses:
         '200':
           description: An array of currencies.
@@ -27,30 +27,90 @@ paths:
             applicaiton/json:
               schema:
                 $ref: "#/components/schemas/CurrencyRateList"
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        '429':
+          description: Too Many Requests
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
         default:
           description: Unexpected error
           content:
             application/json:
               schema:
                 $ref: "#/components/schemas/Error"
-  /objects:
+  /atms:
     get:
-      summary: Bank Objects
-      description: Bank objects.
+      summary: ATMs
+      description: ATMs.
+      tags:
+        - Public
       parameters:
-        - name: Api-Version
-          in: header
-          description: API version (default latest).
-          required: false
-          schema:
-            type: string
+        - $ref: '#/components/parameters/AcceptParameter'
+        - $ref: '#/components/parameters/ContentTypeParameter'
+        - $ref: '#/components/parameters/ApiVersionParameter'
+        - $ref: '#/components/parameters/LocalisationParameter'
       responses:
         '200':
-          description: An array of bank objects.
+          description: An array of ATMs.
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/BankObjectList"
+                $ref: "#/components/schemas/ATMList"
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        '429':
+          description: Too Many Requests
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        default:
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+  /branches:
+    get:
+      summary: Branches
+      description: Branches.
+      tags:
+        - Public
+      parameters:
+        - $ref: '#/components/parameters/AcceptParameter'
+        - $ref: '#/components/parameters/ContentTypeParameter'
+        - $ref: '#/components/parameters/ApiVersionParameter'
+        - $ref: '#/components/parameters/LocalisationParameter'
+      responses:
+        '200':
+          description: An array of brnaches.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/BranchList"
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        '429':
+          description: Too Many Requests
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
         default:
           description: Unexpected error
           content:
@@ -61,16 +121,17 @@ paths:
     get:
       summary: Accounts
       description: List of accounts.
+      tags:
+        - Account
       security:
         - oauth2:
           - read:accounts
       parameters:
-        - name: Api-Version
-          in: header
-          description: API version (default latest).
-          required: false
-          schema:
-            type: string
+        - $ref: '#/components/parameters/AcceptParameter'
+        - $ref: '#/components/parameters/ContentTypeParameter'
+        - $ref: '#/components/parameters/ApiVersionParameter'
+        - $ref: '#/components/parameters/AuthorizationParameter'
+        - $ref: '#/components/parameters/LocalisationParameter'
       responses:
         '200':
           description: An array of accounts.
@@ -78,26 +139,51 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/AccountList"
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        '429':
+          description: Too Many Requests
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
         default:
           description: Unexpected error
           content:
             application/json:
               schema:
                 $ref: "#/components/schemas/Error"
-  /account/{account_id}/payments:
+  /account/{account_id}/transactions:
     get:
       summary: Operations History
       description: Operations history.
+      tags:
+        - Account
       security:
         - oauth2:
           - read:transactions
       parameters:
-        - name: Api-Version
-          in: header
-          description: API version (default latest).
-          required: false
-          schema:
-            type: string
+        - $ref: '#/components/parameters/AcceptParameter'
+        - $ref: '#/components/parameters/ContentTypeParameter'
+        - $ref: '#/components/parameters/ApiVersionParameter'
+        - $ref: '#/components/parameters/AuthorizationParameter'
+        - $ref: '#/components/parameters/LocalisationParameter'
         - name: account_id
           in: path
           required: true
@@ -111,6 +197,36 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/TransactionList"
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        '429':
+          description: Too Many Requests
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
         default:
           description: Unexpected error
           content:
@@ -120,16 +236,18 @@ paths:
     post:
       summary: Make Operation
       description: Make operation.
+      tags:
+        - Payment
       security:
         - oauth2:
           - create:transactions
       parameters:
-        - name: Api-Version
-          in: header
-          description: API version (default latest).
-          required: false
-          schema:
-            type: string
+        - $ref: '#/components/parameters/AcceptParameter'
+        - $ref: '#/components/parameters/ContentTypeParameter'
+        - $ref: '#/components/parameters/ApiVersionParameter'
+        - $ref: '#/components/parameters/AuthorizationParameter'
+        - $ref: '#/components/parameters/IdempotencyKeyParameter'
+        - $ref: '#/components/parameters/LocalisationParameter'
         - name: account_id
           in: path
           required: true
@@ -150,6 +268,36 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/Transaction"
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        '429':
+          description: Too Many Requests
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
         default:
           description: Unexpected error
           content:
@@ -191,21 +339,149 @@ components:
             read:transactions: Grant read transactions access.
             create:transactions: Grant create transactions access.
   schemas:
-    BankObject:
+    PostalAddress:
+      properties:
+        country:
+          type: string
+          format: iso-3166-1
+          description: Country code.
+        state:
+          type: string
+          description: State (localisation).
+        city:
+          type: string
+          description: City (localisation).
+        line:
+          type: string
+          description: Address (localisation).
+        postcode:
+          type: string
+          description: Postcode.
+      required:
+        - country
+        - state
+        - city
+        - line
+    GEOJsonPoint:
       properties:
         type:
           type: string
-          description: Type `BankObject`.
-        bank_object_id:
-          type: string
-          description: Unique identifier of bank object.
-    BankObjectList:
-      properties:
-        items:
-          description: Contains the list of bank objects.
+          description: Type `Point`
+        coordinates:
           type: array
           items:
-            $ref: "#/components/schemas/BankObject"
+            type: number
+            format: float
+          description: longitude, latitude
+      required:
+        - type
+        - coordinates
+    ATM:
+      properties:
+        type:
+          type: string
+          description: Type `ATM`.
+        id:
+          type: string
+          description: Unique identifier of ATM.
+        name:
+          type: string
+          description: ATM name/ref (localisation).
+        address:
+          $ref: "#/components/schemas/PostalAddress"
+          description: Postal address.
+        located_at:
+          type: string
+          description: Additional location information (localisation).
+        location:
+          $ref: "#/components/schemas/GEOJsonPoint"
+          description: GEO location.
+        opening_hours:
+          type: string
+          format: opening-hours
+          description: Opening hours.
+        support_languages:
+          type: array
+          items:
+            type: string
+            format: iso-639-1
+          description: Support languages.
+        supported_currencies:
+          type: array
+          items:
+            type: string
+            format: iso-4217
+          description: Support currencies.
+        supported_services:
+          type: array
+          items:
+            type: string
+          description: Supported services.
+      required:
+        - type
+        - id
+        - name
+        - address
+        - location
+        - opening_hours
+    ATMList:
+      properties:
+        items:
+          description: Contains the list of ATMs.
+          type: array
+          items:
+            $ref: "#/components/schemas/ATM"
+      required:
+        - items
+    Branch:
+      properties:
+        type:
+          type: string
+          description: Type `Branch`.
+        id:
+          type: string
+          description: Unique identifier of branch.
+        name:
+          type: string
+          description: Branch name/ref (localisation).
+        address:
+          $ref: "#/components/schemas/PostalAddress"
+          description: Postal address.
+        location:
+          $ref: "#/components/schemas/GEOJsonPoint"
+          description: GEO location.
+        note:
+          type: string
+          description: Additional location and access information (localisation).
+        phone:
+          type: string
+          format: phone
+          description: Contact phone.
+        opening_hours:
+          type: string
+          format: opening-hours
+          description: Opening hours.
+        supported_services:
+          type: array
+          items:
+            type: string
+          description: Supported operations.
+      required:
+        - type
+        - id
+        - name
+        - address
+        - location
+        - opening_hours
+    BranchList:
+      properties:
+        items:
+          description: Contains the list of branches.
+          type: array
+          items:
+            $ref: "#/components/schemas/Branch"
+      required:
+        - items
     CurrencyRate:
       properties:
         type:
@@ -229,6 +505,11 @@ components:
           type: string
           format: decimal
           description: Currency echange rate.
+      required:
+        - type
+        - currency_from
+        - currency_to
+        - exchange_rate
     CurrencyRateList:
       properties:
         items:
@@ -236,6 +517,8 @@ components:
           type: array
           items:
             $ref: "#/components/schemas/CurrencyRate"
+      required:
+        - items
     Account:
       properties:
         type:
@@ -245,6 +528,14 @@ components:
           type: string
           format: object-uuid
           description: Account identificator.
+        iban:
+          type: string
+          format: iban
+          description: IBAN.
+        bic:
+          type: string
+          format: bic
+          description: BIC.
         balance:
           type: string
           format: decimal
@@ -260,8 +551,33 @@ components:
           type: array
           items:
             $ref: "#/components/schemas/Account"
+    TransactionSender:
+      properties:
+        iban:
+          type: string
+          format: iban
+          description: IBAN.
+        name:
+          type: string
+          description: Full name.
+    TransactionRecipient:
+      properties:
+        iban:
+          type: string
+          format: iban
+          description: IBAN.
+        bic:
+          type: string
+          format: bic
+          description: BIC.
+        name:
+          type: string
+          description: Full name.
     TransactionCreate:
       properties:
+        to:
+          type: "#/components/schemas/TransactionRecipient"
+          description: Recipient.
         amount:
           type: string
           format: decimal
@@ -270,24 +586,25 @@ components:
           type: string
           format: iso-4217
           description: Currency ISO 4217 code.
-        beneficiar:
+        charge_policy:
           type: string
-          description: Beneficiar.
+          enum:
+            - SHARED
+            - RECEIVER
+            - SENDER
+          description: Charge policy.
         description:
           type: string
           description: Description (optional).
-        idempotent_key:
-          type: string
-          description: Idempotent key (optional).
         metadata:
           type: object
           additionalProperties:
             type: string
           description: Metadata (optional).
       required:
+        - to
         - amount
         - currency
-        - beneficiar
     Transaction:
       properties:
         type:
@@ -297,6 +614,12 @@ components:
           type: string
           format: object-uuid
           description: Operation identificator.
+        from:
+          type: "#/components/schemas/TransactionSender"
+          description: Sender.
+        to:
+          type: "#/components/schemas/TransactionRecipient"
+          description: Recipient.
         amount:
           type: string
           format: decimal
@@ -305,6 +628,13 @@ components:
           type: string
           format: iso-4217
           description: Currency ISO 4217 code.
+        charge_policy:
+          type: string
+          enum:
+            - SHARED
+            - RECEIVER
+            - SENDER
+          description: Charge policy.
         description:
           type: string
           description: Description.
@@ -332,3 +662,52 @@ components:
           type: string
         fields:
           type: string
+  parameters:
+    AcceptParameter:
+      name: Accept
+      in: header
+      description: Accept response body content type (default application/json).
+      required: false
+      schema:
+        type: string
+        enum:
+          - application/json
+    ContentTypeParameter:
+      name: Content-Type
+      in: header
+      description: Request body content type (default application/json).
+      required: false
+      schema:
+        type: string
+        enum:
+          - application/json
+    ApiVersionParameter:
+      name: Api-Version
+      in: header
+      description: API version (default latest).
+      required: false
+      schema:
+        type: string
+    AuthorizationParameter:
+      name: Authorization
+      in: header
+      description: Authorization (OAuth2 Bearer).
+      required: true
+      schema:
+        type: string
+        pattern: Bearer [a-z0-9]{12}
+    IdempotencyKeyParameter:
+      name: X-Idempotency-Key
+      in: header
+      description: Idempotency key.
+      required: false
+      schema:
+        type: string
+    LocalisationParameter:
+      name: lang
+      in: query
+      description: Language of text data (default belarusan).
+      required: false
+      schema:
+        type: string
+        format: iso-639-1
