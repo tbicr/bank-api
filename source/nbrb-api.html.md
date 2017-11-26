@@ -182,23 +182,29 @@ lang|en-US|
 {
   "items": [
     {
-      "type": "string",
-      "handle": "string",
-      "name": "string",
-      "full_name": "string",
-      "bic": "string",
+      "type": "Bank",
+      "handle": "nbrb",
+      "name": "NBRB",
+      "full_name": "National Bank of the Republic of Belarus",
+      "bic": "IRJSBY22",
       "unp": "string",
       "okpo": "string",
-      "swift": "string",
-      "adress": "string",
-      "phone": "string",
-      "fax": "string",
-      "telex": "string",
-      "email": "user@example.com",
-      "website": "http://example.com",
+      "swift": "NBRB BY2X",
+      "address": {
+        "country": "BY",
+        "state": "Minsk",
+        "city": "Minsk",
+        "line": "praspiekt Niezaliežnasci, 20",
+        "postcode": "220008"
+      },
+      "phone": "+375173060002",
+      "fax": "+375173274879",
+      "telex": "252449 BELAR BY",
+      "email": "info@nbrb.by",
+      "website": "https://nbrb.by/",
       "presedent": "string",
-      "registration_number": "string",
-      "registration_date": null
+      "registration_number": "1",
+      "registration_date": "1991-01-01"
     }
   ]
 }
@@ -387,12 +393,12 @@ lang|en-US|
 {
   "items": [
     {
-      "type": "string",
-      "currency_from": "string",
-      "currency_from_name": "string",
-      "currency_to": "string",
-      "currency_to_name": "string",
-      "exchange_rate": "string"
+      "type": "CurrencyRate",
+      "currency_from": "EUR",
+      "currency_from_name": "Euro",
+      "currency_to": "BYN",
+      "currency_to_name": "Belarusian ruble",
+      "exchange_rate": "2.3676"
     }
   ]
 }
@@ -433,29 +439,61 @@ This operation does not require authentication
 
 # Schemas
 
+## PostalAddress
+
+<a name="schemapostaladdress"></a>
+
+```json
+{
+  "country": "BY",
+  "state": "Minsk",
+  "city": "Minsk",
+  "line": "praspiekt Niezaliežnasci, 20",
+  "postcode": "220008"
+} 
+```
+
+### Properties
+
+Name|Type|Required|Description
+---|---|---|---|
+country|string(iso-3166-1)|true|Country code.
+state|string|true|State (localisation).
+city|string|true|City (localisation).
+line|string|true|Address (localisation).
+postcode|string|false|Postcode.
+
+
+
 ## Bank
 
 <a name="schemabank"></a>
 
 ```json
 {
-  "type": "string",
-  "handle": "string",
-  "name": "string",
-  "full_name": "string",
-  "bic": "string",
+  "type": "Bank",
+  "handle": "nbrb",
+  "name": "NBRB",
+  "full_name": "National Bank of the Republic of Belarus",
+  "bic": "IRJSBY22",
   "unp": "string",
   "okpo": "string",
-  "swift": "string",
-  "adress": "string",
-  "phone": "string",
-  "fax": "string",
-  "telex": "string",
-  "email": "user@example.com",
-  "website": "http://example.com",
+  "swift": "NBRB BY2X",
+  "address": {
+    "country": "BY",
+    "state": "Minsk",
+    "city": "Minsk",
+    "line": "praspiekt Niezaliežnasci, 20",
+    "postcode": "220008"
+  },
+  "phone": "+375173060002",
+  "fax": "+375173274879",
+  "telex": "252449 BELAR BY",
+  "email": "info@nbrb.by",
+  "website": "https://nbrb.by/",
   "presedent": "string",
-  "registration_number": "string",
-  "registration_date": null
+  "registration_number": "1",
+  "registration_date": "1991-01-01"
 } 
 ```
 
@@ -471,7 +509,12 @@ bic|string|false|Bank BIC
 unp|string|false|Bank UNP
 okpo|string|false|Bank OKPO
 swift|string|false|Bank S.W.I.F.T.
-adress|string|false|Bank adress (localisation).
+address|[PostalAddress](#schemapostaladdress)|false|No description
+» country|string(iso-3166-1)|true|Country code.
+» state|string|true|State (localisation).
+» city|string|true|City (localisation).
+» line|string|true|Address (localisation).
+» postcode|string|false|Postcode.
 phone|string(phone)|false|Bank phone.
 fax|string(phone)|false|Bank fax.
 telex|string|false|Bank telex.
@@ -491,23 +534,29 @@ registration_date|date|false|Registration date.
 {
   "items": [
     {
-      "type": "string",
-      "handle": "string",
-      "name": "string",
-      "full_name": "string",
-      "bic": "string",
+      "type": "Bank",
+      "handle": "nbrb",
+      "name": "NBRB",
+      "full_name": "National Bank of the Republic of Belarus",
+      "bic": "IRJSBY22",
       "unp": "string",
       "okpo": "string",
-      "swift": "string",
-      "adress": "string",
-      "phone": "string",
-      "fax": "string",
-      "telex": "string",
-      "email": "user@example.com",
-      "website": "http://example.com",
+      "swift": "NBRB BY2X",
+      "address": {
+        "country": "BY",
+        "state": "Minsk",
+        "city": "Minsk",
+        "line": "praspiekt Niezaliežnasci, 20",
+        "postcode": "220008"
+      },
+      "phone": "+375173060002",
+      "fax": "+375173274879",
+      "telex": "252449 BELAR BY",
+      "email": "info@nbrb.by",
+      "website": "https://nbrb.by/",
       "presedent": "string",
-      "registration_number": "string",
-      "registration_date": null
+      "registration_number": "1",
+      "registration_date": "1991-01-01"
     }
   ]
 } 
@@ -526,7 +575,12 @@ items|[[Bank](#schemabank)]|false|Contains the list of banks.
 » unp|string|false|Bank UNP
 » okpo|string|false|Bank OKPO
 » swift|string|false|Bank S.W.I.F.T.
-» adress|string|false|Bank adress (localisation).
+» address|[PostalAddress](#schemapostaladdress)|false|No description
+»» country|string(iso-3166-1)|true|Country code.
+»» state|string|true|State (localisation).
+»» city|string|true|City (localisation).
+»» line|string|true|Address (localisation).
+»» postcode|string|false|Postcode.
 » phone|string(phone)|false|Bank phone.
 » fax|string(phone)|false|Bank fax.
 » telex|string|false|Bank telex.
@@ -544,12 +598,12 @@ items|[[Bank](#schemabank)]|false|Contains the list of banks.
 
 ```json
 {
-  "type": "string",
-  "currency_from": "string",
-  "currency_from_name": "string",
-  "currency_to": "string",
-  "currency_to_name": "string",
-  "exchange_rate": "string"
+  "type": "CurrencyRate",
+  "currency_from": "EUR",
+  "currency_from_name": "Euro",
+  "currency_to": "BYN",
+  "currency_to_name": "Belarusian ruble",
+  "exchange_rate": "2.3676"
 } 
 ```
 
@@ -574,12 +628,12 @@ exchange_rate|string(decimal)|false|Currency echange rate.
 {
   "items": [
     {
-      "type": "string",
-      "currency_from": "string",
-      "currency_from_name": "string",
-      "currency_to": "string",
-      "currency_to_name": "string",
-      "exchange_rate": "string"
+      "type": "CurrencyRate",
+      "currency_from": "EUR",
+      "currency_from_name": "Euro",
+      "currency_to": "BYN",
+      "currency_to_name": "Belarusian ruble",
+      "exchange_rate": "2.3676"
     }
   ]
 } 

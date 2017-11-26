@@ -89,23 +89,56 @@ paths:
                 $ref: "#/components/schemas/Error"
 components:
   schemas:
+    PostalAddress:
+      properties:
+        country:
+          type: string
+          format: iso-3166-1
+          description: Country code.
+          example: "BY"
+        state:
+          type: string
+          description: State (localisation).
+          example: "Minsk"
+        city:
+          type: string
+          description: City (localisation).
+          example: "Minsk"
+        line:
+          type: string
+          description: Address (localisation).
+          example: "praspiekt Niezaliežnasci, 20"
+        postcode:
+          type: string
+          description: Postcode.
+          example: "220008"
+      required:
+        - country
+        - state
+        - city
+        - line
     Bank:
       properties:
         type:
           type: string
           description: Type `Bank`.
+          example: "Bank"
         handle:
           type: string
           description: Unique identifier of bank.
+          example: "nbrb"
         name:
           type: string
           description: Short bank name (localisation).
+          example: "NBRB"
         full_name:
           type: string
           description: Full bank name (localisation).
+          example: "National Bank of the Republic of Belarus"
         bic:
           type: string
           description: Bank BIC
+          example: "IRJSBY22"
         unp:
           type: string
           description: Bank UNP
@@ -115,37 +148,45 @@ components:
         swift:
           type: string
           description: Bank S.W.I.F.T.
-        adress:
-          type: string
-          description: Bank adress (localisation).
+          example: "NBRB BY2X"
+        address:
+          $ref: "#/components/schemas/PostalAddress"
+          description: Bank address (localisation).
         phone:
           type: string
           format: phone
           description: Bank phone.
+          example: "+375173060002"
         fax:
           type: string
           format: phone
           description: Bank fax.
+          example: "+375173274879"
         telex:
           type: string
           description: Bank telex.
+          example: "252449 BELAR BY"
         email:
           type: string
           format: email
           description: Bank email.
+          example: "info@nbrb.by"
         website:
           type: string
           format: uri
           description: Bank web site (localisation).
+          example: "https://nbrb.by/"
         presedent:
           type: string
           description: Bank president (localisation).
         registration_number:
           type: string
           description: Registration number.
+          example: "1"
         registration_date:
           type: date
           description: Registration date.
+          example: "1991-01-01"
     BankList:
       properties:
         items:
@@ -158,24 +199,30 @@ components:
         type:
           type: string
           description: Type `CurrencyRate`.
+          example: "CurrencyRate"
         currency_from:
           type: string
           format: iso-4217
           description: Currency ISO 4217 code.
+          example: "EUR"
         currency_from_name:
           type: string
           description: Currency name (localisation).
+          example: "Euro"
         currency_to:
           type: string
           format: iso-4217
           description: Currency ISO 4217 code.
+          example: "BYN"
         currency_to_name:
           type: string
           description: Currency name (localisation).
+          example: "Belarusian ruble"
         exchange_rate:
           type: string
           format: decimal
           description: Currency echange rate.
+          example: "2.3676"
     CurrencyRateList:
       properties:
         items:

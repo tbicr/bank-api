@@ -760,32 +760,37 @@ System.out.println(response.toString());
 <pre class="highlight tab tab-json"><code>{
   <span class="hljs-attr">"items"</span>: [
     {
-      <span class="hljs-attr">"type"</span>: <span class="hljs-string">"string"</span>,
-      <span class="hljs-attr">"id"</span>: <span class="hljs-string">"string"</span>,
-      <span class="hljs-attr">"name"</span>: <span class="hljs-string">"string"</span>,
+      <span class="hljs-attr">"type"</span>: <span class="hljs-string">"ATM"</span>,
+      <span class="hljs-attr">"id"</span>: <span class="hljs-string">"atm_nbrb_88"</span>,
+      <span class="hljs-attr">"name"</span>: <span class="hljs-string">"NBRB #88"</span>,
       <span class="hljs-attr">"address"</span>: {
-        <span class="hljs-attr">"country"</span>: <span class="hljs-string">"string"</span>,
-        <span class="hljs-attr">"state"</span>: <span class="hljs-string">"string"</span>,
-        <span class="hljs-attr">"city"</span>: <span class="hljs-string">"string"</span>,
-        <span class="hljs-attr">"line"</span>: <span class="hljs-string">"string"</span>,
-        <span class="hljs-attr">"postcode"</span>: <span class="hljs-string">"string"</span>
+        <span class="hljs-attr">"country"</span>: <span class="hljs-string">"BY"</span>,
+        <span class="hljs-attr">"state"</span>: <span class="hljs-string">"Minsk"</span>,
+        <span class="hljs-attr">"city"</span>: <span class="hljs-string">"Minsk"</span>,
+        <span class="hljs-attr">"line"</span>: <span class="hljs-string">"praspiekt Niezaliežnasci, 20"</span>,
+        <span class="hljs-attr">"postcode"</span>: <span class="hljs-string">"220008"</span>
       },
-      <span class="hljs-attr">"located_at"</span>: <span class="hljs-string">"string"</span>,
+      <span class="hljs-attr">"located_at"</span>: <span class="hljs-string">"hall"</span>,
       <span class="hljs-attr">"location"</span>: {
-        <span class="hljs-attr">"type"</span>: <span class="hljs-string">"string"</span>,
+        <span class="hljs-attr">"type"</span>: <span class="hljs-string">"Point"</span>,
         <span class="hljs-attr">"coordinates"</span>: [
-          <span class="hljs-number">0</span>
+          <span class="hljs-number">53.9001189</span>,
+          <span class="hljs-number">27.5590155</span>
         ]
       },
-      <span class="hljs-attr">"opening_hours"</span>: <span class="hljs-string">"string"</span>,
+      <span class="hljs-attr">"opening_hours"</span>: <span class="hljs-string">"Mo-Fr 08:00-20:00"</span>,
       <span class="hljs-attr">"support_languages"</span>: [
-        <span class="hljs-string">"string"</span>
+        <span class="hljs-string">"be"</span>,
+        <span class="hljs-string">"ru"</span>,
+        <span class="hljs-string">"en"</span>
       ],
       <span class="hljs-attr">"supported_currencies"</span>: [
-        <span class="hljs-string">"string"</span>
+        <span class="hljs-string">"BYN"</span>,
+        <span class="hljs-string">"EUR"</span>
       ],
       <span class="hljs-attr">"supported_services"</span>: [
-        <span class="hljs-string">"string"</span>
+        <span class="hljs-string">"show_balance"</span>,
+        <span class="hljs-string">"cash_withdrawal"</span>
       ]
     }
   ]
@@ -1035,28 +1040,27 @@ System.out.println(response.toString());
 <pre class="highlight tab tab-json"><code>{
   <span class="hljs-attr">"items"</span>: [
     {
-      <span class="hljs-attr">"type"</span>: <span class="hljs-string">"string"</span>,
-      <span class="hljs-attr">"id"</span>: <span class="hljs-string">"string"</span>,
-      <span class="hljs-attr">"name"</span>: <span class="hljs-string">"string"</span>,
+      <span class="hljs-attr">"type"</span>: <span class="hljs-string">"Branch"</span>,
+      <span class="hljs-attr">"id"</span>: <span class="hljs-string">"branch_nbrb_1"</span>,
+      <span class="hljs-attr">"name"</span>: <span class="hljs-string">"Main office NBRB"</span>,
       <span class="hljs-attr">"address"</span>: {
-        <span class="hljs-attr">"country"</span>: <span class="hljs-string">"string"</span>,
-        <span class="hljs-attr">"state"</span>: <span class="hljs-string">"string"</span>,
-        <span class="hljs-attr">"city"</span>: <span class="hljs-string">"string"</span>,
-        <span class="hljs-attr">"line"</span>: <span class="hljs-string">"string"</span>,
-        <span class="hljs-attr">"postcode"</span>: <span class="hljs-string">"string"</span>
+        <span class="hljs-attr">"country"</span>: <span class="hljs-string">"BY"</span>,
+        <span class="hljs-attr">"state"</span>: <span class="hljs-string">"Minsk"</span>,
+        <span class="hljs-attr">"city"</span>: <span class="hljs-string">"Minsk"</span>,
+        <span class="hljs-attr">"line"</span>: <span class="hljs-string">"praspiekt Niezaliežnasci, 20"</span>,
+        <span class="hljs-attr">"postcode"</span>: <span class="hljs-string">"220008"</span>
       },
       <span class="hljs-attr">"location"</span>: {
-        <span class="hljs-attr">"type"</span>: <span class="hljs-string">"string"</span>,
+        <span class="hljs-attr">"type"</span>: <span class="hljs-string">"Point"</span>,
         <span class="hljs-attr">"coordinates"</span>: [
-          <span class="hljs-number">0</span>
+          <span class="hljs-number">53.9001189</span>,
+          <span class="hljs-number">27.5590155</span>
         ]
       },
-      <span class="hljs-attr">"note"</span>: <span class="hljs-string">"string"</span>,
-      <span class="hljs-attr">"phone"</span>: <span class="hljs-string">"string"</span>,
-      <span class="hljs-attr">"opening_hours"</span>: <span class="hljs-string">"string"</span>,
-      <span class="hljs-attr">"supported_services"</span>: [
-        <span class="hljs-string">"string"</span>
-      ]
+      <span class="hljs-attr">"note"</span>: <span class="hljs-literal">null</span>,
+      <span class="hljs-attr">"phone"</span>: <span class="hljs-string">"+375173060002"</span>,
+      <span class="hljs-attr">"opening_hours"</span>: <span class="hljs-string">"Mo-Th 08:30-17:30, Fr 08:30-16:15"</span>,
+      <span class="hljs-attr">"supported_services"</span>: []
     }
   ]
 }
@@ -1128,8 +1132,8 @@ This operation does not require authentication
 curl -X GET https://api.bank.by/accounts \
   -H <span class="hljs-string">'Accept: application/json'</span> \
   -H <span class="hljs-string">'Content-Type: application/json'</span> \
-  -H <span class="hljs-string">'X-Api-Version: 1.0.0'</span> \
   -H <span class="hljs-string">'Authorization: Bearer wism73ydof4spe8o92x705t36wbfx41av8bltyys'</span> \
+  -H <span class="hljs-string">'X-Api-Version: 1.0.0'</span> \
   -H <span class="hljs-string">'Accept: application/json'</span>
 
 </code></pre>
@@ -1139,15 +1143,15 @@ curl -X GET https://api.bank.by/accounts \
 <span class="http"><span class="hljs-attribute">Accept</span>: application/json
 <span class="hljs-attribute">Accept</span>: application/json
 <span class="hljs-attribute">Content-Type</span>: application/json
-<span class="hljs-attribute">X-Api-Version</span>: 1.0.0
 <span class="hljs-attribute">Authorization</span>: Bearer wism73ydof4spe8o92x705t36wbfx41av8bltyys
+<span class="hljs-attribute">X-Api-Version</span>: 1.0.0
 
 <span class="undefined"></span></span></code></pre>
 <pre class="highlight tab tab-javascript"><code><span class="hljs-keyword">var</span> headers = {
   <span class="hljs-string">'Accept'</span>:<span class="hljs-string">'application/json'</span>,
   <span class="hljs-string">'Content-Type'</span>:<span class="hljs-string">'application/json'</span>,
-  <span class="hljs-string">'X-Api-Version'</span>:<span class="hljs-string">'1.0.0'</span>,
   <span class="hljs-string">'Authorization'</span>:<span class="hljs-string">'Bearer wism73ydof4spe8o92x705t36wbfx41av8bltyys'</span>,
+  <span class="hljs-string">'X-Api-Version'</span>:<span class="hljs-string">'1.0.0'</span>,
   <span class="hljs-string">'Accept'</span>:<span class="hljs-string">'application/json'</span>
 
 };
@@ -1167,8 +1171,8 @@ $.ajax({
 <span class="hljs-keyword">const</span> headers = {
   <span class="hljs-string">'Accept'</span>:<span class="hljs-string">'application/json'</span>,
   <span class="hljs-string">'Content-Type'</span>:<span class="hljs-string">'application/json'</span>,
-  <span class="hljs-string">'X-Api-Version'</span>:<span class="hljs-string">'1.0.0'</span>,
   <span class="hljs-string">'Authorization'</span>:<span class="hljs-string">'Bearer wism73ydof4spe8o92x705t36wbfx41av8bltyys'</span>,
+  <span class="hljs-string">'X-Api-Version'</span>:<span class="hljs-string">'1.0.0'</span>,
   <span class="hljs-string">'Accept'</span>:<span class="hljs-string">'application/json'</span>
 
 };
@@ -1191,8 +1195,8 @@ fetch(<span class="hljs-string">'https://api.bank.by/accounts'</span>,
 headers = {
   <span class="hljs-string">'Accept'</span> =&gt; <span class="hljs-string">'application/json'</span>,
   <span class="hljs-string">'Content-Type'</span> =&gt; <span class="hljs-string">'application/json'</span>,
-  <span class="hljs-string">'X-Api-Version'</span> =&gt; <span class="hljs-string">'1.0.0'</span>,
   <span class="hljs-string">'Authorization'</span> =&gt; <span class="hljs-string">'Bearer wism73ydof4spe8o92x705t36wbfx41av8bltyys'</span>,
+  <span class="hljs-string">'X-Api-Version'</span> =&gt; <span class="hljs-string">'1.0.0'</span>,
   <span class="hljs-string">'Accept'</span> =&gt; <span class="hljs-string">'application/json'</span>
 }
 
@@ -1206,8 +1210,8 @@ p JSON.parse(result)
 headers = {
   <span class="hljs-string">'Accept'</span>: <span class="hljs-string">'application/json'</span>,
   <span class="hljs-string">'Content-Type'</span>: <span class="hljs-string">'application/json'</span>,
-  <span class="hljs-string">'X-Api-Version'</span>: <span class="hljs-string">'1.0.0'</span>,
   <span class="hljs-string">'Authorization'</span>: <span class="hljs-string">'Bearer wism73ydof4spe8o92x705t36wbfx41av8bltyys'</span>,
+  <span class="hljs-string">'X-Api-Version'</span>: <span class="hljs-string">'1.0.0'</span>,
   <span class="hljs-string">'Accept'</span>: <span class="hljs-string">'application/json'</span>
 }
 
@@ -1260,18 +1264,18 @@ System.out.println(response.toString());
 <td>Request body content type (default application/json).</td>
 </tr>
 <tr>
-<td>X-Api-Version</td>
-<td>header</td>
-<td>string</td>
-<td>false</td>
-<td>API version (default latest).</td>
-</tr>
-<tr>
 <td>Authorization</td>
 <td>header</td>
 <td>string</td>
 <td>true</td>
 <td>Authorization (OAuth2 Bearer).</td>
+</tr>
+<tr>
+<td>X-Api-Version</td>
+<td>header</td>
+<td>string</td>
+<td>false</td>
+<td>API version (default latest).</td>
 </tr>
 <tr>
 <td>lang</td>
@@ -1319,12 +1323,12 @@ System.out.println(response.toString());
 <pre class="highlight tab tab-json"><code>{
   <span class="hljs-attr">"items"</span>: [
     {
-      <span class="hljs-attr">"type"</span>: <span class="hljs-string">"string"</span>,
-      <span class="hljs-attr">"id"</span>: <span class="hljs-string">"string"</span>,
-      <span class="hljs-attr">"iban"</span>: <span class="hljs-string">"string"</span>,
-      <span class="hljs-attr">"bic"</span>: <span class="hljs-string">"string"</span>,
-      <span class="hljs-attr">"balance"</span>: <span class="hljs-string">"string"</span>,
-      <span class="hljs-attr">"currency"</span>: <span class="hljs-string">"string"</span>
+      <span class="hljs-attr">"type"</span>: <span class="hljs-string">"Account"</span>,
+      <span class="hljs-attr">"id"</span>: <span class="hljs-string">"account_d87e183c49b84cbd9ac2e585bdd93896"</span>,
+      <span class="hljs-attr">"iban"</span>: <span class="hljs-string">"BY90UNBS30120919200220000840"</span>,
+      <span class="hljs-attr">"bic"</span>: <span class="hljs-string">"IRJSBY22"</span>,
+      <span class="hljs-attr">"balance"</span>: <span class="hljs-string">"1252.00"</span>,
+      <span class="hljs-attr">"currency"</span>: <span class="hljs-string">"BYN"</span>
     }
   ]
 }
@@ -1420,8 +1424,8 @@ oauth2 ( Scopes: read:accounts )
 curl -X GET https://api.bank.by/account/{account_id}/transactions \
   -H <span class="hljs-string">'Accept: application/json'</span> \
   -H <span class="hljs-string">'Content-Type: application/json'</span> \
-  -H <span class="hljs-string">'X-Api-Version: 1.0.0'</span> \
   -H <span class="hljs-string">'Authorization: Bearer wism73ydof4spe8o92x705t36wbfx41av8bltyys'</span> \
+  -H <span class="hljs-string">'X-Api-Version: 1.0.0'</span> \
   -H <span class="hljs-string">'Accept: application/json'</span>
 
 </code></pre>
@@ -1431,15 +1435,15 @@ curl -X GET https://api.bank.by/account/{account_id}/transactions \
 <span class="http"><span class="hljs-attribute">Accept</span>: application/json
 <span class="hljs-attribute">Accept</span>: application/json
 <span class="hljs-attribute">Content-Type</span>: application/json
-<span class="hljs-attribute">X-Api-Version</span>: 1.0.0
 <span class="hljs-attribute">Authorization</span>: Bearer wism73ydof4spe8o92x705t36wbfx41av8bltyys
+<span class="hljs-attribute">X-Api-Version</span>: 1.0.0
 
 <span class="undefined"></span></span></code></pre>
 <pre class="highlight tab tab-javascript"><code><span class="hljs-keyword">var</span> headers = {
   <span class="hljs-string">'Accept'</span>:<span class="hljs-string">'application/json'</span>,
   <span class="hljs-string">'Content-Type'</span>:<span class="hljs-string">'application/json'</span>,
-  <span class="hljs-string">'X-Api-Version'</span>:<span class="hljs-string">'1.0.0'</span>,
   <span class="hljs-string">'Authorization'</span>:<span class="hljs-string">'Bearer wism73ydof4spe8o92x705t36wbfx41av8bltyys'</span>,
+  <span class="hljs-string">'X-Api-Version'</span>:<span class="hljs-string">'1.0.0'</span>,
   <span class="hljs-string">'Accept'</span>:<span class="hljs-string">'application/json'</span>
 
 };
@@ -1459,8 +1463,8 @@ $.ajax({
 <span class="hljs-keyword">const</span> headers = {
   <span class="hljs-string">'Accept'</span>:<span class="hljs-string">'application/json'</span>,
   <span class="hljs-string">'Content-Type'</span>:<span class="hljs-string">'application/json'</span>,
-  <span class="hljs-string">'X-Api-Version'</span>:<span class="hljs-string">'1.0.0'</span>,
   <span class="hljs-string">'Authorization'</span>:<span class="hljs-string">'Bearer wism73ydof4spe8o92x705t36wbfx41av8bltyys'</span>,
+  <span class="hljs-string">'X-Api-Version'</span>:<span class="hljs-string">'1.0.0'</span>,
   <span class="hljs-string">'Accept'</span>:<span class="hljs-string">'application/json'</span>
 
 };
@@ -1483,8 +1487,8 @@ fetch(<span class="hljs-string">'https://api.bank.by/account/{account_id}/transa
 headers = {
   <span class="hljs-string">'Accept'</span> =&gt; <span class="hljs-string">'application/json'</span>,
   <span class="hljs-string">'Content-Type'</span> =&gt; <span class="hljs-string">'application/json'</span>,
-  <span class="hljs-string">'X-Api-Version'</span> =&gt; <span class="hljs-string">'1.0.0'</span>,
   <span class="hljs-string">'Authorization'</span> =&gt; <span class="hljs-string">'Bearer wism73ydof4spe8o92x705t36wbfx41av8bltyys'</span>,
+  <span class="hljs-string">'X-Api-Version'</span> =&gt; <span class="hljs-string">'1.0.0'</span>,
   <span class="hljs-string">'Accept'</span> =&gt; <span class="hljs-string">'application/json'</span>
 }
 
@@ -1498,8 +1502,8 @@ p JSON.parse(result)
 headers = {
   <span class="hljs-string">'Accept'</span>: <span class="hljs-string">'application/json'</span>,
   <span class="hljs-string">'Content-Type'</span>: <span class="hljs-string">'application/json'</span>,
-  <span class="hljs-string">'X-Api-Version'</span>: <span class="hljs-string">'1.0.0'</span>,
   <span class="hljs-string">'Authorization'</span>: <span class="hljs-string">'Bearer wism73ydof4spe8o92x705t36wbfx41av8bltyys'</span>,
+  <span class="hljs-string">'X-Api-Version'</span>: <span class="hljs-string">'1.0.0'</span>,
   <span class="hljs-string">'Accept'</span>: <span class="hljs-string">'application/json'</span>
 }
 
@@ -1552,18 +1556,18 @@ System.out.println(response.toString());
 <td>Request body content type (default application/json).</td>
 </tr>
 <tr>
-<td>X-Api-Version</td>
-<td>header</td>
-<td>string</td>
-<td>false</td>
-<td>API version (default latest).</td>
-</tr>
-<tr>
 <td>Authorization</td>
 <td>header</td>
 <td>string</td>
 <td>true</td>
 <td>Authorization (OAuth2 Bearer).</td>
+</tr>
+<tr>
+<td>X-Api-Version</td>
+<td>header</td>
+<td>string</td>
+<td>false</td>
+<td>API version (default latest).</td>
 </tr>
 <tr>
 <td>lang</td>
@@ -1616,7 +1620,29 @@ System.out.println(response.toString());
 <p>Example responses</p>
 </blockquote>
 <pre class="highlight tab tab-json"><code>{
-  <span class="hljs-attr">"items"</span>: <span class="hljs-string">"string"</span>
+  <span class="hljs-attr">"items"</span>: [
+    {
+      <span class="hljs-attr">"type"</span>: <span class="hljs-string">"Transaction"</span>,
+      <span class="hljs-attr">"id"</span>: <span class="hljs-string">"transaction_85c4b3e76d064fbcb6cebbc38629733d"</span>,
+      <span class="hljs-attr">"from"</span>: {
+        <span class="hljs-attr">"iban"</span>: <span class="hljs-string">"BY90UNBS30120919200220000840"</span>,
+        <span class="hljs-attr">"name"</span>: <span class="hljs-string">"Kanstantyn Mickievich"</span>
+      },
+      <span class="hljs-attr">"to"</span>: {
+        <span class="hljs-attr">"iban"</span>: <span class="hljs-string">"BY52PJCB30125007521010000840"</span>,
+        <span class="hljs-attr">"bic"</span>: <span class="hljs-string">"PJCBBY2X"</span>,
+        <span class="hljs-attr">"name"</span>: <span class="hljs-string">"Jan Branislavavich Savicki"</span>
+      },
+      <span class="hljs-attr">"amount"</span>: <span class="hljs-string">"30.00"</span>,
+      <span class="hljs-attr">"currency"</span>: <span class="hljs-string">"BYN"</span>,
+      <span class="hljs-attr">"charge_policy"</span>: <span class="hljs-string">"SENDER"</span>,
+      <span class="hljs-attr">"description"</span>: <span class="hljs-string">"Act #2 by 08.09.2017"</span>,
+      <span class="hljs-attr">"metadata"</span>: {
+        <span class="hljs-attr">"customer_id"</span>: <span class="hljs-string">"52feca613b844ae8b7ddd627d1fdf58b"</span>
+      },
+      <span class="hljs-attr">"created_at"</span>: <span class="hljs-string">"2017-11-26T09:39:04Z"</span>
+    }
+  ]
 }
 </code></pre>
 <pre class="highlight tab tab-json"><code>{
@@ -1723,8 +1749,8 @@ oauth2 ( Scopes: read:transactions )
 curl -X POST https://api.bank.by/account/{account_id}/transactions \
   -H <span class="hljs-string">'Accept: application/json'</span> \
   -H <span class="hljs-string">'Content-Type: application/json'</span> \
-  -H <span class="hljs-string">'X-Api-Version: 1.0.0'</span> \
   -H <span class="hljs-string">'Authorization: Bearer wism73ydof4spe8o92x705t36wbfx41av8bltyys'</span> \
+  -H <span class="hljs-string">'X-Api-Version: 1.0.0'</span> \
   -H <span class="hljs-string">'X-Idempotency-Key: string'</span> \
   -H <span class="hljs-string">'Content-Type: application/json'</span> \
   -H <span class="hljs-string">'Accept: application/json'</span>
@@ -1736,16 +1762,16 @@ curl -X POST https://api.bank.by/account/{account_id}/transactions \
 <span class="hljs-attribute">Accept</span>: application/json
 <span class="hljs-attribute">Accept</span>: application/json
 <span class="hljs-attribute">Content-Type</span>: application/json
-<span class="hljs-attribute">X-Api-Version</span>: 1.0.0
 <span class="hljs-attribute">Authorization</span>: Bearer wism73ydof4spe8o92x705t36wbfx41av8bltyys
+<span class="hljs-attribute">X-Api-Version</span>: 1.0.0
 <span class="hljs-attribute">X-Idempotency-Key</span>: string
 
 <span class="undefined"></span></code></pre>
 <pre class="highlight tab tab-javascript"><code><span class="hljs-keyword">var</span> headers = {
   <span class="hljs-string">'Accept'</span>:<span class="hljs-string">'application/json'</span>,
   <span class="hljs-string">'Content-Type'</span>:<span class="hljs-string">'application/json'</span>,
-  <span class="hljs-string">'X-Api-Version'</span>:<span class="hljs-string">'1.0.0'</span>,
   <span class="hljs-string">'Authorization'</span>:<span class="hljs-string">'Bearer wism73ydof4spe8o92x705t36wbfx41av8bltyys'</span>,
+  <span class="hljs-string">'X-Api-Version'</span>:<span class="hljs-string">'1.0.0'</span>,
   <span class="hljs-string">'X-Idempotency-Key'</span>:<span class="hljs-string">'string'</span>,
   <span class="hljs-string">'Content-Type'</span>:<span class="hljs-string">'application/json'</span>,
   <span class="hljs-string">'Accept'</span>:<span class="hljs-string">'application/json'</span>
@@ -1764,21 +1790,24 @@ $.ajax({
 </code></pre>
 <pre class="highlight tab tab-javascript--nodejs"><code><span class="hljs-keyword">const</span> request = <span class="hljs-built_in">require</span>(<span class="hljs-string">'node-fetch'</span>);
 <span class="hljs-keyword">const</span> inputBody = <span class="hljs-string">'{
-  "to": null,
-  "amount": "string",
-  "currency": "string",
-  "charge_policy": "SHARED",
-  "description": "string",
+  "to": {
+    "iban": "BY52PJCB30125007521010000840",
+    "bic": "PJCBBY2X",
+    "name": "Jan Branislavavich Savicki"
+  },
+  "amount": "30.00",
+  "currency": "BYN",
+  "charge_policy": "SENDER",
+  "description": "Act #2 by 08.09.2017",
   "metadata": {
-    "property1": "string",
-    "property2": "string"
+    "customer_id": "52feca613b844ae8b7ddd627d1fdf58b"
   }
 }'</span>;
 <span class="hljs-keyword">const</span> headers = {
   <span class="hljs-string">'Accept'</span>:<span class="hljs-string">'application/json'</span>,
   <span class="hljs-string">'Content-Type'</span>:<span class="hljs-string">'application/json'</span>,
-  <span class="hljs-string">'X-Api-Version'</span>:<span class="hljs-string">'1.0.0'</span>,
   <span class="hljs-string">'Authorization'</span>:<span class="hljs-string">'Bearer wism73ydof4spe8o92x705t36wbfx41av8bltyys'</span>,
+  <span class="hljs-string">'X-Api-Version'</span>:<span class="hljs-string">'1.0.0'</span>,
   <span class="hljs-string">'X-Idempotency-Key'</span>:<span class="hljs-string">'string'</span>,
   <span class="hljs-string">'Content-Type'</span>:<span class="hljs-string">'application/json'</span>,
   <span class="hljs-string">'Accept'</span>:<span class="hljs-string">'application/json'</span>
@@ -1803,8 +1832,8 @@ fetch(<span class="hljs-string">'https://api.bank.by/account/{account_id}/transa
 headers = {
   <span class="hljs-string">'Accept'</span> =&gt; <span class="hljs-string">'application/json'</span>,
   <span class="hljs-string">'Content-Type'</span> =&gt; <span class="hljs-string">'application/json'</span>,
-  <span class="hljs-string">'X-Api-Version'</span> =&gt; <span class="hljs-string">'1.0.0'</span>,
   <span class="hljs-string">'Authorization'</span> =&gt; <span class="hljs-string">'Bearer wism73ydof4spe8o92x705t36wbfx41av8bltyys'</span>,
+  <span class="hljs-string">'X-Api-Version'</span> =&gt; <span class="hljs-string">'1.0.0'</span>,
   <span class="hljs-string">'X-Idempotency-Key'</span> =&gt; <span class="hljs-string">'string'</span>,
   <span class="hljs-string">'Content-Type'</span> =&gt; <span class="hljs-string">'application/json'</span>,
   <span class="hljs-string">'Accept'</span> =&gt; <span class="hljs-string">'application/json'</span>
@@ -1820,8 +1849,8 @@ p JSON.parse(result)
 headers = {
   <span class="hljs-string">'Accept'</span>: <span class="hljs-string">'application/json'</span>,
   <span class="hljs-string">'Content-Type'</span>: <span class="hljs-string">'application/json'</span>,
-  <span class="hljs-string">'X-Api-Version'</span>: <span class="hljs-string">'1.0.0'</span>,
   <span class="hljs-string">'Authorization'</span>: <span class="hljs-string">'Bearer wism73ydof4spe8o92x705t36wbfx41av8bltyys'</span>,
+  <span class="hljs-string">'X-Api-Version'</span>: <span class="hljs-string">'1.0.0'</span>,
   <span class="hljs-string">'X-Idempotency-Key'</span>: <span class="hljs-string">'string'</span>,
   <span class="hljs-string">'Content-Type'</span>: <span class="hljs-string">'application/json'</span>,
   <span class="hljs-string">'Accept'</span>: <span class="hljs-string">'application/json'</span>
@@ -1853,14 +1882,17 @@ System.out.println(response.toString());
 <p>Body parameter</p>
 </blockquote>
 <pre class="highlight tab tab-json"><code>{
-  <span class="hljs-attr">"to"</span>: <span class="hljs-literal">null</span>,
-  <span class="hljs-attr">"amount"</span>: <span class="hljs-string">"string"</span>,
-  <span class="hljs-attr">"currency"</span>: <span class="hljs-string">"string"</span>,
-  <span class="hljs-attr">"charge_policy"</span>: <span class="hljs-string">"SHARED"</span>,
-  <span class="hljs-attr">"description"</span>: <span class="hljs-string">"string"</span>,
+  <span class="hljs-attr">"to"</span>: {
+    <span class="hljs-attr">"iban"</span>: <span class="hljs-string">"BY52PJCB30125007521010000840"</span>,
+    <span class="hljs-attr">"bic"</span>: <span class="hljs-string">"PJCBBY2X"</span>,
+    <span class="hljs-attr">"name"</span>: <span class="hljs-string">"Jan Branislavavich Savicki"</span>
+  },
+  <span class="hljs-attr">"amount"</span>: <span class="hljs-string">"30.00"</span>,
+  <span class="hljs-attr">"currency"</span>: <span class="hljs-string">"BYN"</span>,
+  <span class="hljs-attr">"charge_policy"</span>: <span class="hljs-string">"SENDER"</span>,
+  <span class="hljs-attr">"description"</span>: <span class="hljs-string">"Act #2 by 08.09.2017"</span>,
   <span class="hljs-attr">"metadata"</span>: {
-    <span class="hljs-attr">"property1"</span>: <span class="hljs-string">"string"</span>,
-    <span class="hljs-attr">"property2"</span>: <span class="hljs-string">"string"</span>
+    <span class="hljs-attr">"customer_id"</span>: <span class="hljs-string">"52feca613b844ae8b7ddd627d1fdf58b"</span>
   }
 }
 </code></pre>
@@ -1891,18 +1923,18 @@ System.out.println(response.toString());
 <td>Request body content type (default application/json).</td>
 </tr>
 <tr>
-<td>X-Api-Version</td>
-<td>header</td>
-<td>string</td>
-<td>false</td>
-<td>API version (default latest).</td>
-</tr>
-<tr>
 <td>Authorization</td>
 <td>header</td>
 <td>string</td>
 <td>true</td>
 <td>Authorization (OAuth2 Bearer).</td>
+</tr>
+<tr>
+<td>X-Api-Version</td>
+<td>header</td>
+<td>string</td>
+<td>false</td>
+<td>API version (default latest).</td>
 </tr>
 <tr>
 <td>X-Idempotency-Key</td>
@@ -1969,19 +2001,25 @@ System.out.println(response.toString());
 <p>Example responses</p>
 </blockquote>
 <pre class="highlight tab tab-json"><code>{
-  <span class="hljs-attr">"type"</span>: <span class="hljs-string">"string"</span>,
-  <span class="hljs-attr">"id"</span>: <span class="hljs-string">"string"</span>,
-  <span class="hljs-attr">"from"</span>: <span class="hljs-literal">null</span>,
-  <span class="hljs-attr">"to"</span>: <span class="hljs-literal">null</span>,
-  <span class="hljs-attr">"amount"</span>: <span class="hljs-string">"string"</span>,
-  <span class="hljs-attr">"currency"</span>: <span class="hljs-string">"string"</span>,
-  <span class="hljs-attr">"charge_policy"</span>: <span class="hljs-string">"SHARED"</span>,
-  <span class="hljs-attr">"description"</span>: <span class="hljs-string">"string"</span>,
-  <span class="hljs-attr">"metadata"</span>: {
-    <span class="hljs-attr">"property1"</span>: <span class="hljs-string">"string"</span>,
-    <span class="hljs-attr">"property2"</span>: <span class="hljs-string">"string"</span>
+  <span class="hljs-attr">"type"</span>: <span class="hljs-string">"Transaction"</span>,
+  <span class="hljs-attr">"id"</span>: <span class="hljs-string">"transaction_85c4b3e76d064fbcb6cebbc38629733d"</span>,
+  <span class="hljs-attr">"from"</span>: {
+    <span class="hljs-attr">"iban"</span>: <span class="hljs-string">"BY90UNBS30120919200220000840"</span>,
+    <span class="hljs-attr">"name"</span>: <span class="hljs-string">"Kanstantyn Mickievich"</span>
   },
-  <span class="hljs-attr">"created_at"</span>: <span class="hljs-string">"2017-11-26T08:05:05Z"</span>
+  <span class="hljs-attr">"to"</span>: {
+    <span class="hljs-attr">"iban"</span>: <span class="hljs-string">"BY52PJCB30125007521010000840"</span>,
+    <span class="hljs-attr">"bic"</span>: <span class="hljs-string">"PJCBBY2X"</span>,
+    <span class="hljs-attr">"name"</span>: <span class="hljs-string">"Jan Branislavavich Savicki"</span>
+  },
+  <span class="hljs-attr">"amount"</span>: <span class="hljs-string">"30.00"</span>,
+  <span class="hljs-attr">"currency"</span>: <span class="hljs-string">"BYN"</span>,
+  <span class="hljs-attr">"charge_policy"</span>: <span class="hljs-string">"SENDER"</span>,
+  <span class="hljs-attr">"description"</span>: <span class="hljs-string">"Act #2 by 08.09.2017"</span>,
+  <span class="hljs-attr">"metadata"</span>: {
+    <span class="hljs-attr">"customer_id"</span>: <span class="hljs-string">"52feca613b844ae8b7ddd627d1fdf58b"</span>
+  },
+  <span class="hljs-attr">"created_at"</span>: <span class="hljs-string">"2017-11-26T09:39:04Z"</span>
 }
 </code></pre>
 <pre class="highlight tab tab-json"><code>{
@@ -2083,11 +2121,11 @@ oauth2 ( Scopes: create:transactions )
 <h2 id="postaladdress">PostalAddress</h2>
 <p><a name="schemapostaladdress"></a></p>
 <pre class="highlight tab tab-json"><code>{
-  <span class="hljs-attr">"country"</span>: <span class="hljs-string">"string"</span>,
-  <span class="hljs-attr">"state"</span>: <span class="hljs-string">"string"</span>,
-  <span class="hljs-attr">"city"</span>: <span class="hljs-string">"string"</span>,
-  <span class="hljs-attr">"line"</span>: <span class="hljs-string">"string"</span>,
-  <span class="hljs-attr">"postcode"</span>: <span class="hljs-string">"string"</span>
+  <span class="hljs-attr">"country"</span>: <span class="hljs-string">"BY"</span>,
+  <span class="hljs-attr">"state"</span>: <span class="hljs-string">"Minsk"</span>,
+  <span class="hljs-attr">"city"</span>: <span class="hljs-string">"Minsk"</span>,
+  <span class="hljs-attr">"line"</span>: <span class="hljs-string">"praspiekt Niezaliežnasci, 20"</span>,
+  <span class="hljs-attr">"postcode"</span>: <span class="hljs-string">"220008"</span>
 } 
 </code></pre>
 <h3 id="properties">Properties</h3>
@@ -2136,9 +2174,10 @@ oauth2 ( Scopes: create:transactions )
 <h2 id="geojsonpoint">GEOJsonPoint</h2>
 <p><a name="schemageojsonpoint"></a></p>
 <pre class="highlight tab tab-json"><code>{
-  <span class="hljs-attr">"type"</span>: <span class="hljs-string">"string"</span>,
+  <span class="hljs-attr">"type"</span>: <span class="hljs-string">"Point"</span>,
   <span class="hljs-attr">"coordinates"</span>: [
-    <span class="hljs-number">0</span>
+    <span class="hljs-number">53.9001189</span>,
+    <span class="hljs-number">27.5590155</span>
   ]
 } 
 </code></pre>
@@ -2170,32 +2209,37 @@ oauth2 ( Scopes: create:transactions )
 <h2 id="atm">ATM</h2>
 <p><a name="schemaatm"></a></p>
 <pre class="highlight tab tab-json"><code>{
-  <span class="hljs-attr">"type"</span>: <span class="hljs-string">"string"</span>,
-  <span class="hljs-attr">"id"</span>: <span class="hljs-string">"string"</span>,
-  <span class="hljs-attr">"name"</span>: <span class="hljs-string">"string"</span>,
+  <span class="hljs-attr">"type"</span>: <span class="hljs-string">"ATM"</span>,
+  <span class="hljs-attr">"id"</span>: <span class="hljs-string">"atm_nbrb_88"</span>,
+  <span class="hljs-attr">"name"</span>: <span class="hljs-string">"NBRB #88"</span>,
   <span class="hljs-attr">"address"</span>: {
-    <span class="hljs-attr">"country"</span>: <span class="hljs-string">"string"</span>,
-    <span class="hljs-attr">"state"</span>: <span class="hljs-string">"string"</span>,
-    <span class="hljs-attr">"city"</span>: <span class="hljs-string">"string"</span>,
-    <span class="hljs-attr">"line"</span>: <span class="hljs-string">"string"</span>,
-    <span class="hljs-attr">"postcode"</span>: <span class="hljs-string">"string"</span>
+    <span class="hljs-attr">"country"</span>: <span class="hljs-string">"BY"</span>,
+    <span class="hljs-attr">"state"</span>: <span class="hljs-string">"Minsk"</span>,
+    <span class="hljs-attr">"city"</span>: <span class="hljs-string">"Minsk"</span>,
+    <span class="hljs-attr">"line"</span>: <span class="hljs-string">"praspiekt Niezaliežnasci, 20"</span>,
+    <span class="hljs-attr">"postcode"</span>: <span class="hljs-string">"220008"</span>
   },
-  <span class="hljs-attr">"located_at"</span>: <span class="hljs-string">"string"</span>,
+  <span class="hljs-attr">"located_at"</span>: <span class="hljs-string">"hall"</span>,
   <span class="hljs-attr">"location"</span>: {
-    <span class="hljs-attr">"type"</span>: <span class="hljs-string">"string"</span>,
+    <span class="hljs-attr">"type"</span>: <span class="hljs-string">"Point"</span>,
     <span class="hljs-attr">"coordinates"</span>: [
-      <span class="hljs-number">0</span>
+      <span class="hljs-number">53.9001189</span>,
+      <span class="hljs-number">27.5590155</span>
     ]
   },
-  <span class="hljs-attr">"opening_hours"</span>: <span class="hljs-string">"string"</span>,
+  <span class="hljs-attr">"opening_hours"</span>: <span class="hljs-string">"Mo-Fr 08:00-20:00"</span>,
   <span class="hljs-attr">"support_languages"</span>: [
-    <span class="hljs-string">"string"</span>
+    <span class="hljs-string">"be"</span>,
+    <span class="hljs-string">"ru"</span>,
+    <span class="hljs-string">"en"</span>
   ],
   <span class="hljs-attr">"supported_currencies"</span>: [
-    <span class="hljs-string">"string"</span>
+    <span class="hljs-string">"BYN"</span>,
+    <span class="hljs-string">"EUR"</span>
   ],
   <span class="hljs-attr">"supported_services"</span>: [
-    <span class="hljs-string">"string"</span>
+    <span class="hljs-string">"show_balance"</span>,
+    <span class="hljs-string">"cash_withdrawal"</span>
   ]
 } 
 </code></pre>
@@ -2319,32 +2363,37 @@ oauth2 ( Scopes: create:transactions )
 <pre class="highlight tab tab-json"><code>{
   <span class="hljs-attr">"items"</span>: [
     {
-      <span class="hljs-attr">"type"</span>: <span class="hljs-string">"string"</span>,
-      <span class="hljs-attr">"id"</span>: <span class="hljs-string">"string"</span>,
-      <span class="hljs-attr">"name"</span>: <span class="hljs-string">"string"</span>,
+      <span class="hljs-attr">"type"</span>: <span class="hljs-string">"ATM"</span>,
+      <span class="hljs-attr">"id"</span>: <span class="hljs-string">"atm_nbrb_88"</span>,
+      <span class="hljs-attr">"name"</span>: <span class="hljs-string">"NBRB #88"</span>,
       <span class="hljs-attr">"address"</span>: {
-        <span class="hljs-attr">"country"</span>: <span class="hljs-string">"string"</span>,
-        <span class="hljs-attr">"state"</span>: <span class="hljs-string">"string"</span>,
-        <span class="hljs-attr">"city"</span>: <span class="hljs-string">"string"</span>,
-        <span class="hljs-attr">"line"</span>: <span class="hljs-string">"string"</span>,
-        <span class="hljs-attr">"postcode"</span>: <span class="hljs-string">"string"</span>
+        <span class="hljs-attr">"country"</span>: <span class="hljs-string">"BY"</span>,
+        <span class="hljs-attr">"state"</span>: <span class="hljs-string">"Minsk"</span>,
+        <span class="hljs-attr">"city"</span>: <span class="hljs-string">"Minsk"</span>,
+        <span class="hljs-attr">"line"</span>: <span class="hljs-string">"praspiekt Niezaliežnasci, 20"</span>,
+        <span class="hljs-attr">"postcode"</span>: <span class="hljs-string">"220008"</span>
       },
-      <span class="hljs-attr">"located_at"</span>: <span class="hljs-string">"string"</span>,
+      <span class="hljs-attr">"located_at"</span>: <span class="hljs-string">"hall"</span>,
       <span class="hljs-attr">"location"</span>: {
-        <span class="hljs-attr">"type"</span>: <span class="hljs-string">"string"</span>,
+        <span class="hljs-attr">"type"</span>: <span class="hljs-string">"Point"</span>,
         <span class="hljs-attr">"coordinates"</span>: [
-          <span class="hljs-number">0</span>
+          <span class="hljs-number">53.9001189</span>,
+          <span class="hljs-number">27.5590155</span>
         ]
       },
-      <span class="hljs-attr">"opening_hours"</span>: <span class="hljs-string">"string"</span>,
+      <span class="hljs-attr">"opening_hours"</span>: <span class="hljs-string">"Mo-Fr 08:00-20:00"</span>,
       <span class="hljs-attr">"support_languages"</span>: [
-        <span class="hljs-string">"string"</span>
+        <span class="hljs-string">"be"</span>,
+        <span class="hljs-string">"ru"</span>,
+        <span class="hljs-string">"en"</span>
       ],
       <span class="hljs-attr">"supported_currencies"</span>: [
-        <span class="hljs-string">"string"</span>
+        <span class="hljs-string">"BYN"</span>,
+        <span class="hljs-string">"EUR"</span>
       ],
       <span class="hljs-attr">"supported_services"</span>: [
-        <span class="hljs-string">"string"</span>
+        <span class="hljs-string">"show_balance"</span>,
+        <span class="hljs-string">"cash_withdrawal"</span>
       ]
     }
   ]
@@ -2474,28 +2523,27 @@ oauth2 ( Scopes: create:transactions )
 <h2 id="branch">Branch</h2>
 <p><a name="schemabranch"></a></p>
 <pre class="highlight tab tab-json"><code>{
-  <span class="hljs-attr">"type"</span>: <span class="hljs-string">"string"</span>,
-  <span class="hljs-attr">"id"</span>: <span class="hljs-string">"string"</span>,
-  <span class="hljs-attr">"name"</span>: <span class="hljs-string">"string"</span>,
+  <span class="hljs-attr">"type"</span>: <span class="hljs-string">"Branch"</span>,
+  <span class="hljs-attr">"id"</span>: <span class="hljs-string">"branch_nbrb_1"</span>,
+  <span class="hljs-attr">"name"</span>: <span class="hljs-string">"Main office NBRB"</span>,
   <span class="hljs-attr">"address"</span>: {
-    <span class="hljs-attr">"country"</span>: <span class="hljs-string">"string"</span>,
-    <span class="hljs-attr">"state"</span>: <span class="hljs-string">"string"</span>,
-    <span class="hljs-attr">"city"</span>: <span class="hljs-string">"string"</span>,
-    <span class="hljs-attr">"line"</span>: <span class="hljs-string">"string"</span>,
-    <span class="hljs-attr">"postcode"</span>: <span class="hljs-string">"string"</span>
+    <span class="hljs-attr">"country"</span>: <span class="hljs-string">"BY"</span>,
+    <span class="hljs-attr">"state"</span>: <span class="hljs-string">"Minsk"</span>,
+    <span class="hljs-attr">"city"</span>: <span class="hljs-string">"Minsk"</span>,
+    <span class="hljs-attr">"line"</span>: <span class="hljs-string">"praspiekt Niezaliežnasci, 20"</span>,
+    <span class="hljs-attr">"postcode"</span>: <span class="hljs-string">"220008"</span>
   },
   <span class="hljs-attr">"location"</span>: {
-    <span class="hljs-attr">"type"</span>: <span class="hljs-string">"string"</span>,
+    <span class="hljs-attr">"type"</span>: <span class="hljs-string">"Point"</span>,
     <span class="hljs-attr">"coordinates"</span>: [
-      <span class="hljs-number">0</span>
+      <span class="hljs-number">53.9001189</span>,
+      <span class="hljs-number">27.5590155</span>
     ]
   },
-  <span class="hljs-attr">"note"</span>: <span class="hljs-string">"string"</span>,
-  <span class="hljs-attr">"phone"</span>: <span class="hljs-string">"string"</span>,
-  <span class="hljs-attr">"opening_hours"</span>: <span class="hljs-string">"string"</span>,
-  <span class="hljs-attr">"supported_services"</span>: [
-    <span class="hljs-string">"string"</span>
-  ]
+  <span class="hljs-attr">"note"</span>: <span class="hljs-literal">null</span>,
+  <span class="hljs-attr">"phone"</span>: <span class="hljs-string">"+375173060002"</span>,
+  <span class="hljs-attr">"opening_hours"</span>: <span class="hljs-string">"Mo-Th 08:30-17:30, Fr 08:30-16:15"</span>,
+  <span class="hljs-attr">"supported_services"</span>: []
 } 
 </code></pre>
 <h3 id="properties">Properties</h3>
@@ -2612,28 +2660,27 @@ oauth2 ( Scopes: create:transactions )
 <pre class="highlight tab tab-json"><code>{
   <span class="hljs-attr">"items"</span>: [
     {
-      <span class="hljs-attr">"type"</span>: <span class="hljs-string">"string"</span>,
-      <span class="hljs-attr">"id"</span>: <span class="hljs-string">"string"</span>,
-      <span class="hljs-attr">"name"</span>: <span class="hljs-string">"string"</span>,
+      <span class="hljs-attr">"type"</span>: <span class="hljs-string">"Branch"</span>,
+      <span class="hljs-attr">"id"</span>: <span class="hljs-string">"branch_nbrb_1"</span>,
+      <span class="hljs-attr">"name"</span>: <span class="hljs-string">"Main office NBRB"</span>,
       <span class="hljs-attr">"address"</span>: {
-        <span class="hljs-attr">"country"</span>: <span class="hljs-string">"string"</span>,
-        <span class="hljs-attr">"state"</span>: <span class="hljs-string">"string"</span>,
-        <span class="hljs-attr">"city"</span>: <span class="hljs-string">"string"</span>,
-        <span class="hljs-attr">"line"</span>: <span class="hljs-string">"string"</span>,
-        <span class="hljs-attr">"postcode"</span>: <span class="hljs-string">"string"</span>
+        <span class="hljs-attr">"country"</span>: <span class="hljs-string">"BY"</span>,
+        <span class="hljs-attr">"state"</span>: <span class="hljs-string">"Minsk"</span>,
+        <span class="hljs-attr">"city"</span>: <span class="hljs-string">"Minsk"</span>,
+        <span class="hljs-attr">"line"</span>: <span class="hljs-string">"praspiekt Niezaliežnasci, 20"</span>,
+        <span class="hljs-attr">"postcode"</span>: <span class="hljs-string">"220008"</span>
       },
       <span class="hljs-attr">"location"</span>: {
-        <span class="hljs-attr">"type"</span>: <span class="hljs-string">"string"</span>,
+        <span class="hljs-attr">"type"</span>: <span class="hljs-string">"Point"</span>,
         <span class="hljs-attr">"coordinates"</span>: [
-          <span class="hljs-number">0</span>
+          <span class="hljs-number">53.9001189</span>,
+          <span class="hljs-number">27.5590155</span>
         ]
       },
-      <span class="hljs-attr">"note"</span>: <span class="hljs-string">"string"</span>,
-      <span class="hljs-attr">"phone"</span>: <span class="hljs-string">"string"</span>,
-      <span class="hljs-attr">"opening_hours"</span>: <span class="hljs-string">"string"</span>,
-      <span class="hljs-attr">"supported_services"</span>: [
-        <span class="hljs-string">"string"</span>
-      ]
+      <span class="hljs-attr">"note"</span>: <span class="hljs-literal">null</span>,
+      <span class="hljs-attr">"phone"</span>: <span class="hljs-string">"+375173060002"</span>,
+      <span class="hljs-attr">"opening_hours"</span>: <span class="hljs-string">"Mo-Th 08:30-17:30, Fr 08:30-16:15"</span>,
+      <span class="hljs-attr">"supported_services"</span>: []
     }
   ]
 } 
@@ -2756,12 +2803,12 @@ oauth2 ( Scopes: create:transactions )
 <h2 id="currencyrate">CurrencyRate</h2>
 <p><a name="schemacurrencyrate"></a></p>
 <pre class="highlight tab tab-json"><code>{
-  <span class="hljs-attr">"type"</span>: <span class="hljs-string">"string"</span>,
-  <span class="hljs-attr">"currency_from"</span>: <span class="hljs-string">"string"</span>,
-  <span class="hljs-attr">"currency_from_name"</span>: <span class="hljs-string">"string"</span>,
-  <span class="hljs-attr">"currency_to"</span>: <span class="hljs-string">"string"</span>,
-  <span class="hljs-attr">"currency_to_name"</span>: <span class="hljs-string">"string"</span>,
-  <span class="hljs-attr">"exchange_rate"</span>: <span class="hljs-string">"string"</span>
+  <span class="hljs-attr">"type"</span>: <span class="hljs-string">"CurrencyRate"</span>,
+  <span class="hljs-attr">"currency_from"</span>: <span class="hljs-string">"EUR"</span>,
+  <span class="hljs-attr">"currency_from_name"</span>: <span class="hljs-string">"Euro"</span>,
+  <span class="hljs-attr">"currency_to"</span>: <span class="hljs-string">"BYN"</span>,
+  <span class="hljs-attr">"currency_to_name"</span>: <span class="hljs-string">"Belarusian ruble"</span>,
+  <span class="hljs-attr">"exchange_rate"</span>: <span class="hljs-string">"2.3676"</span>
 } 
 </code></pre>
 <h3 id="properties">Properties</h3>
@@ -2818,12 +2865,12 @@ oauth2 ( Scopes: create:transactions )
 <pre class="highlight tab tab-json"><code>{
   <span class="hljs-attr">"items"</span>: [
     {
-      <span class="hljs-attr">"type"</span>: <span class="hljs-string">"string"</span>,
-      <span class="hljs-attr">"currency_from"</span>: <span class="hljs-string">"string"</span>,
-      <span class="hljs-attr">"currency_from_name"</span>: <span class="hljs-string">"string"</span>,
-      <span class="hljs-attr">"currency_to"</span>: <span class="hljs-string">"string"</span>,
-      <span class="hljs-attr">"currency_to_name"</span>: <span class="hljs-string">"string"</span>,
-      <span class="hljs-attr">"exchange_rate"</span>: <span class="hljs-string">"string"</span>
+      <span class="hljs-attr">"type"</span>: <span class="hljs-string">"CurrencyRate"</span>,
+      <span class="hljs-attr">"currency_from"</span>: <span class="hljs-string">"EUR"</span>,
+      <span class="hljs-attr">"currency_from_name"</span>: <span class="hljs-string">"Euro"</span>,
+      <span class="hljs-attr">"currency_to"</span>: <span class="hljs-string">"BYN"</span>,
+      <span class="hljs-attr">"currency_to_name"</span>: <span class="hljs-string">"Belarusian ruble"</span>,
+      <span class="hljs-attr">"exchange_rate"</span>: <span class="hljs-string">"2.3676"</span>
     }
   ]
 } 
@@ -2886,12 +2933,12 @@ oauth2 ( Scopes: create:transactions )
 <h2 id="account">Account</h2>
 <p><a name="schemaaccount"></a></p>
 <pre class="highlight tab tab-json"><code>{
-  <span class="hljs-attr">"type"</span>: <span class="hljs-string">"string"</span>,
-  <span class="hljs-attr">"id"</span>: <span class="hljs-string">"string"</span>,
-  <span class="hljs-attr">"iban"</span>: <span class="hljs-string">"string"</span>,
-  <span class="hljs-attr">"bic"</span>: <span class="hljs-string">"string"</span>,
-  <span class="hljs-attr">"balance"</span>: <span class="hljs-string">"string"</span>,
-  <span class="hljs-attr">"currency"</span>: <span class="hljs-string">"string"</span>
+  <span class="hljs-attr">"type"</span>: <span class="hljs-string">"Account"</span>,
+  <span class="hljs-attr">"id"</span>: <span class="hljs-string">"account_d87e183c49b84cbd9ac2e585bdd93896"</span>,
+  <span class="hljs-attr">"iban"</span>: <span class="hljs-string">"BY90UNBS30120919200220000840"</span>,
+  <span class="hljs-attr">"bic"</span>: <span class="hljs-string">"IRJSBY22"</span>,
+  <span class="hljs-attr">"balance"</span>: <span class="hljs-string">"1252.00"</span>,
+  <span class="hljs-attr">"currency"</span>: <span class="hljs-string">"BYN"</span>
 } 
 </code></pre>
 <h3 id="properties">Properties</h3>
@@ -2948,12 +2995,12 @@ oauth2 ( Scopes: create:transactions )
 <pre class="highlight tab tab-json"><code>{
   <span class="hljs-attr">"items"</span>: [
     {
-      <span class="hljs-attr">"type"</span>: <span class="hljs-string">"string"</span>,
-      <span class="hljs-attr">"id"</span>: <span class="hljs-string">"string"</span>,
-      <span class="hljs-attr">"iban"</span>: <span class="hljs-string">"string"</span>,
-      <span class="hljs-attr">"bic"</span>: <span class="hljs-string">"string"</span>,
-      <span class="hljs-attr">"balance"</span>: <span class="hljs-string">"string"</span>,
-      <span class="hljs-attr">"currency"</span>: <span class="hljs-string">"string"</span>
+      <span class="hljs-attr">"type"</span>: <span class="hljs-string">"Account"</span>,
+      <span class="hljs-attr">"id"</span>: <span class="hljs-string">"account_d87e183c49b84cbd9ac2e585bdd93896"</span>,
+      <span class="hljs-attr">"iban"</span>: <span class="hljs-string">"BY90UNBS30120919200220000840"</span>,
+      <span class="hljs-attr">"bic"</span>: <span class="hljs-string">"IRJSBY22"</span>,
+      <span class="hljs-attr">"balance"</span>: <span class="hljs-string">"1252.00"</span>,
+      <span class="hljs-attr">"currency"</span>: <span class="hljs-string">"BYN"</span>
     }
   ]
 } 
@@ -3016,8 +3063,8 @@ oauth2 ( Scopes: create:transactions )
 <h2 id="transactionsender">TransactionSender</h2>
 <p><a name="schematransactionsender"></a></p>
 <pre class="highlight tab tab-json"><code>{
-  <span class="hljs-attr">"iban"</span>: <span class="hljs-string">"string"</span>,
-  <span class="hljs-attr">"name"</span>: <span class="hljs-string">"string"</span>
+  <span class="hljs-attr">"iban"</span>: <span class="hljs-string">"BY90UNBS30120919200220000840"</span>,
+  <span class="hljs-attr">"name"</span>: <span class="hljs-string">"Kanstantyn Mickievich"</span>
 } 
 </code></pre>
 <h3 id="properties">Properties</h3>
@@ -3048,9 +3095,9 @@ oauth2 ( Scopes: create:transactions )
 <h2 id="transactionrecipient">TransactionRecipient</h2>
 <p><a name="schematransactionrecipient"></a></p>
 <pre class="highlight tab tab-json"><code>{
-  <span class="hljs-attr">"iban"</span>: <span class="hljs-string">"string"</span>,
-  <span class="hljs-attr">"bic"</span>: <span class="hljs-string">"string"</span>,
-  <span class="hljs-attr">"name"</span>: <span class="hljs-string">"string"</span>
+  <span class="hljs-attr">"iban"</span>: <span class="hljs-string">"BY52PJCB30125007521010000840"</span>,
+  <span class="hljs-attr">"bic"</span>: <span class="hljs-string">"PJCBBY2X"</span>,
+  <span class="hljs-attr">"name"</span>: <span class="hljs-string">"Jan Branislavavich Savicki"</span>
 } 
 </code></pre>
 <h3 id="properties">Properties</h3>
@@ -3087,14 +3134,17 @@ oauth2 ( Scopes: create:transactions )
 <h2 id="transactioncreate">TransactionCreate</h2>
 <p><a name="schematransactioncreate"></a></p>
 <pre class="highlight tab tab-json"><code>{
-  <span class="hljs-attr">"to"</span>: <span class="hljs-literal">null</span>,
-  <span class="hljs-attr">"amount"</span>: <span class="hljs-string">"string"</span>,
-  <span class="hljs-attr">"currency"</span>: <span class="hljs-string">"string"</span>,
-  <span class="hljs-attr">"charge_policy"</span>: <span class="hljs-string">"SHARED"</span>,
-  <span class="hljs-attr">"description"</span>: <span class="hljs-string">"string"</span>,
+  <span class="hljs-attr">"to"</span>: {
+    <span class="hljs-attr">"iban"</span>: <span class="hljs-string">"BY52PJCB30125007521010000840"</span>,
+    <span class="hljs-attr">"bic"</span>: <span class="hljs-string">"PJCBBY2X"</span>,
+    <span class="hljs-attr">"name"</span>: <span class="hljs-string">"Jan Branislavavich Savicki"</span>
+  },
+  <span class="hljs-attr">"amount"</span>: <span class="hljs-string">"30.00"</span>,
+  <span class="hljs-attr">"currency"</span>: <span class="hljs-string">"BYN"</span>,
+  <span class="hljs-attr">"charge_policy"</span>: <span class="hljs-string">"SENDER"</span>,
+  <span class="hljs-attr">"description"</span>: <span class="hljs-string">"Act #2 by 08.09.2017"</span>,
   <span class="hljs-attr">"metadata"</span>: {
-    <span class="hljs-attr">"property1"</span>: <span class="hljs-string">"string"</span>,
-    <span class="hljs-attr">"property2"</span>: <span class="hljs-string">"string"</span>
+    <span class="hljs-attr">"customer_id"</span>: <span class="hljs-string">"52feca613b844ae8b7ddd627d1fdf58b"</span>
   }
 } 
 </code></pre>
@@ -3111,9 +3161,27 @@ oauth2 ( Scopes: create:transactions )
 <tbody>
 <tr>
 <td>to</td>
-<td>#/components/schemas/TransactionRecipient</td>
+<td><a href="#schematransactionrecipient">TransactionRecipient</a></td>
 <td>true</td>
-<td>Recipient.</td>
+<td>No description</td>
+</tr>
+<tr>
+<td>» iban</td>
+<td>string(iban)</td>
+<td>false</td>
+<td>IBAN.</td>
+</tr>
+<tr>
+<td>» bic</td>
+<td>string(bic)</td>
+<td>false</td>
+<td>BIC.</td>
+</tr>
+<tr>
+<td>» name</td>
+<td>string</td>
+<td>false</td>
+<td>Full name.</td>
 </tr>
 <tr>
 <td>amount</td>
@@ -3173,19 +3241,25 @@ oauth2 ( Scopes: create:transactions )
 <h2 id="transaction">Transaction</h2>
 <p><a name="schematransaction"></a></p>
 <pre class="highlight tab tab-json"><code>{
-  <span class="hljs-attr">"type"</span>: <span class="hljs-string">"string"</span>,
-  <span class="hljs-attr">"id"</span>: <span class="hljs-string">"string"</span>,
-  <span class="hljs-attr">"from"</span>: <span class="hljs-literal">null</span>,
-  <span class="hljs-attr">"to"</span>: <span class="hljs-literal">null</span>,
-  <span class="hljs-attr">"amount"</span>: <span class="hljs-string">"string"</span>,
-  <span class="hljs-attr">"currency"</span>: <span class="hljs-string">"string"</span>,
-  <span class="hljs-attr">"charge_policy"</span>: <span class="hljs-string">"SHARED"</span>,
-  <span class="hljs-attr">"description"</span>: <span class="hljs-string">"string"</span>,
-  <span class="hljs-attr">"metadata"</span>: {
-    <span class="hljs-attr">"property1"</span>: <span class="hljs-string">"string"</span>,
-    <span class="hljs-attr">"property2"</span>: <span class="hljs-string">"string"</span>
+  <span class="hljs-attr">"type"</span>: <span class="hljs-string">"Transaction"</span>,
+  <span class="hljs-attr">"id"</span>: <span class="hljs-string">"transaction_85c4b3e76d064fbcb6cebbc38629733d"</span>,
+  <span class="hljs-attr">"from"</span>: {
+    <span class="hljs-attr">"iban"</span>: <span class="hljs-string">"BY90UNBS30120919200220000840"</span>,
+    <span class="hljs-attr">"name"</span>: <span class="hljs-string">"Kanstantyn Mickievich"</span>
   },
-  <span class="hljs-attr">"created_at"</span>: <span class="hljs-string">"2017-11-26T08:05:05Z"</span>
+  <span class="hljs-attr">"to"</span>: {
+    <span class="hljs-attr">"iban"</span>: <span class="hljs-string">"BY52PJCB30125007521010000840"</span>,
+    <span class="hljs-attr">"bic"</span>: <span class="hljs-string">"PJCBBY2X"</span>,
+    <span class="hljs-attr">"name"</span>: <span class="hljs-string">"Jan Branislavavich Savicki"</span>
+  },
+  <span class="hljs-attr">"amount"</span>: <span class="hljs-string">"30.00"</span>,
+  <span class="hljs-attr">"currency"</span>: <span class="hljs-string">"BYN"</span>,
+  <span class="hljs-attr">"charge_policy"</span>: <span class="hljs-string">"SENDER"</span>,
+  <span class="hljs-attr">"description"</span>: <span class="hljs-string">"Act #2 by 08.09.2017"</span>,
+  <span class="hljs-attr">"metadata"</span>: {
+    <span class="hljs-attr">"customer_id"</span>: <span class="hljs-string">"52feca613b844ae8b7ddd627d1fdf58b"</span>
+  },
+  <span class="hljs-attr">"created_at"</span>: <span class="hljs-string">"2017-11-26T09:39:04Z"</span>
 } 
 </code></pre>
 <h3 id="properties">Properties</h3>
@@ -3213,15 +3287,45 @@ oauth2 ( Scopes: create:transactions )
 </tr>
 <tr>
 <td>from</td>
-<td>#/components/schemas/TransactionSender</td>
+<td><a href="#schematransactionsender">TransactionSender</a></td>
 <td>false</td>
-<td>Sender.</td>
+<td>No description</td>
+</tr>
+<tr>
+<td>» iban</td>
+<td>string(iban)</td>
+<td>false</td>
+<td>IBAN.</td>
+</tr>
+<tr>
+<td>» name</td>
+<td>string</td>
+<td>false</td>
+<td>Full name.</td>
 </tr>
 <tr>
 <td>to</td>
-<td>#/components/schemas/TransactionRecipient</td>
+<td><a href="#schematransactionrecipient">TransactionRecipient</a></td>
 <td>false</td>
-<td>Recipient.</td>
+<td>No description</td>
+</tr>
+<tr>
+<td>» iban</td>
+<td>string(iban)</td>
+<td>false</td>
+<td>IBAN.</td>
+</tr>
+<tr>
+<td>» bic</td>
+<td>string(bic)</td>
+<td>false</td>
+<td>BIC.</td>
+</tr>
+<tr>
+<td>» name</td>
+<td>string</td>
+<td>false</td>
+<td>Full name.</td>
 </tr>
 <tr>
 <td>amount</td>
@@ -3287,7 +3391,29 @@ oauth2 ( Scopes: create:transactions )
 <h2 id="transactionlist">TransactionList</h2>
 <p><a name="schematransactionlist"></a></p>
 <pre class="highlight tab tab-json"><code>{
-  <span class="hljs-attr">"items"</span>: <span class="hljs-string">"string"</span>
+  <span class="hljs-attr">"items"</span>: [
+    {
+      <span class="hljs-attr">"type"</span>: <span class="hljs-string">"Transaction"</span>,
+      <span class="hljs-attr">"id"</span>: <span class="hljs-string">"transaction_85c4b3e76d064fbcb6cebbc38629733d"</span>,
+      <span class="hljs-attr">"from"</span>: {
+        <span class="hljs-attr">"iban"</span>: <span class="hljs-string">"BY90UNBS30120919200220000840"</span>,
+        <span class="hljs-attr">"name"</span>: <span class="hljs-string">"Kanstantyn Mickievich"</span>
+      },
+      <span class="hljs-attr">"to"</span>: {
+        <span class="hljs-attr">"iban"</span>: <span class="hljs-string">"BY52PJCB30125007521010000840"</span>,
+        <span class="hljs-attr">"bic"</span>: <span class="hljs-string">"PJCBBY2X"</span>,
+        <span class="hljs-attr">"name"</span>: <span class="hljs-string">"Jan Branislavavich Savicki"</span>
+      },
+      <span class="hljs-attr">"amount"</span>: <span class="hljs-string">"30.00"</span>,
+      <span class="hljs-attr">"currency"</span>: <span class="hljs-string">"BYN"</span>,
+      <span class="hljs-attr">"charge_policy"</span>: <span class="hljs-string">"SENDER"</span>,
+      <span class="hljs-attr">"description"</span>: <span class="hljs-string">"Act #2 by 08.09.2017"</span>,
+      <span class="hljs-attr">"metadata"</span>: {
+        <span class="hljs-attr">"customer_id"</span>: <span class="hljs-string">"52feca613b844ae8b7ddd627d1fdf58b"</span>
+      },
+      <span class="hljs-attr">"created_at"</span>: <span class="hljs-string">"2017-11-26T09:39:04Z"</span>
+    }
+  ]
 } 
 </code></pre>
 <h3 id="properties">Properties</h3>
@@ -3303,7 +3429,7 @@ oauth2 ( Scopes: create:transactions )
 <tbody>
 <tr>
 <td>items</td>
-<td>string</td>
+<td>[<a href="#schematransaction">Transaction</a>]</td>
 <td>false</td>
 <td>Countains the list of transactions.</td>
 </tr>
@@ -3321,15 +3447,45 @@ oauth2 ( Scopes: create:transactions )
 </tr>
 <tr>
 <td>» from</td>
-<td>#/components/schemas/TransactionSender</td>
+<td><a href="#schematransactionsender">TransactionSender</a></td>
 <td>false</td>
-<td>Sender.</td>
+<td>No description</td>
+</tr>
+<tr>
+<td>»» iban</td>
+<td>string(iban)</td>
+<td>false</td>
+<td>IBAN.</td>
+</tr>
+<tr>
+<td>»» name</td>
+<td>string</td>
+<td>false</td>
+<td>Full name.</td>
 </tr>
 <tr>
 <td>» to</td>
-<td>#/components/schemas/TransactionRecipient</td>
+<td><a href="#schematransactionrecipient">TransactionRecipient</a></td>
 <td>false</td>
-<td>Recipient.</td>
+<td>No description</td>
+</tr>
+<tr>
+<td>»» iban</td>
+<td>string(iban)</td>
+<td>false</td>
+<td>IBAN.</td>
+</tr>
+<tr>
+<td>»» bic</td>
+<td>string(bic)</td>
+<td>false</td>
+<td>BIC.</td>
+</tr>
+<tr>
+<td>»» name</td>
+<td>string</td>
+<td>false</td>
+<td>Full name.</td>
 </tr>
 <tr>
 <td>» amount</td>

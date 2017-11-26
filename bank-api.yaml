@@ -129,8 +129,8 @@ paths:
       parameters:
         - $ref: '#/components/parameters/AcceptParameter'
         - $ref: '#/components/parameters/ContentTypeParameter'
-        - $ref: '#/components/parameters/ApiVersionParameter'
         - $ref: '#/components/parameters/AuthorizationParameter'
+        - $ref: '#/components/parameters/ApiVersionParameter'
         - $ref: '#/components/parameters/LocalisationParameter'
       responses:
         '200':
@@ -181,8 +181,8 @@ paths:
       parameters:
         - $ref: '#/components/parameters/AcceptParameter'
         - $ref: '#/components/parameters/ContentTypeParameter'
-        - $ref: '#/components/parameters/ApiVersionParameter'
         - $ref: '#/components/parameters/AuthorizationParameter'
+        - $ref: '#/components/parameters/ApiVersionParameter'
         - $ref: '#/components/parameters/LocalisationParameter'
         - name: account_id
           in: path
@@ -244,8 +244,8 @@ paths:
       parameters:
         - $ref: '#/components/parameters/AcceptParameter'
         - $ref: '#/components/parameters/ContentTypeParameter'
-        - $ref: '#/components/parameters/ApiVersionParameter'
         - $ref: '#/components/parameters/AuthorizationParameter'
+        - $ref: '#/components/parameters/ApiVersionParameter'
         - $ref: '#/components/parameters/IdempotencyKeyParameter'
         - $ref: '#/components/parameters/LocalisationParameter'
         - name: account_id
@@ -345,18 +345,23 @@ components:
           type: string
           format: iso-3166-1
           description: Country code.
+          example: "BY"
         state:
           type: string
           description: State (localisation).
+          example: "Minsk"
         city:
           type: string
           description: City (localisation).
+          example: "Minsk"
         line:
           type: string
           description: Address (localisation).
+          example: "praspiekt Niezaliežnasci, 20"
         postcode:
           type: string
           description: Postcode.
+          example: "220008"
       required:
         - country
         - state
@@ -367,12 +372,14 @@ components:
         type:
           type: string
           description: Type `Point`
+          example: Point
         coordinates:
           type: array
           items:
             type: number
             format: float
           description: longitude, latitude
+          example: [53.9001189, 27.5590155]
       required:
         - type
         - coordinates
@@ -381,18 +388,22 @@ components:
         type:
           type: string
           description: Type `ATM`.
+          example: "ATM"
         id:
           type: string
           description: Unique identifier of ATM.
+          example: "atm_nbrb_88"
         name:
           type: string
           description: ATM name/ref (localisation).
+          example: "NBRB #88"
         address:
           $ref: "#/components/schemas/PostalAddress"
           description: Postal address.
         located_at:
           type: string
           description: Additional location information (localisation).
+          example: "hall"
         location:
           $ref: "#/components/schemas/GEOJsonPoint"
           description: GEO location.
@@ -400,23 +411,27 @@ components:
           type: string
           format: opening-hours
           description: Opening hours.
+          example: "Mo-Fr 08:00-20:00"
         support_languages:
           type: array
           items:
             type: string
             format: iso-639-1
           description: Support languages.
+          example: ["be", "ru", "en"]
         supported_currencies:
           type: array
           items:
             type: string
             format: iso-4217
           description: Support currencies.
+          example: ["BYN", "EUR"]
         supported_services:
           type: array
           items:
             type: string
           description: Supported services.
+          example: ["show_balance", "cash_withdrawal"]
       required:
         - type
         - id
@@ -438,12 +453,15 @@ components:
         type:
           type: string
           description: Type `Branch`.
+          example: "Branch"
         id:
           type: string
           description: Unique identifier of branch.
+          example: "branch_nbrb_1"
         name:
           type: string
           description: Branch name/ref (localisation).
+          example: "Main office NBRB"
         address:
           $ref: "#/components/schemas/PostalAddress"
           description: Postal address.
@@ -453,19 +471,23 @@ components:
         note:
           type: string
           description: Additional location and access information (localisation).
+          example: null
         phone:
           type: string
           format: phone
           description: Contact phone.
+          example: "+375173060002"
         opening_hours:
           type: string
           format: opening-hours
           description: Opening hours.
+          example: "Mo-Th 08:30-17:30, Fr 08:30-16:15"
         supported_services:
           type: array
           items:
             type: string
           description: Supported operations.
+          example: []
       required:
         - type
         - id
@@ -487,24 +509,30 @@ components:
         type:
           type: string
           description: Type `CurrencyRate`.
+          example: "CurrencyRate"
         currency_from:
           type: string
           format: iso-4217
           description: Currency ISO 4217 code.
+          example: "EUR"
         currency_from_name:
           type: string
           description: Currency name (localisation).
+          example: "Euro"
         currency_to:
           type: string
           format: iso-4217
           description: Currency ISO 4217 code.
+          example: "BYN"
         currency_to_name:
           type: string
           description: Currency name (localisation).
+          example: "Belarusian ruble"
         exchange_rate:
           type: string
           format: decimal
           description: Currency echange rate.
+          example: "2.3676"
       required:
         - type
         - currency_from
@@ -524,26 +552,32 @@ components:
         type:
           type: string
           description: Type `Account`
+          example: "Account"
         id:
           type: string
           format: object-uuid
           description: Account identificator.
+          example: "account_d87e183c49b84cbd9ac2e585bdd93896"
         iban:
           type: string
           format: iban
           description: IBAN.
+          example: "BY90UNBS30120919200220000840"
         bic:
           type: string
           format: bic
           description: BIC.
+          example: "IRJSBY22"
         balance:
           type: string
           format: decimal
           description: Balance.
+          example: "1252.00"
         currency:
           type: string
           format: iso-4217
           description: Currency ISO 4217 code.
+          example: "BYN"
     AccountList:
       properties:
         items:
@@ -557,35 +591,42 @@ components:
           type: string
           format: iban
           description: IBAN.
+          example: "BY90UNBS30120919200220000840"
         name:
           type: string
           description: Full name.
+          example: "Kanstantyn Mickievich"
     TransactionRecipient:
       properties:
         iban:
           type: string
           format: iban
           description: IBAN.
+          example: "BY52PJCB30125007521010000840"
         bic:
           type: string
           format: bic
           description: BIC.
+          example: "PJCBBY2X"
         name:
           type: string
           description: Full name.
+          example: "Jan Branislavavich Savicki"
     TransactionCreate:
       properties:
         to:
-          type: "#/components/schemas/TransactionRecipient"
+          $ref: "#/components/schemas/TransactionRecipient"
           description: Recipient.
         amount:
           type: string
           format: decimal
           description: Transaction amount.
+          example: "30.00"
         currency:
           type: string
           format: iso-4217
           description: Currency ISO 4217 code.
+          example: "BYN"
         charge_policy:
           type: string
           enum:
@@ -593,14 +634,17 @@ components:
             - RECEIVER
             - SENDER
           description: Charge policy.
+          example: "SENDER"
         description:
           type: string
           description: Description (optional).
+          example: "Act #2 by 08.09.2017"
         metadata:
           type: object
           additionalProperties:
             type: string
           description: Metadata (optional).
+          example: {"customer_id": "52feca613b844ae8b7ddd627d1fdf58b"}
       required:
         - to
         - amount
@@ -610,24 +654,28 @@ components:
         type:
           type: string
           description: Type `Transaction`
+          example: "Transaction"
         id:
           type: string
           format: object-uuid
           description: Operation identificator.
+          example: "transaction_85c4b3e76d064fbcb6cebbc38629733d"
         from:
-          type: "#/components/schemas/TransactionSender"
+          $ref: "#/components/schemas/TransactionSender"
           description: Sender.
         to:
-          type: "#/components/schemas/TransactionRecipient"
+          $ref: "#/components/schemas/TransactionRecipient"
           description: Recipient.
         amount:
           type: string
           format: decimal
           description: Transaction amount
+          example: "30.00"
         currency:
           type: string
           format: iso-4217
           description: Currency ISO 4217 code.
+          example: "BYN"
         charge_policy:
           type: string
           enum:
@@ -635,14 +683,17 @@ components:
             - RECEIVER
             - SENDER
           description: Charge policy.
+          example: "SENDER"
         description:
           type: string
           description: Description.
+          example: "Act #2 by 08.09.2017"
         metadata:
           type: object
           additionalProperties:
             type: string
           description: Metadata.
+          example: {"customer_id": "52feca613b844ae8b7ddd627d1fdf58b"}
         created_at:
           type: string
           format: date-time
@@ -651,7 +702,7 @@ components:
       properties:
         items:
           description: Countains the list of transactions.
-          type: string
+          type: array
           items:
             $ref: "#/components/schemas/Transaction"
     Error:

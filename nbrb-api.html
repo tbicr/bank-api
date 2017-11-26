@@ -123,6 +123,11 @@ window.onpopstate = function() {
               <ul class="toc-list-h2">
                 
                   <li>
+                    <a href="#postaladdress" class="toc-h2 toc-link" data-title="PostalAddress">PostalAddress</a>
+                    
+                  </li>
+                
+                  <li>
                     <a href="#bank" class="toc-h2 toc-link" data-title="Bank">Bank</a>
                     
                   </li>
@@ -363,23 +368,29 @@ System.out.println(response.toString());
 <pre class="highlight tab tab-json"><code>{
   <span class="hljs-attr">"items"</span>: [
     {
-      <span class="hljs-attr">"type"</span>: <span class="hljs-string">"string"</span>,
-      <span class="hljs-attr">"handle"</span>: <span class="hljs-string">"string"</span>,
-      <span class="hljs-attr">"name"</span>: <span class="hljs-string">"string"</span>,
-      <span class="hljs-attr">"full_name"</span>: <span class="hljs-string">"string"</span>,
-      <span class="hljs-attr">"bic"</span>: <span class="hljs-string">"string"</span>,
+      <span class="hljs-attr">"type"</span>: <span class="hljs-string">"Bank"</span>,
+      <span class="hljs-attr">"handle"</span>: <span class="hljs-string">"nbrb"</span>,
+      <span class="hljs-attr">"name"</span>: <span class="hljs-string">"NBRB"</span>,
+      <span class="hljs-attr">"full_name"</span>: <span class="hljs-string">"National Bank of the Republic of Belarus"</span>,
+      <span class="hljs-attr">"bic"</span>: <span class="hljs-string">"IRJSBY22"</span>,
       <span class="hljs-attr">"unp"</span>: <span class="hljs-string">"string"</span>,
       <span class="hljs-attr">"okpo"</span>: <span class="hljs-string">"string"</span>,
-      <span class="hljs-attr">"swift"</span>: <span class="hljs-string">"string"</span>,
-      <span class="hljs-attr">"adress"</span>: <span class="hljs-string">"string"</span>,
-      <span class="hljs-attr">"phone"</span>: <span class="hljs-string">"string"</span>,
-      <span class="hljs-attr">"fax"</span>: <span class="hljs-string">"string"</span>,
-      <span class="hljs-attr">"telex"</span>: <span class="hljs-string">"string"</span>,
-      <span class="hljs-attr">"email"</span>: <span class="hljs-string">"user@example.com"</span>,
-      <span class="hljs-attr">"website"</span>: <span class="hljs-string">"http://example.com"</span>,
+      <span class="hljs-attr">"swift"</span>: <span class="hljs-string">"NBRB BY2X"</span>,
+      <span class="hljs-attr">"address"</span>: {
+        <span class="hljs-attr">"country"</span>: <span class="hljs-string">"BY"</span>,
+        <span class="hljs-attr">"state"</span>: <span class="hljs-string">"Minsk"</span>,
+        <span class="hljs-attr">"city"</span>: <span class="hljs-string">"Minsk"</span>,
+        <span class="hljs-attr">"line"</span>: <span class="hljs-string">"praspiekt Niezaliežnasci, 20"</span>,
+        <span class="hljs-attr">"postcode"</span>: <span class="hljs-string">"220008"</span>
+      },
+      <span class="hljs-attr">"phone"</span>: <span class="hljs-string">"+375173060002"</span>,
+      <span class="hljs-attr">"fax"</span>: <span class="hljs-string">"+375173274879"</span>,
+      <span class="hljs-attr">"telex"</span>: <span class="hljs-string">"252449 BELAR BY"</span>,
+      <span class="hljs-attr">"email"</span>: <span class="hljs-string">"info@nbrb.by"</span>,
+      <span class="hljs-attr">"website"</span>: <span class="hljs-string">"https://nbrb.by/"</span>,
       <span class="hljs-attr">"presedent"</span>: <span class="hljs-string">"string"</span>,
-      <span class="hljs-attr">"registration_number"</span>: <span class="hljs-string">"string"</span>,
-      <span class="hljs-attr">"registration_date"</span>: <span class="hljs-literal">null</span>
+      <span class="hljs-attr">"registration_number"</span>: <span class="hljs-string">"1"</span>,
+      <span class="hljs-attr">"registration_date"</span>: <span class="hljs-string">"1991-01-01"</span>
     }
   ]
 }
@@ -635,12 +646,12 @@ System.out.println(response.toString());
 <pre class="highlight tab tab-json"><code>{
   <span class="hljs-attr">"items"</span>: [
     {
-      <span class="hljs-attr">"type"</span>: <span class="hljs-string">"string"</span>,
-      <span class="hljs-attr">"currency_from"</span>: <span class="hljs-string">"string"</span>,
-      <span class="hljs-attr">"currency_from_name"</span>: <span class="hljs-string">"string"</span>,
-      <span class="hljs-attr">"currency_to"</span>: <span class="hljs-string">"string"</span>,
-      <span class="hljs-attr">"currency_to_name"</span>: <span class="hljs-string">"string"</span>,
-      <span class="hljs-attr">"exchange_rate"</span>: <span class="hljs-string">"string"</span>
+      <span class="hljs-attr">"type"</span>: <span class="hljs-string">"CurrencyRate"</span>,
+      <span class="hljs-attr">"currency_from"</span>: <span class="hljs-string">"EUR"</span>,
+      <span class="hljs-attr">"currency_from_name"</span>: <span class="hljs-string">"Euro"</span>,
+      <span class="hljs-attr">"currency_to"</span>: <span class="hljs-string">"BYN"</span>,
+      <span class="hljs-attr">"currency_to_name"</span>: <span class="hljs-string">"Belarusian ruble"</span>,
+      <span class="hljs-attr">"exchange_rate"</span>: <span class="hljs-string">"2.3676"</span>
     }
   ]
 }
@@ -704,26 +715,85 @@ System.out.println(response.toString());
 This operation does not require authentication
 </aside>
 <h1 id="schemas">Schemas</h1>
+<h2 id="postaladdress">PostalAddress</h2>
+<p><a name="schemapostaladdress"></a></p>
+<pre class="highlight tab tab-json"><code>{
+  <span class="hljs-attr">"country"</span>: <span class="hljs-string">"BY"</span>,
+  <span class="hljs-attr">"state"</span>: <span class="hljs-string">"Minsk"</span>,
+  <span class="hljs-attr">"city"</span>: <span class="hljs-string">"Minsk"</span>,
+  <span class="hljs-attr">"line"</span>: <span class="hljs-string">"praspiekt Niezaliežnasci, 20"</span>,
+  <span class="hljs-attr">"postcode"</span>: <span class="hljs-string">"220008"</span>
+} 
+</code></pre>
+<h3 id="properties">Properties</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>country</td>
+<td>string(iso-3166-1)</td>
+<td>true</td>
+<td>Country code.</td>
+</tr>
+<tr>
+<td>state</td>
+<td>string</td>
+<td>true</td>
+<td>State (localisation).</td>
+</tr>
+<tr>
+<td>city</td>
+<td>string</td>
+<td>true</td>
+<td>City (localisation).</td>
+</tr>
+<tr>
+<td>line</td>
+<td>string</td>
+<td>true</td>
+<td>Address (localisation).</td>
+</tr>
+<tr>
+<td>postcode</td>
+<td>string</td>
+<td>false</td>
+<td>Postcode.</td>
+</tr>
+</tbody>
+</table>
 <h2 id="bank">Bank</h2>
 <p><a name="schemabank"></a></p>
 <pre class="highlight tab tab-json"><code>{
-  <span class="hljs-attr">"type"</span>: <span class="hljs-string">"string"</span>,
-  <span class="hljs-attr">"handle"</span>: <span class="hljs-string">"string"</span>,
-  <span class="hljs-attr">"name"</span>: <span class="hljs-string">"string"</span>,
-  <span class="hljs-attr">"full_name"</span>: <span class="hljs-string">"string"</span>,
-  <span class="hljs-attr">"bic"</span>: <span class="hljs-string">"string"</span>,
+  <span class="hljs-attr">"type"</span>: <span class="hljs-string">"Bank"</span>,
+  <span class="hljs-attr">"handle"</span>: <span class="hljs-string">"nbrb"</span>,
+  <span class="hljs-attr">"name"</span>: <span class="hljs-string">"NBRB"</span>,
+  <span class="hljs-attr">"full_name"</span>: <span class="hljs-string">"National Bank of the Republic of Belarus"</span>,
+  <span class="hljs-attr">"bic"</span>: <span class="hljs-string">"IRJSBY22"</span>,
   <span class="hljs-attr">"unp"</span>: <span class="hljs-string">"string"</span>,
   <span class="hljs-attr">"okpo"</span>: <span class="hljs-string">"string"</span>,
-  <span class="hljs-attr">"swift"</span>: <span class="hljs-string">"string"</span>,
-  <span class="hljs-attr">"adress"</span>: <span class="hljs-string">"string"</span>,
-  <span class="hljs-attr">"phone"</span>: <span class="hljs-string">"string"</span>,
-  <span class="hljs-attr">"fax"</span>: <span class="hljs-string">"string"</span>,
-  <span class="hljs-attr">"telex"</span>: <span class="hljs-string">"string"</span>,
-  <span class="hljs-attr">"email"</span>: <span class="hljs-string">"user@example.com"</span>,
-  <span class="hljs-attr">"website"</span>: <span class="hljs-string">"http://example.com"</span>,
+  <span class="hljs-attr">"swift"</span>: <span class="hljs-string">"NBRB BY2X"</span>,
+  <span class="hljs-attr">"address"</span>: {
+    <span class="hljs-attr">"country"</span>: <span class="hljs-string">"BY"</span>,
+    <span class="hljs-attr">"state"</span>: <span class="hljs-string">"Minsk"</span>,
+    <span class="hljs-attr">"city"</span>: <span class="hljs-string">"Minsk"</span>,
+    <span class="hljs-attr">"line"</span>: <span class="hljs-string">"praspiekt Niezaliežnasci, 20"</span>,
+    <span class="hljs-attr">"postcode"</span>: <span class="hljs-string">"220008"</span>
+  },
+  <span class="hljs-attr">"phone"</span>: <span class="hljs-string">"+375173060002"</span>,
+  <span class="hljs-attr">"fax"</span>: <span class="hljs-string">"+375173274879"</span>,
+  <span class="hljs-attr">"telex"</span>: <span class="hljs-string">"252449 BELAR BY"</span>,
+  <span class="hljs-attr">"email"</span>: <span class="hljs-string">"info@nbrb.by"</span>,
+  <span class="hljs-attr">"website"</span>: <span class="hljs-string">"https://nbrb.by/"</span>,
   <span class="hljs-attr">"presedent"</span>: <span class="hljs-string">"string"</span>,
-  <span class="hljs-attr">"registration_number"</span>: <span class="hljs-string">"string"</span>,
-  <span class="hljs-attr">"registration_date"</span>: <span class="hljs-literal">null</span>
+  <span class="hljs-attr">"registration_number"</span>: <span class="hljs-string">"1"</span>,
+  <span class="hljs-attr">"registration_date"</span>: <span class="hljs-string">"1991-01-01"</span>
 } 
 </code></pre>
 <h3 id="properties">Properties</h3>
@@ -786,10 +856,40 @@ This operation does not require authentication
 <td>Bank S.W.I.F.T.</td>
 </tr>
 <tr>
-<td>adress</td>
+<td>address</td>
+<td><a href="#schemapostaladdress">PostalAddress</a></td>
+<td>false</td>
+<td>No description</td>
+</tr>
+<tr>
+<td>» country</td>
+<td>string(iso-3166-1)</td>
+<td>true</td>
+<td>Country code.</td>
+</tr>
+<tr>
+<td>» state</td>
+<td>string</td>
+<td>true</td>
+<td>State (localisation).</td>
+</tr>
+<tr>
+<td>» city</td>
+<td>string</td>
+<td>true</td>
+<td>City (localisation).</td>
+</tr>
+<tr>
+<td>» line</td>
+<td>string</td>
+<td>true</td>
+<td>Address (localisation).</td>
+</tr>
+<tr>
+<td>» postcode</td>
 <td>string</td>
 <td>false</td>
-<td>Bank adress (localisation).</td>
+<td>Postcode.</td>
 </tr>
 <tr>
 <td>phone</td>
@@ -846,23 +946,29 @@ This operation does not require authentication
 <pre class="highlight tab tab-json"><code>{
   <span class="hljs-attr">"items"</span>: [
     {
-      <span class="hljs-attr">"type"</span>: <span class="hljs-string">"string"</span>,
-      <span class="hljs-attr">"handle"</span>: <span class="hljs-string">"string"</span>,
-      <span class="hljs-attr">"name"</span>: <span class="hljs-string">"string"</span>,
-      <span class="hljs-attr">"full_name"</span>: <span class="hljs-string">"string"</span>,
-      <span class="hljs-attr">"bic"</span>: <span class="hljs-string">"string"</span>,
+      <span class="hljs-attr">"type"</span>: <span class="hljs-string">"Bank"</span>,
+      <span class="hljs-attr">"handle"</span>: <span class="hljs-string">"nbrb"</span>,
+      <span class="hljs-attr">"name"</span>: <span class="hljs-string">"NBRB"</span>,
+      <span class="hljs-attr">"full_name"</span>: <span class="hljs-string">"National Bank of the Republic of Belarus"</span>,
+      <span class="hljs-attr">"bic"</span>: <span class="hljs-string">"IRJSBY22"</span>,
       <span class="hljs-attr">"unp"</span>: <span class="hljs-string">"string"</span>,
       <span class="hljs-attr">"okpo"</span>: <span class="hljs-string">"string"</span>,
-      <span class="hljs-attr">"swift"</span>: <span class="hljs-string">"string"</span>,
-      <span class="hljs-attr">"adress"</span>: <span class="hljs-string">"string"</span>,
-      <span class="hljs-attr">"phone"</span>: <span class="hljs-string">"string"</span>,
-      <span class="hljs-attr">"fax"</span>: <span class="hljs-string">"string"</span>,
-      <span class="hljs-attr">"telex"</span>: <span class="hljs-string">"string"</span>,
-      <span class="hljs-attr">"email"</span>: <span class="hljs-string">"user@example.com"</span>,
-      <span class="hljs-attr">"website"</span>: <span class="hljs-string">"http://example.com"</span>,
+      <span class="hljs-attr">"swift"</span>: <span class="hljs-string">"NBRB BY2X"</span>,
+      <span class="hljs-attr">"address"</span>: {
+        <span class="hljs-attr">"country"</span>: <span class="hljs-string">"BY"</span>,
+        <span class="hljs-attr">"state"</span>: <span class="hljs-string">"Minsk"</span>,
+        <span class="hljs-attr">"city"</span>: <span class="hljs-string">"Minsk"</span>,
+        <span class="hljs-attr">"line"</span>: <span class="hljs-string">"praspiekt Niezaliežnasci, 20"</span>,
+        <span class="hljs-attr">"postcode"</span>: <span class="hljs-string">"220008"</span>
+      },
+      <span class="hljs-attr">"phone"</span>: <span class="hljs-string">"+375173060002"</span>,
+      <span class="hljs-attr">"fax"</span>: <span class="hljs-string">"+375173274879"</span>,
+      <span class="hljs-attr">"telex"</span>: <span class="hljs-string">"252449 BELAR BY"</span>,
+      <span class="hljs-attr">"email"</span>: <span class="hljs-string">"info@nbrb.by"</span>,
+      <span class="hljs-attr">"website"</span>: <span class="hljs-string">"https://nbrb.by/"</span>,
       <span class="hljs-attr">"presedent"</span>: <span class="hljs-string">"string"</span>,
-      <span class="hljs-attr">"registration_number"</span>: <span class="hljs-string">"string"</span>,
-      <span class="hljs-attr">"registration_date"</span>: <span class="hljs-literal">null</span>
+      <span class="hljs-attr">"registration_number"</span>: <span class="hljs-string">"1"</span>,
+      <span class="hljs-attr">"registration_date"</span>: <span class="hljs-string">"1991-01-01"</span>
     }
   ]
 } 
@@ -933,10 +1039,40 @@ This operation does not require authentication
 <td>Bank S.W.I.F.T.</td>
 </tr>
 <tr>
-<td>» adress</td>
+<td>» address</td>
+<td><a href="#schemapostaladdress">PostalAddress</a></td>
+<td>false</td>
+<td>No description</td>
+</tr>
+<tr>
+<td>»» country</td>
+<td>string(iso-3166-1)</td>
+<td>true</td>
+<td>Country code.</td>
+</tr>
+<tr>
+<td>»» state</td>
+<td>string</td>
+<td>true</td>
+<td>State (localisation).</td>
+</tr>
+<tr>
+<td>»» city</td>
+<td>string</td>
+<td>true</td>
+<td>City (localisation).</td>
+</tr>
+<tr>
+<td>»» line</td>
+<td>string</td>
+<td>true</td>
+<td>Address (localisation).</td>
+</tr>
+<tr>
+<td>»» postcode</td>
 <td>string</td>
 <td>false</td>
-<td>Bank adress (localisation).</td>
+<td>Postcode.</td>
 </tr>
 <tr>
 <td>» phone</td>
@@ -991,12 +1127,12 @@ This operation does not require authentication
 <h2 id="currencyrate">CurrencyRate</h2>
 <p><a name="schemacurrencyrate"></a></p>
 <pre class="highlight tab tab-json"><code>{
-  <span class="hljs-attr">"type"</span>: <span class="hljs-string">"string"</span>,
-  <span class="hljs-attr">"currency_from"</span>: <span class="hljs-string">"string"</span>,
-  <span class="hljs-attr">"currency_from_name"</span>: <span class="hljs-string">"string"</span>,
-  <span class="hljs-attr">"currency_to"</span>: <span class="hljs-string">"string"</span>,
-  <span class="hljs-attr">"currency_to_name"</span>: <span class="hljs-string">"string"</span>,
-  <span class="hljs-attr">"exchange_rate"</span>: <span class="hljs-string">"string"</span>
+  <span class="hljs-attr">"type"</span>: <span class="hljs-string">"CurrencyRate"</span>,
+  <span class="hljs-attr">"currency_from"</span>: <span class="hljs-string">"EUR"</span>,
+  <span class="hljs-attr">"currency_from_name"</span>: <span class="hljs-string">"Euro"</span>,
+  <span class="hljs-attr">"currency_to"</span>: <span class="hljs-string">"BYN"</span>,
+  <span class="hljs-attr">"currency_to_name"</span>: <span class="hljs-string">"Belarusian ruble"</span>,
+  <span class="hljs-attr">"exchange_rate"</span>: <span class="hljs-string">"2.3676"</span>
 } 
 </code></pre>
 <h3 id="properties">Properties</h3>
@@ -1053,12 +1189,12 @@ This operation does not require authentication
 <pre class="highlight tab tab-json"><code>{
   <span class="hljs-attr">"items"</span>: [
     {
-      <span class="hljs-attr">"type"</span>: <span class="hljs-string">"string"</span>,
-      <span class="hljs-attr">"currency_from"</span>: <span class="hljs-string">"string"</span>,
-      <span class="hljs-attr">"currency_from_name"</span>: <span class="hljs-string">"string"</span>,
-      <span class="hljs-attr">"currency_to"</span>: <span class="hljs-string">"string"</span>,
-      <span class="hljs-attr">"currency_to_name"</span>: <span class="hljs-string">"string"</span>,
-      <span class="hljs-attr">"exchange_rate"</span>: <span class="hljs-string">"string"</span>
+      <span class="hljs-attr">"type"</span>: <span class="hljs-string">"CurrencyRate"</span>,
+      <span class="hljs-attr">"currency_from"</span>: <span class="hljs-string">"EUR"</span>,
+      <span class="hljs-attr">"currency_from_name"</span>: <span class="hljs-string">"Euro"</span>,
+      <span class="hljs-attr">"currency_to"</span>: <span class="hljs-string">"BYN"</span>,
+      <span class="hljs-attr">"currency_to_name"</span>: <span class="hljs-string">"Belarusian ruble"</span>,
+      <span class="hljs-attr">"exchange_rate"</span>: <span class="hljs-string">"2.3676"</span>
     }
   ]
 } 

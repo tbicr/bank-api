@@ -390,32 +390,37 @@ lang|en-US|
 {
   "items": [
     {
-      "type": "string",
-      "id": "string",
-      "name": "string",
+      "type": "ATM",
+      "id": "atm_nbrb_88",
+      "name": "NBRB #88",
       "address": {
-        "country": "string",
-        "state": "string",
-        "city": "string",
-        "line": "string",
-        "postcode": "string"
+        "country": "BY",
+        "state": "Minsk",
+        "city": "Minsk",
+        "line": "praspiekt Niezaliežnasci, 20",
+        "postcode": "220008"
       },
-      "located_at": "string",
+      "located_at": "hall",
       "location": {
-        "type": "string",
+        "type": "Point",
         "coordinates": [
-          0
+          53.9001189,
+          27.5590155
         ]
       },
-      "opening_hours": "string",
+      "opening_hours": "Mo-Fr 08:00-20:00",
       "support_languages": [
-        "string"
+        "be",
+        "ru",
+        "en"
       ],
       "supported_currencies": [
-        "string"
+        "BYN",
+        "EUR"
       ],
       "supported_services": [
-        "string"
+        "show_balance",
+        "cash_withdrawal"
       ]
     }
   ]
@@ -604,28 +609,27 @@ lang|en-US|
 {
   "items": [
     {
-      "type": "string",
-      "id": "string",
-      "name": "string",
+      "type": "Branch",
+      "id": "branch_nbrb_1",
+      "name": "Main office NBRB",
       "address": {
-        "country": "string",
-        "state": "string",
-        "city": "string",
-        "line": "string",
-        "postcode": "string"
+        "country": "BY",
+        "state": "Minsk",
+        "city": "Minsk",
+        "line": "praspiekt Niezaliežnasci, 20",
+        "postcode": "220008"
       },
       "location": {
-        "type": "string",
+        "type": "Point",
         "coordinates": [
-          0
+          53.9001189,
+          27.5590155
         ]
       },
-      "note": "string",
-      "phone": "string",
-      "opening_hours": "string",
-      "supported_services": [
-        "string"
-      ]
+      "note": null,
+      "phone": "+375173060002",
+      "opening_hours": "Mo-Th 08:30-17:30, Fr 08:30-16:15",
+      "supported_services": []
     }
   ]
 }
@@ -675,8 +679,8 @@ This operation does not require authentication
 curl -X GET https://api.bank.by/accounts \
   -H 'Accept: application/json' \
   -H 'Content-Type: application/json' \
-  -H 'X-Api-Version: 1.0.0' \
   -H 'Authorization: Bearer wism73ydof4spe8o92x705t36wbfx41av8bltyys' \
+  -H 'X-Api-Version: 1.0.0' \
   -H 'Accept: application/json'
 
 ```
@@ -688,8 +692,8 @@ Host: api.bank.by
 Accept: application/json
 Accept: application/json
 Content-Type: application/json
-X-Api-Version: 1.0.0
 Authorization: Bearer wism73ydof4spe8o92x705t36wbfx41av8bltyys
+X-Api-Version: 1.0.0
 
 ```
 
@@ -697,8 +701,8 @@ Authorization: Bearer wism73ydof4spe8o92x705t36wbfx41av8bltyys
 var headers = {
   'Accept':'application/json',
   'Content-Type':'application/json',
-  'X-Api-Version':'1.0.0',
   'Authorization':'Bearer wism73ydof4spe8o92x705t36wbfx41av8bltyys',
+  'X-Api-Version':'1.0.0',
   'Accept':'application/json'
 
 };
@@ -720,8 +724,8 @@ const request = require('node-fetch');
 const headers = {
   'Accept':'application/json',
   'Content-Type':'application/json',
-  'X-Api-Version':'1.0.0',
   'Authorization':'Bearer wism73ydof4spe8o92x705t36wbfx41av8bltyys',
+  'X-Api-Version':'1.0.0',
   'Accept':'application/json'
 
 };
@@ -746,8 +750,8 @@ require 'json'
 headers = {
   'Accept' => 'application/json',
   'Content-Type' => 'application/json',
-  'X-Api-Version' => '1.0.0',
   'Authorization' => 'Bearer wism73ydof4spe8o92x705t36wbfx41av8bltyys',
+  'X-Api-Version' => '1.0.0',
   'Accept' => 'application/json'
 }
 
@@ -763,8 +767,8 @@ import requests
 headers = {
   'Accept': 'application/json',
   'Content-Type': 'application/json',
-  'X-Api-Version': '1.0.0',
   'Authorization': 'Bearer wism73ydof4spe8o92x705t36wbfx41av8bltyys',
+  'X-Api-Version': '1.0.0',
   'Accept': 'application/json'
 }
 
@@ -801,8 +805,8 @@ Parameter|In|Type|Required|Description
 ---|---|---|---|---|
 Accept|header|string|false|Accept response body content type (default application/json).
 Content-Type|header|string|false|Request body content type (default application/json).
-X-Api-Version|header|string|false|API version (default latest).
 Authorization|header|string|true|Authorization (OAuth2 Bearer).
+X-Api-Version|header|string|false|API version (default latest).
 lang|query|string(iso-639-1)(iso-639-1)(iso-639-1)(iso-639-1)|false|Language of text data (default belarusan).
 
 
@@ -822,12 +826,12 @@ lang|en-US|
 {
   "items": [
     {
-      "type": "string",
-      "id": "string",
-      "iban": "string",
-      "bic": "string",
-      "balance": "string",
-      "currency": "string"
+      "type": "Account",
+      "id": "account_d87e183c49b84cbd9ac2e585bdd93896",
+      "iban": "BY90UNBS30120919200220000840",
+      "bic": "IRJSBY22",
+      "balance": "1252.00",
+      "currency": "BYN"
     }
   ]
 }
@@ -892,8 +896,8 @@ oauth2 ( Scopes: read:accounts )
 curl -X GET https://api.bank.by/account/{account_id}/transactions \
   -H 'Accept: application/json' \
   -H 'Content-Type: application/json' \
-  -H 'X-Api-Version: 1.0.0' \
   -H 'Authorization: Bearer wism73ydof4spe8o92x705t36wbfx41av8bltyys' \
+  -H 'X-Api-Version: 1.0.0' \
   -H 'Accept: application/json'
 
 ```
@@ -905,8 +909,8 @@ Host: api.bank.by
 Accept: application/json
 Accept: application/json
 Content-Type: application/json
-X-Api-Version: 1.0.0
 Authorization: Bearer wism73ydof4spe8o92x705t36wbfx41av8bltyys
+X-Api-Version: 1.0.0
 
 ```
 
@@ -914,8 +918,8 @@ Authorization: Bearer wism73ydof4spe8o92x705t36wbfx41av8bltyys
 var headers = {
   'Accept':'application/json',
   'Content-Type':'application/json',
-  'X-Api-Version':'1.0.0',
   'Authorization':'Bearer wism73ydof4spe8o92x705t36wbfx41av8bltyys',
+  'X-Api-Version':'1.0.0',
   'Accept':'application/json'
 
 };
@@ -937,8 +941,8 @@ const request = require('node-fetch');
 const headers = {
   'Accept':'application/json',
   'Content-Type':'application/json',
-  'X-Api-Version':'1.0.0',
   'Authorization':'Bearer wism73ydof4spe8o92x705t36wbfx41av8bltyys',
+  'X-Api-Version':'1.0.0',
   'Accept':'application/json'
 
 };
@@ -963,8 +967,8 @@ require 'json'
 headers = {
   'Accept' => 'application/json',
   'Content-Type' => 'application/json',
-  'X-Api-Version' => '1.0.0',
   'Authorization' => 'Bearer wism73ydof4spe8o92x705t36wbfx41av8bltyys',
+  'X-Api-Version' => '1.0.0',
   'Accept' => 'application/json'
 }
 
@@ -980,8 +984,8 @@ import requests
 headers = {
   'Accept': 'application/json',
   'Content-Type': 'application/json',
-  'X-Api-Version': '1.0.0',
   'Authorization': 'Bearer wism73ydof4spe8o92x705t36wbfx41av8bltyys',
+  'X-Api-Version': '1.0.0',
   'Accept': 'application/json'
 }
 
@@ -1018,8 +1022,8 @@ Parameter|In|Type|Required|Description
 ---|---|---|---|---|
 Accept|header|string|false|Accept response body content type (default application/json).
 Content-Type|header|string|false|Request body content type (default application/json).
-X-Api-Version|header|string|false|API version (default latest).
 Authorization|header|string|true|Authorization (OAuth2 Bearer).
+X-Api-Version|header|string|false|API version (default latest).
 lang|query|string(iso-639-1)(iso-639-1)(iso-639-1)(iso-639-1)(iso-639-1)|false|Language of text data (default belarusan).
 account_id|path|string(object-uuid)|true|No description
 
@@ -1038,7 +1042,29 @@ lang|en-US|
 
 ```json
 {
-  "items": "string"
+  "items": [
+    {
+      "type": "Transaction",
+      "id": "transaction_85c4b3e76d064fbcb6cebbc38629733d",
+      "from": {
+        "iban": "BY90UNBS30120919200220000840",
+        "name": "Kanstantyn Mickievich"
+      },
+      "to": {
+        "iban": "BY52PJCB30125007521010000840",
+        "bic": "PJCBBY2X",
+        "name": "Jan Branislavavich Savicki"
+      },
+      "amount": "30.00",
+      "currency": "BYN",
+      "charge_policy": "SENDER",
+      "description": "Act #2 by 08.09.2017",
+      "metadata": {
+        "customer_id": "52feca613b844ae8b7ddd627d1fdf58b"
+      },
+      "created_at": "2017-11-26T09:39:04Z"
+    }
+  ]
 }
 ```
 ```json
@@ -1111,8 +1137,8 @@ oauth2 ( Scopes: read:transactions )
 curl -X POST https://api.bank.by/account/{account_id}/transactions \
   -H 'Accept: application/json' \
   -H 'Content-Type: application/json' \
-  -H 'X-Api-Version: 1.0.0' \
   -H 'Authorization: Bearer wism73ydof4spe8o92x705t36wbfx41av8bltyys' \
+  -H 'X-Api-Version: 1.0.0' \
   -H 'X-Idempotency-Key: string' \
   -H 'Content-Type: application/json' \
   -H 'Accept: application/json'
@@ -1126,8 +1152,8 @@ Content-Type: application/json
 Accept: application/json
 Accept: application/json
 Content-Type: application/json
-X-Api-Version: 1.0.0
 Authorization: Bearer wism73ydof4spe8o92x705t36wbfx41av8bltyys
+X-Api-Version: 1.0.0
 X-Idempotency-Key: string
 
 ```
@@ -1136,8 +1162,8 @@ X-Idempotency-Key: string
 var headers = {
   'Accept':'application/json',
   'Content-Type':'application/json',
-  'X-Api-Version':'1.0.0',
   'Authorization':'Bearer wism73ydof4spe8o92x705t36wbfx41av8bltyys',
+  'X-Api-Version':'1.0.0',
   'X-Idempotency-Key':'string',
   'Content-Type':'application/json',
   'Accept':'application/json'
@@ -1158,21 +1184,24 @@ $.ajax({
 ```javascript--nodejs
 const request = require('node-fetch');
 const inputBody = '{
-  "to": null,
-  "amount": "string",
-  "currency": "string",
-  "charge_policy": "SHARED",
-  "description": "string",
+  "to": {
+    "iban": "BY52PJCB30125007521010000840",
+    "bic": "PJCBBY2X",
+    "name": "Jan Branislavavich Savicki"
+  },
+  "amount": "30.00",
+  "currency": "BYN",
+  "charge_policy": "SENDER",
+  "description": "Act #2 by 08.09.2017",
   "metadata": {
-    "property1": "string",
-    "property2": "string"
+    "customer_id": "52feca613b844ae8b7ddd627d1fdf58b"
   }
 }';
 const headers = {
   'Accept':'application/json',
   'Content-Type':'application/json',
-  'X-Api-Version':'1.0.0',
   'Authorization':'Bearer wism73ydof4spe8o92x705t36wbfx41av8bltyys',
+  'X-Api-Version':'1.0.0',
   'X-Idempotency-Key':'string',
   'Content-Type':'application/json',
   'Accept':'application/json'
@@ -1199,8 +1228,8 @@ require 'json'
 headers = {
   'Accept' => 'application/json',
   'Content-Type' => 'application/json',
-  'X-Api-Version' => '1.0.0',
   'Authorization' => 'Bearer wism73ydof4spe8o92x705t36wbfx41av8bltyys',
+  'X-Api-Version' => '1.0.0',
   'X-Idempotency-Key' => 'string',
   'Content-Type' => 'application/json',
   'Accept' => 'application/json'
@@ -1218,8 +1247,8 @@ import requests
 headers = {
   'Accept': 'application/json',
   'Content-Type': 'application/json',
-  'X-Api-Version': '1.0.0',
   'Authorization': 'Bearer wism73ydof4spe8o92x705t36wbfx41av8bltyys',
+  'X-Api-Version': '1.0.0',
   'X-Idempotency-Key': 'string',
   'Content-Type': 'application/json',
   'Accept': 'application/json'
@@ -1256,14 +1285,17 @@ Make operation.
 
 ```json
 {
-  "to": null,
-  "amount": "string",
-  "currency": "string",
-  "charge_policy": "SHARED",
-  "description": "string",
+  "to": {
+    "iban": "BY52PJCB30125007521010000840",
+    "bic": "PJCBBY2X",
+    "name": "Jan Branislavavich Savicki"
+  },
+  "amount": "30.00",
+  "currency": "BYN",
+  "charge_policy": "SENDER",
+  "description": "Act #2 by 08.09.2017",
   "metadata": {
-    "property1": "string",
-    "property2": "string"
+    "customer_id": "52feca613b844ae8b7ddd627d1fdf58b"
   }
 }
 ```
@@ -1273,8 +1305,8 @@ Parameter|In|Type|Required|Description
 ---|---|---|---|---|
 Accept|header|string|false|Accept response body content type (default application/json).
 Content-Type|header|string|false|Request body content type (default application/json).
-X-Api-Version|header|string|false|API version (default latest).
 Authorization|header|string|true|Authorization (OAuth2 Bearer).
+X-Api-Version|header|string|false|API version (default latest).
 X-Idempotency-Key|header|string|false|Idempotency key.
 lang|query|string(iso-639-1)(iso-639-1)(iso-639-1)(iso-639-1)(iso-639-1)(iso-639-1)|false|Language of text data (default belarusan).
 account_id|path|string(object-uuid)|true|No description
@@ -1295,19 +1327,25 @@ lang|en-US|
 
 ```json
 {
-  "type": "string",
-  "id": "string",
-  "from": null,
-  "to": null,
-  "amount": "string",
-  "currency": "string",
-  "charge_policy": "SHARED",
-  "description": "string",
-  "metadata": {
-    "property1": "string",
-    "property2": "string"
+  "type": "Transaction",
+  "id": "transaction_85c4b3e76d064fbcb6cebbc38629733d",
+  "from": {
+    "iban": "BY90UNBS30120919200220000840",
+    "name": "Kanstantyn Mickievich"
   },
-  "created_at": "2017-11-26T08:05:05Z"
+  "to": {
+    "iban": "BY52PJCB30125007521010000840",
+    "bic": "PJCBBY2X",
+    "name": "Jan Branislavavich Savicki"
+  },
+  "amount": "30.00",
+  "currency": "BYN",
+  "charge_policy": "SENDER",
+  "description": "Act #2 by 08.09.2017",
+  "metadata": {
+    "customer_id": "52feca613b844ae8b7ddd627d1fdf58b"
+  },
+  "created_at": "2017-11-26T09:39:04Z"
 }
 ```
 ```json
@@ -1377,11 +1415,11 @@ oauth2 ( Scopes: create:transactions )
 
 ```json
 {
-  "country": "string",
-  "state": "string",
-  "city": "string",
-  "line": "string",
-  "postcode": "string"
+  "country": "BY",
+  "state": "Minsk",
+  "city": "Minsk",
+  "line": "praspiekt Niezaliežnasci, 20",
+  "postcode": "220008"
 } 
 ```
 
@@ -1403,9 +1441,10 @@ postcode|string|false|Postcode.
 
 ```json
 {
-  "type": "string",
+  "type": "Point",
   "coordinates": [
-    0
+    53.9001189,
+    27.5590155
   ]
 } 
 ```
@@ -1425,32 +1464,37 @@ coordinates|[number(float)]|false|longitude, latitude
 
 ```json
 {
-  "type": "string",
-  "id": "string",
-  "name": "string",
+  "type": "ATM",
+  "id": "atm_nbrb_88",
+  "name": "NBRB #88",
   "address": {
-    "country": "string",
-    "state": "string",
-    "city": "string",
-    "line": "string",
-    "postcode": "string"
+    "country": "BY",
+    "state": "Minsk",
+    "city": "Minsk",
+    "line": "praspiekt Niezaliežnasci, 20",
+    "postcode": "220008"
   },
-  "located_at": "string",
+  "located_at": "hall",
   "location": {
-    "type": "string",
+    "type": "Point",
     "coordinates": [
-      0
+      53.9001189,
+      27.5590155
     ]
   },
-  "opening_hours": "string",
+  "opening_hours": "Mo-Fr 08:00-20:00",
   "support_languages": [
-    "string"
+    "be",
+    "ru",
+    "en"
   ],
   "supported_currencies": [
-    "string"
+    "BYN",
+    "EUR"
   ],
   "supported_services": [
-    "string"
+    "show_balance",
+    "cash_withdrawal"
   ]
 } 
 ```
@@ -1487,32 +1531,37 @@ supported_services|[string]|false|Supported services.
 {
   "items": [
     {
-      "type": "string",
-      "id": "string",
-      "name": "string",
+      "type": "ATM",
+      "id": "atm_nbrb_88",
+      "name": "NBRB #88",
       "address": {
-        "country": "string",
-        "state": "string",
-        "city": "string",
-        "line": "string",
-        "postcode": "string"
+        "country": "BY",
+        "state": "Minsk",
+        "city": "Minsk",
+        "line": "praspiekt Niezaliežnasci, 20",
+        "postcode": "220008"
       },
-      "located_at": "string",
+      "located_at": "hall",
       "location": {
-        "type": "string",
+        "type": "Point",
         "coordinates": [
-          0
+          53.9001189,
+          27.5590155
         ]
       },
-      "opening_hours": "string",
+      "opening_hours": "Mo-Fr 08:00-20:00",
       "support_languages": [
-        "string"
+        "be",
+        "ru",
+        "en"
       ],
       "supported_currencies": [
-        "string"
+        "BYN",
+        "EUR"
       ],
       "supported_services": [
-        "string"
+        "show_balance",
+        "cash_withdrawal"
       ]
     }
   ]
@@ -1550,28 +1599,27 @@ items|[[ATM](#schemaatm)]|false|Contains the list of ATMs.
 
 ```json
 {
-  "type": "string",
-  "id": "string",
-  "name": "string",
+  "type": "Branch",
+  "id": "branch_nbrb_1",
+  "name": "Main office NBRB",
   "address": {
-    "country": "string",
-    "state": "string",
-    "city": "string",
-    "line": "string",
-    "postcode": "string"
+    "country": "BY",
+    "state": "Minsk",
+    "city": "Minsk",
+    "line": "praspiekt Niezaliežnasci, 20",
+    "postcode": "220008"
   },
   "location": {
-    "type": "string",
+    "type": "Point",
     "coordinates": [
-      0
+      53.9001189,
+      27.5590155
     ]
   },
-  "note": "string",
-  "phone": "string",
-  "opening_hours": "string",
-  "supported_services": [
-    "string"
-  ]
+  "note": null,
+  "phone": "+375173060002",
+  "opening_hours": "Mo-Th 08:30-17:30, Fr 08:30-16:15",
+  "supported_services": []
 } 
 ```
 
@@ -1606,28 +1654,27 @@ supported_services|[string]|false|Supported operations.
 {
   "items": [
     {
-      "type": "string",
-      "id": "string",
-      "name": "string",
+      "type": "Branch",
+      "id": "branch_nbrb_1",
+      "name": "Main office NBRB",
       "address": {
-        "country": "string",
-        "state": "string",
-        "city": "string",
-        "line": "string",
-        "postcode": "string"
+        "country": "BY",
+        "state": "Minsk",
+        "city": "Minsk",
+        "line": "praspiekt Niezaliežnasci, 20",
+        "postcode": "220008"
       },
       "location": {
-        "type": "string",
+        "type": "Point",
         "coordinates": [
-          0
+          53.9001189,
+          27.5590155
         ]
       },
-      "note": "string",
-      "phone": "string",
-      "opening_hours": "string",
-      "supported_services": [
-        "string"
-      ]
+      "note": null,
+      "phone": "+375173060002",
+      "opening_hours": "Mo-Th 08:30-17:30, Fr 08:30-16:15",
+      "supported_services": []
     }
   ]
 } 
@@ -1663,12 +1710,12 @@ items|[[Branch](#schemabranch)]|false|Contains the list of branches.
 
 ```json
 {
-  "type": "string",
-  "currency_from": "string",
-  "currency_from_name": "string",
-  "currency_to": "string",
-  "currency_to_name": "string",
-  "exchange_rate": "string"
+  "type": "CurrencyRate",
+  "currency_from": "EUR",
+  "currency_from_name": "Euro",
+  "currency_to": "BYN",
+  "currency_to_name": "Belarusian ruble",
+  "exchange_rate": "2.3676"
 } 
 ```
 
@@ -1693,12 +1740,12 @@ exchange_rate|string(decimal)|true|Currency echange rate.
 {
   "items": [
     {
-      "type": "string",
-      "currency_from": "string",
-      "currency_from_name": "string",
-      "currency_to": "string",
-      "currency_to_name": "string",
-      "exchange_rate": "string"
+      "type": "CurrencyRate",
+      "currency_from": "EUR",
+      "currency_from_name": "Euro",
+      "currency_to": "BYN",
+      "currency_to_name": "Belarusian ruble",
+      "exchange_rate": "2.3676"
     }
   ]
 } 
@@ -1724,12 +1771,12 @@ items|[[CurrencyRate](#schemacurrencyrate)]|false|Contains the list of currencie
 
 ```json
 {
-  "type": "string",
-  "id": "string",
-  "iban": "string",
-  "bic": "string",
-  "balance": "string",
-  "currency": "string"
+  "type": "Account",
+  "id": "account_d87e183c49b84cbd9ac2e585bdd93896",
+  "iban": "BY90UNBS30120919200220000840",
+  "bic": "IRJSBY22",
+  "balance": "1252.00",
+  "currency": "BYN"
 } 
 ```
 
@@ -1754,12 +1801,12 @@ currency|string(iso-4217)|false|Currency ISO 4217 code.
 {
   "items": [
     {
-      "type": "string",
-      "id": "string",
-      "iban": "string",
-      "bic": "string",
-      "balance": "string",
-      "currency": "string"
+      "type": "Account",
+      "id": "account_d87e183c49b84cbd9ac2e585bdd93896",
+      "iban": "BY90UNBS30120919200220000840",
+      "bic": "IRJSBY22",
+      "balance": "1252.00",
+      "currency": "BYN"
     }
   ]
 } 
@@ -1785,8 +1832,8 @@ items|[[Account](#schemaaccount)]|false|Countains the list of accounts.
 
 ```json
 {
-  "iban": "string",
-  "name": "string"
+  "iban": "BY90UNBS30120919200220000840",
+  "name": "Kanstantyn Mickievich"
 } 
 ```
 
@@ -1805,9 +1852,9 @@ name|string|false|Full name.
 
 ```json
 {
-  "iban": "string",
-  "bic": "string",
-  "name": "string"
+  "iban": "BY52PJCB30125007521010000840",
+  "bic": "PJCBBY2X",
+  "name": "Jan Branislavavich Savicki"
 } 
 ```
 
@@ -1827,14 +1874,17 @@ name|string|false|Full name.
 
 ```json
 {
-  "to": null,
-  "amount": "string",
-  "currency": "string",
-  "charge_policy": "SHARED",
-  "description": "string",
+  "to": {
+    "iban": "BY52PJCB30125007521010000840",
+    "bic": "PJCBBY2X",
+    "name": "Jan Branislavavich Savicki"
+  },
+  "amount": "30.00",
+  "currency": "BYN",
+  "charge_policy": "SENDER",
+  "description": "Act #2 by 08.09.2017",
   "metadata": {
-    "property1": "string",
-    "property2": "string"
+    "customer_id": "52feca613b844ae8b7ddd627d1fdf58b"
   }
 } 
 ```
@@ -1843,7 +1893,10 @@ name|string|false|Full name.
 
 Name|Type|Required|Description
 ---|---|---|---|
-to|#/components/schemas/TransactionRecipient|true|Recipient.
+to|[TransactionRecipient](#schematransactionrecipient)|true|No description
+» iban|string(iban)|false|IBAN.
+» bic|string(bic)|false|BIC.
+» name|string|false|Full name.
 amount|string(decimal)|true|Transaction amount.
 currency|string(iso-4217)|true|Currency ISO 4217 code.
 charge_policy|string|false|Charge policy.
@@ -1866,19 +1919,25 @@ charge_policy|SENDER|
 
 ```json
 {
-  "type": "string",
-  "id": "string",
-  "from": null,
-  "to": null,
-  "amount": "string",
-  "currency": "string",
-  "charge_policy": "SHARED",
-  "description": "string",
-  "metadata": {
-    "property1": "string",
-    "property2": "string"
+  "type": "Transaction",
+  "id": "transaction_85c4b3e76d064fbcb6cebbc38629733d",
+  "from": {
+    "iban": "BY90UNBS30120919200220000840",
+    "name": "Kanstantyn Mickievich"
   },
-  "created_at": "2017-11-26T08:05:05Z"
+  "to": {
+    "iban": "BY52PJCB30125007521010000840",
+    "bic": "PJCBBY2X",
+    "name": "Jan Branislavavich Savicki"
+  },
+  "amount": "30.00",
+  "currency": "BYN",
+  "charge_policy": "SENDER",
+  "description": "Act #2 by 08.09.2017",
+  "metadata": {
+    "customer_id": "52feca613b844ae8b7ddd627d1fdf58b"
+  },
+  "created_at": "2017-11-26T09:39:04Z"
 } 
 ```
 
@@ -1888,8 +1947,13 @@ Name|Type|Required|Description
 ---|---|---|---|
 type|string|false|Type `Transaction`
 id|string(object-uuid)|false|Operation identificator.
-from|#/components/schemas/TransactionSender|false|Sender.
-to|#/components/schemas/TransactionRecipient|false|Recipient.
+from|[TransactionSender](#schematransactionsender)|false|No description
+» iban|string(iban)|false|IBAN.
+» name|string|false|Full name.
+to|[TransactionRecipient](#schematransactionrecipient)|false|No description
+» iban|string(iban)|false|IBAN.
+» bic|string(bic)|false|BIC.
+» name|string|false|Full name.
 amount|string(decimal)|false|Transaction amount
 currency|string(iso-4217)|false|Currency ISO 4217 code.
 charge_policy|string|false|Charge policy.
@@ -1913,7 +1977,29 @@ charge_policy|SENDER|
 
 ```json
 {
-  "items": "string"
+  "items": [
+    {
+      "type": "Transaction",
+      "id": "transaction_85c4b3e76d064fbcb6cebbc38629733d",
+      "from": {
+        "iban": "BY90UNBS30120919200220000840",
+        "name": "Kanstantyn Mickievich"
+      },
+      "to": {
+        "iban": "BY52PJCB30125007521010000840",
+        "bic": "PJCBBY2X",
+        "name": "Jan Branislavavich Savicki"
+      },
+      "amount": "30.00",
+      "currency": "BYN",
+      "charge_policy": "SENDER",
+      "description": "Act #2 by 08.09.2017",
+      "metadata": {
+        "customer_id": "52feca613b844ae8b7ddd627d1fdf58b"
+      },
+      "created_at": "2017-11-26T09:39:04Z"
+    }
+  ]
 } 
 ```
 
@@ -1921,11 +2007,16 @@ charge_policy|SENDER|
 
 Name|Type|Required|Description
 ---|---|---|---|
-items|string|false|Countains the list of transactions.
+items|[[Transaction](#schematransaction)]|false|Countains the list of transactions.
 » type|string|false|Type `Transaction`
 » id|string(object-uuid)|false|Operation identificator.
-» from|#/components/schemas/TransactionSender|false|Sender.
-» to|#/components/schemas/TransactionRecipient|false|Recipient.
+» from|[TransactionSender](#schematransactionsender)|false|No description
+»» iban|string(iban)|false|IBAN.
+»» name|string|false|Full name.
+» to|[TransactionRecipient](#schematransactionrecipient)|false|No description
+»» iban|string(iban)|false|IBAN.
+»» bic|string(bic)|false|BIC.
+»» name|string|false|Full name.
 » amount|string(decimal)|false|Transaction amount
 » currency|string(iso-4217)|false|Currency ISO 4217 code.
 » charge_policy|string|false|Charge policy.
