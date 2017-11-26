@@ -42,7 +42,7 @@ Base URLs:
 curl -X GET https://api.nbrb.by/banks \
   -H 'Accept: application/json' \
   -H 'Content-Type: application/json' \
-  -H 'Api-Version: string' \
+  -H 'X-Api-Version: 1.0.0' \
   -H 'Accept: application/json'
 
 ```
@@ -54,7 +54,7 @@ Host: api.nbrb.by
 Accept: application/json
 Accept: application/json
 Content-Type: application/json
-Api-Version: string
+X-Api-Version: 1.0.0
 
 ```
 
@@ -62,7 +62,7 @@ Api-Version: string
 var headers = {
   'Accept':'application/json',
   'Content-Type':'application/json',
-  'Api-Version':'string',
+  'X-Api-Version':'1.0.0',
   'Accept':'application/json'
 
 };
@@ -84,7 +84,7 @@ const request = require('node-fetch');
 const headers = {
   'Accept':'application/json',
   'Content-Type':'application/json',
-  'Api-Version':'string',
+  'X-Api-Version':'1.0.0',
   'Accept':'application/json'
 
 };
@@ -109,7 +109,7 @@ require 'json'
 headers = {
   'Accept' => 'application/json',
   'Content-Type' => 'application/json',
-  'Api-Version' => 'string',
+  'X-Api-Version' => '1.0.0',
   'Accept' => 'application/json'
 }
 
@@ -125,7 +125,7 @@ import requests
 headers = {
   'Accept': 'application/json',
   'Content-Type': 'application/json',
-  'Api-Version': 'string',
+  'X-Api-Version': '1.0.0',
   'Accept': 'application/json'
 }
 
@@ -162,8 +162,8 @@ Parameter|In|Type|Required|Description
 ---|---|---|---|---|
 Accept|header|string|false|Accept response body content type (default application/json).
 Content-Type|header|string|false|Request body content type (default application/json).
-Api-Version|header|string|false|API version (default latest).
-lang|query|string|false|Language of text data (default belarusan).
+X-Api-Version|header|string|false|API version (default latest).
+lang|query|string(iso-639-1)|false|Language of text data (default belarusan).
 
 
 #### Enumerated Values
@@ -172,6 +172,9 @@ lang|query|string|false|Language of text data (default belarusan).
 |---|---|
 Accept|application/json|
 Content-Type|application/json|
+lang|be|
+lang|ru|
+lang|en-US|
 
 > Example responses
 
@@ -243,7 +246,7 @@ This operation does not require authentication
 curl -X GET https://api.nbrb.by/currencies \
   -H 'Accept: application/json' \
   -H 'Content-Type: application/json' \
-  -H 'Api-Version: string' \
+  -H 'X-Api-Version: 1.0.0' \
   -H 'Accept: application/json'
 
 ```
@@ -255,7 +258,7 @@ Host: api.nbrb.by
 Accept: application/json
 Accept: application/json
 Content-Type: application/json
-Api-Version: string
+X-Api-Version: 1.0.0
 
 ```
 
@@ -263,7 +266,7 @@ Api-Version: string
 var headers = {
   'Accept':'application/json',
   'Content-Type':'application/json',
-  'Api-Version':'string',
+  'X-Api-Version':'1.0.0',
   'Accept':'application/json'
 
 };
@@ -285,7 +288,7 @@ const request = require('node-fetch');
 const headers = {
   'Accept':'application/json',
   'Content-Type':'application/json',
-  'Api-Version':'string',
+  'X-Api-Version':'1.0.0',
   'Accept':'application/json'
 
 };
@@ -310,7 +313,7 @@ require 'json'
 headers = {
   'Accept' => 'application/json',
   'Content-Type' => 'application/json',
-  'Api-Version' => 'string',
+  'X-Api-Version' => '1.0.0',
   'Accept' => 'application/json'
 }
 
@@ -326,7 +329,7 @@ import requests
 headers = {
   'Accept': 'application/json',
   'Content-Type': 'application/json',
-  'Api-Version': 'string',
+  'X-Api-Version': '1.0.0',
   'Accept': 'application/json'
 }
 
@@ -363,8 +366,8 @@ Parameter|In|Type|Required|Description
 ---|---|---|---|---|
 Accept|header|string|false|Accept response body content type (default application/json).
 Content-Type|header|string|false|Request body content type (default application/json).
-Api-Version|header|string|false|API version (default latest).
-lang|query|string|false|Language of text data (default belarusan).
+X-Api-Version|header|string|false|API version (default latest).
+lang|query|string(iso-639-1)(iso-639-1)|false|Language of text data (default belarusan).
 at|query|dateTime|false|Currancy rate at specific date. Current time used by default.
 
 
@@ -374,6 +377,9 @@ at|query|dateTime|false|Currancy rate at specific date. Current time used by def
 |---|---|
 Accept|application/json|
 Content-Type|application/json|
+lang|be|
+lang|ru|
+lang|en-US|
 
 > Example responses
 
@@ -450,7 +456,7 @@ This operation does not require authentication
   "presedent": "string",
   "registration_number": "string",
   "registration_date": null
-}
+} 
 ```
 
 ### Properties
@@ -504,7 +510,7 @@ registration_date|date|false|Registration date.
       "registration_date": null
     }
   ]
-}
+} 
 ```
 
 ### Properties
@@ -544,7 +550,7 @@ items|[[Bank](#schemabank)]|false|Contains the list of banks.
   "currency_to": "string",
   "currency_to_name": "string",
   "exchange_rate": "string"
-}
+} 
 ```
 
 ### Properties
@@ -576,7 +582,7 @@ exchange_rate|string(decimal)|false|Currency echange rate.
       "exchange_rate": "string"
     }
   ]
-}
+} 
 ```
 
 ### Properties
@@ -602,7 +608,7 @@ items|[[CurrencyRate](#schemacurrencyrate)]|false|Contains the list of currencie
   "code": "string",
   "message": "string",
   "fields": "string"
-}
+} 
 ```
 
 ### Properties

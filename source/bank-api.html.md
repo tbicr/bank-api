@@ -35,7 +35,7 @@ Base URLs:
 
 
 
-- oAuth2 authentication.
+- oAuth2 authentication. 
 
     - Flow: authorizationCode
     - Authorization URL = [https://api.bank.by/oauth2/authorize](https://api.bank.by/oauth2/authorize)
@@ -71,7 +71,7 @@ Base URLs:
 curl -X GET https://api.bank.by/currencies \
   -H 'Accept: application/json' \
   -H 'Content-Type: application/json' \
-  -H 'Api-Version: string' \
+  -H 'X-Api-Version: 1.0.0' \
   -H 'Accept: applicaiton/json'
 
 ```
@@ -83,7 +83,7 @@ Host: api.bank.by
 Accept: applicaiton/json
 Accept: application/json
 Content-Type: application/json
-Api-Version: string
+X-Api-Version: 1.0.0
 
 ```
 
@@ -91,7 +91,7 @@ Api-Version: string
 var headers = {
   'Accept':'application/json',
   'Content-Type':'application/json',
-  'Api-Version':'string',
+  'X-Api-Version':'1.0.0',
   'Accept':'applicaiton/json'
 
 };
@@ -113,7 +113,7 @@ const request = require('node-fetch');
 const headers = {
   'Accept':'application/json',
   'Content-Type':'application/json',
-  'Api-Version':'string',
+  'X-Api-Version':'1.0.0',
   'Accept':'applicaiton/json'
 
 };
@@ -138,7 +138,7 @@ require 'json'
 headers = {
   'Accept' => 'application/json',
   'Content-Type' => 'application/json',
-  'Api-Version' => 'string',
+  'X-Api-Version' => '1.0.0',
   'Accept' => 'applicaiton/json'
 }
 
@@ -154,7 +154,7 @@ import requests
 headers = {
   'Accept': 'application/json',
   'Content-Type': 'application/json',
-  'Api-Version': 'string',
+  'X-Api-Version': '1.0.0',
   'Accept': 'applicaiton/json'
 }
 
@@ -191,7 +191,7 @@ Parameter|In|Type|Required|Description
 ---|---|---|---|---|
 Accept|header|string|false|Accept response body content type (default application/json).
 Content-Type|header|string|false|Request body content type (default application/json).
-Api-Version|header|string|false|API version (default latest).
+X-Api-Version|header|string|false|API version (default latest).
 lang|query|string(iso-639-1)|false|Language of text data (default belarusan).
 
 
@@ -201,6 +201,9 @@ lang|query|string(iso-639-1)|false|Language of text data (default belarusan).
 |---|---|
 Accept|application/json|
 Content-Type|application/json|
+lang|be|
+lang|ru|
+lang|en-US|
 
 > Example responses
 
@@ -247,7 +250,7 @@ This operation does not require authentication
 curl -X GET https://api.bank.by/atms \
   -H 'Accept: application/json' \
   -H 'Content-Type: application/json' \
-  -H 'Api-Version: string' \
+  -H 'X-Api-Version: 1.0.0' \
   -H 'Accept: application/json'
 
 ```
@@ -259,7 +262,7 @@ Host: api.bank.by
 Accept: application/json
 Accept: application/json
 Content-Type: application/json
-Api-Version: string
+X-Api-Version: 1.0.0
 
 ```
 
@@ -267,7 +270,7 @@ Api-Version: string
 var headers = {
   'Accept':'application/json',
   'Content-Type':'application/json',
-  'Api-Version':'string',
+  'X-Api-Version':'1.0.0',
   'Accept':'application/json'
 
 };
@@ -289,7 +292,7 @@ const request = require('node-fetch');
 const headers = {
   'Accept':'application/json',
   'Content-Type':'application/json',
-  'Api-Version':'string',
+  'X-Api-Version':'1.0.0',
   'Accept':'application/json'
 
 };
@@ -314,7 +317,7 @@ require 'json'
 headers = {
   'Accept' => 'application/json',
   'Content-Type' => 'application/json',
-  'Api-Version' => 'string',
+  'X-Api-Version' => '1.0.0',
   'Accept' => 'application/json'
 }
 
@@ -330,7 +333,7 @@ import requests
 headers = {
   'Accept': 'application/json',
   'Content-Type': 'application/json',
-  'Api-Version': 'string',
+  'X-Api-Version': '1.0.0',
   'Accept': 'application/json'
 }
 
@@ -367,7 +370,7 @@ Parameter|In|Type|Required|Description
 ---|---|---|---|---|
 Accept|header|string|false|Accept response body content type (default application/json).
 Content-Type|header|string|false|Request body content type (default application/json).
-Api-Version|header|string|false|API version (default latest).
+X-Api-Version|header|string|false|API version (default latest).
 lang|query|string(iso-639-1)(iso-639-1)|false|Language of text data (default belarusan).
 
 
@@ -377,6 +380,9 @@ lang|query|string(iso-639-1)(iso-639-1)|false|Language of text data (default bel
 |---|---|
 Accept|application/json|
 Content-Type|application/json|
+lang|be|
+lang|ru|
+lang|en-US|
 
 > Example responses
 
@@ -458,7 +464,7 @@ This operation does not require authentication
 curl -X GET https://api.bank.by/branches \
   -H 'Accept: application/json' \
   -H 'Content-Type: application/json' \
-  -H 'Api-Version: string' \
+  -H 'X-Api-Version: 1.0.0' \
   -H 'Accept: application/json'
 
 ```
@@ -470,7 +476,7 @@ Host: api.bank.by
 Accept: application/json
 Accept: application/json
 Content-Type: application/json
-Api-Version: string
+X-Api-Version: 1.0.0
 
 ```
 
@@ -478,7 +484,7 @@ Api-Version: string
 var headers = {
   'Accept':'application/json',
   'Content-Type':'application/json',
-  'Api-Version':'string',
+  'X-Api-Version':'1.0.0',
   'Accept':'application/json'
 
 };
@@ -500,7 +506,7 @@ const request = require('node-fetch');
 const headers = {
   'Accept':'application/json',
   'Content-Type':'application/json',
-  'Api-Version':'string',
+  'X-Api-Version':'1.0.0',
   'Accept':'application/json'
 
 };
@@ -525,7 +531,7 @@ require 'json'
 headers = {
   'Accept' => 'application/json',
   'Content-Type' => 'application/json',
-  'Api-Version' => 'string',
+  'X-Api-Version' => '1.0.0',
   'Accept' => 'application/json'
 }
 
@@ -541,7 +547,7 @@ import requests
 headers = {
   'Accept': 'application/json',
   'Content-Type': 'application/json',
-  'Api-Version': 'string',
+  'X-Api-Version': '1.0.0',
   'Accept': 'application/json'
 }
 
@@ -578,7 +584,7 @@ Parameter|In|Type|Required|Description
 ---|---|---|---|---|
 Accept|header|string|false|Accept response body content type (default application/json).
 Content-Type|header|string|false|Request body content type (default application/json).
-Api-Version|header|string|false|API version (default latest).
+X-Api-Version|header|string|false|API version (default latest).
 lang|query|string(iso-639-1)(iso-639-1)(iso-639-1)|false|Language of text data (default belarusan).
 
 
@@ -588,6 +594,9 @@ lang|query|string(iso-639-1)(iso-639-1)(iso-639-1)|false|Language of text data (
 |---|---|
 Accept|application/json|
 Content-Type|application/json|
+lang|be|
+lang|ru|
+lang|en-US|
 
 > Example responses
 
@@ -666,8 +675,8 @@ This operation does not require authentication
 curl -X GET https://api.bank.by/accounts \
   -H 'Accept: application/json' \
   -H 'Content-Type: application/json' \
-  -H 'Api-Version: string' \
-  -H 'Authorization: string' \
+  -H 'X-Api-Version: 1.0.0' \
+  -H 'Authorization: Bearer wism73ydof4spe8o92x705t36wbfx41av8bltyys' \
   -H 'Accept: application/json'
 
 ```
@@ -679,8 +688,8 @@ Host: api.bank.by
 Accept: application/json
 Accept: application/json
 Content-Type: application/json
-Api-Version: string
-Authorization: string
+X-Api-Version: 1.0.0
+Authorization: Bearer wism73ydof4spe8o92x705t36wbfx41av8bltyys
 
 ```
 
@@ -688,8 +697,8 @@ Authorization: string
 var headers = {
   'Accept':'application/json',
   'Content-Type':'application/json',
-  'Api-Version':'string',
-  'Authorization':'string',
+  'X-Api-Version':'1.0.0',
+  'Authorization':'Bearer wism73ydof4spe8o92x705t36wbfx41av8bltyys',
   'Accept':'application/json'
 
 };
@@ -711,8 +720,8 @@ const request = require('node-fetch');
 const headers = {
   'Accept':'application/json',
   'Content-Type':'application/json',
-  'Api-Version':'string',
-  'Authorization':'string',
+  'X-Api-Version':'1.0.0',
+  'Authorization':'Bearer wism73ydof4spe8o92x705t36wbfx41av8bltyys',
   'Accept':'application/json'
 
 };
@@ -737,8 +746,8 @@ require 'json'
 headers = {
   'Accept' => 'application/json',
   'Content-Type' => 'application/json',
-  'Api-Version' => 'string',
-  'Authorization' => 'string',
+  'X-Api-Version' => '1.0.0',
+  'Authorization' => 'Bearer wism73ydof4spe8o92x705t36wbfx41av8bltyys',
   'Accept' => 'application/json'
 }
 
@@ -754,8 +763,8 @@ import requests
 headers = {
   'Accept': 'application/json',
   'Content-Type': 'application/json',
-  'Api-Version': 'string',
-  'Authorization': 'string',
+  'X-Api-Version': '1.0.0',
+  'Authorization': 'Bearer wism73ydof4spe8o92x705t36wbfx41av8bltyys',
   'Accept': 'application/json'
 }
 
@@ -792,7 +801,7 @@ Parameter|In|Type|Required|Description
 ---|---|---|---|---|
 Accept|header|string|false|Accept response body content type (default application/json).
 Content-Type|header|string|false|Request body content type (default application/json).
-Api-Version|header|string|false|API version (default latest).
+X-Api-Version|header|string|false|API version (default latest).
 Authorization|header|string|true|Authorization (OAuth2 Bearer).
 lang|query|string(iso-639-1)(iso-639-1)(iso-639-1)(iso-639-1)|false|Language of text data (default belarusan).
 
@@ -803,6 +812,9 @@ lang|query|string(iso-639-1)(iso-639-1)(iso-639-1)(iso-639-1)|false|Language of 
 |---|---|
 Accept|application/json|
 Content-Type|application/json|
+lang|be|
+lang|ru|
+lang|en-US|
 
 > Example responses
 
@@ -880,8 +892,8 @@ oauth2 ( Scopes: read:accounts )
 curl -X GET https://api.bank.by/account/{account_id}/transactions \
   -H 'Accept: application/json' \
   -H 'Content-Type: application/json' \
-  -H 'Api-Version: string' \
-  -H 'Authorization: string' \
+  -H 'X-Api-Version: 1.0.0' \
+  -H 'Authorization: Bearer wism73ydof4spe8o92x705t36wbfx41av8bltyys' \
   -H 'Accept: application/json'
 
 ```
@@ -893,8 +905,8 @@ Host: api.bank.by
 Accept: application/json
 Accept: application/json
 Content-Type: application/json
-Api-Version: string
-Authorization: string
+X-Api-Version: 1.0.0
+Authorization: Bearer wism73ydof4spe8o92x705t36wbfx41av8bltyys
 
 ```
 
@@ -902,8 +914,8 @@ Authorization: string
 var headers = {
   'Accept':'application/json',
   'Content-Type':'application/json',
-  'Api-Version':'string',
-  'Authorization':'string',
+  'X-Api-Version':'1.0.0',
+  'Authorization':'Bearer wism73ydof4spe8o92x705t36wbfx41av8bltyys',
   'Accept':'application/json'
 
 };
@@ -925,8 +937,8 @@ const request = require('node-fetch');
 const headers = {
   'Accept':'application/json',
   'Content-Type':'application/json',
-  'Api-Version':'string',
-  'Authorization':'string',
+  'X-Api-Version':'1.0.0',
+  'Authorization':'Bearer wism73ydof4spe8o92x705t36wbfx41av8bltyys',
   'Accept':'application/json'
 
 };
@@ -951,8 +963,8 @@ require 'json'
 headers = {
   'Accept' => 'application/json',
   'Content-Type' => 'application/json',
-  'Api-Version' => 'string',
-  'Authorization' => 'string',
+  'X-Api-Version' => '1.0.0',
+  'Authorization' => 'Bearer wism73ydof4spe8o92x705t36wbfx41av8bltyys',
   'Accept' => 'application/json'
 }
 
@@ -968,8 +980,8 @@ import requests
 headers = {
   'Accept': 'application/json',
   'Content-Type': 'application/json',
-  'Api-Version': 'string',
-  'Authorization': 'string',
+  'X-Api-Version': '1.0.0',
+  'Authorization': 'Bearer wism73ydof4spe8o92x705t36wbfx41av8bltyys',
   'Accept': 'application/json'
 }
 
@@ -1006,7 +1018,7 @@ Parameter|In|Type|Required|Description
 ---|---|---|---|---|
 Accept|header|string|false|Accept response body content type (default application/json).
 Content-Type|header|string|false|Request body content type (default application/json).
-Api-Version|header|string|false|API version (default latest).
+X-Api-Version|header|string|false|API version (default latest).
 Authorization|header|string|true|Authorization (OAuth2 Bearer).
 lang|query|string(iso-639-1)(iso-639-1)(iso-639-1)(iso-639-1)(iso-639-1)|false|Language of text data (default belarusan).
 account_id|path|string(object-uuid)|true|No description
@@ -1018,6 +1030,9 @@ account_id|path|string(object-uuid)|true|No description
 |---|---|
 Accept|application/json|
 Content-Type|application/json|
+lang|be|
+lang|ru|
+lang|en-US|
 
 > Example responses
 
@@ -1096,8 +1111,8 @@ oauth2 ( Scopes: read:transactions )
 curl -X POST https://api.bank.by/account/{account_id}/transactions \
   -H 'Accept: application/json' \
   -H 'Content-Type: application/json' \
-  -H 'Api-Version: string' \
-  -H 'Authorization: string' \
+  -H 'X-Api-Version: 1.0.0' \
+  -H 'Authorization: Bearer wism73ydof4spe8o92x705t36wbfx41av8bltyys' \
   -H 'X-Idempotency-Key: string' \
   -H 'Content-Type: application/json' \
   -H 'Accept: application/json'
@@ -1111,8 +1126,8 @@ Content-Type: application/json
 Accept: application/json
 Accept: application/json
 Content-Type: application/json
-Api-Version: string
-Authorization: string
+X-Api-Version: 1.0.0
+Authorization: Bearer wism73ydof4spe8o92x705t36wbfx41av8bltyys
 X-Idempotency-Key: string
 
 ```
@@ -1121,8 +1136,8 @@ X-Idempotency-Key: string
 var headers = {
   'Accept':'application/json',
   'Content-Type':'application/json',
-  'Api-Version':'string',
-  'Authorization':'string',
+  'X-Api-Version':'1.0.0',
+  'Authorization':'Bearer wism73ydof4spe8o92x705t36wbfx41av8bltyys',
   'X-Idempotency-Key':'string',
   'Content-Type':'application/json',
   'Accept':'application/json'
@@ -1156,8 +1171,8 @@ const inputBody = '{
 const headers = {
   'Accept':'application/json',
   'Content-Type':'application/json',
-  'Api-Version':'string',
-  'Authorization':'string',
+  'X-Api-Version':'1.0.0',
+  'Authorization':'Bearer wism73ydof4spe8o92x705t36wbfx41av8bltyys',
   'X-Idempotency-Key':'string',
   'Content-Type':'application/json',
   'Accept':'application/json'
@@ -1184,8 +1199,8 @@ require 'json'
 headers = {
   'Accept' => 'application/json',
   'Content-Type' => 'application/json',
-  'Api-Version' => 'string',
-  'Authorization' => 'string',
+  'X-Api-Version' => '1.0.0',
+  'Authorization' => 'Bearer wism73ydof4spe8o92x705t36wbfx41av8bltyys',
   'X-Idempotency-Key' => 'string',
   'Content-Type' => 'application/json',
   'Accept' => 'application/json'
@@ -1203,8 +1218,8 @@ import requests
 headers = {
   'Accept': 'application/json',
   'Content-Type': 'application/json',
-  'Api-Version': 'string',
-  'Authorization': 'string',
+  'X-Api-Version': '1.0.0',
+  'Authorization': 'Bearer wism73ydof4spe8o92x705t36wbfx41av8bltyys',
   'X-Idempotency-Key': 'string',
   'Content-Type': 'application/json',
   'Accept': 'application/json'
@@ -1258,7 +1273,7 @@ Parameter|In|Type|Required|Description
 ---|---|---|---|---|
 Accept|header|string|false|Accept response body content type (default application/json).
 Content-Type|header|string|false|Request body content type (default application/json).
-Api-Version|header|string|false|API version (default latest).
+X-Api-Version|header|string|false|API version (default latest).
 Authorization|header|string|true|Authorization (OAuth2 Bearer).
 X-Idempotency-Key|header|string|false|Idempotency key.
 lang|query|string(iso-639-1)(iso-639-1)(iso-639-1)(iso-639-1)(iso-639-1)(iso-639-1)|false|Language of text data (default belarusan).
@@ -1272,6 +1287,9 @@ body|body|[TransactionCreate](#schematransactioncreate)|true|Make opeation.
 |---|---|
 Accept|application/json|
 Content-Type|application/json|
+lang|be|
+lang|ru|
+lang|en-US|
 
 > Example responses
 
@@ -1289,7 +1307,7 @@ Content-Type|application/json|
     "property1": "string",
     "property2": "string"
   },
-  "created_at": "2017-11-15T06:37:15Z"
+  "created_at": "2017-11-26T08:05:05Z"
 }
 ```
 ```json
@@ -1364,7 +1382,7 @@ oauth2 ( Scopes: create:transactions )
   "city": "string",
   "line": "string",
   "postcode": "string"
-}
+} 
 ```
 
 ### Properties
@@ -1389,7 +1407,7 @@ postcode|string|false|Postcode.
   "coordinates": [
     0
   ]
-}
+} 
 ```
 
 ### Properties
@@ -1434,7 +1452,7 @@ coordinates|[number(float)]|false|longitude, latitude
   "supported_services": [
     "string"
   ]
-}
+} 
 ```
 
 ### Properties
@@ -1498,7 +1516,7 @@ supported_services|[string]|false|Supported services.
       ]
     }
   ]
-}
+} 
 ```
 
 ### Properties
@@ -1554,7 +1572,7 @@ items|[[ATM](#schemaatm)]|false|Contains the list of ATMs.
   "supported_services": [
     "string"
   ]
-}
+} 
 ```
 
 ### Properties
@@ -1612,7 +1630,7 @@ supported_services|[string]|false|Supported operations.
       ]
     }
   ]
-}
+} 
 ```
 
 ### Properties
@@ -1651,7 +1669,7 @@ items|[[Branch](#schemabranch)]|false|Contains the list of branches.
   "currency_to": "string",
   "currency_to_name": "string",
   "exchange_rate": "string"
-}
+} 
 ```
 
 ### Properties
@@ -1683,7 +1701,7 @@ exchange_rate|string(decimal)|true|Currency echange rate.
       "exchange_rate": "string"
     }
   ]
-}
+} 
 ```
 
 ### Properties
@@ -1712,7 +1730,7 @@ items|[[CurrencyRate](#schemacurrencyrate)]|false|Contains the list of currencie
   "bic": "string",
   "balance": "string",
   "currency": "string"
-}
+} 
 ```
 
 ### Properties
@@ -1744,7 +1762,7 @@ currency|string(iso-4217)|false|Currency ISO 4217 code.
       "currency": "string"
     }
   ]
-}
+} 
 ```
 
 ### Properties
@@ -1769,7 +1787,7 @@ items|[[Account](#schemaaccount)]|false|Countains the list of accounts.
 {
   "iban": "string",
   "name": "string"
-}
+} 
 ```
 
 ### Properties
@@ -1790,7 +1808,7 @@ name|string|false|Full name.
   "iban": "string",
   "bic": "string",
   "name": "string"
-}
+} 
 ```
 
 ### Properties
@@ -1818,7 +1836,7 @@ name|string|false|Full name.
     "property1": "string",
     "property2": "string"
   }
-}
+} 
 ```
 
 ### Properties
@@ -1860,8 +1878,8 @@ charge_policy|SENDER|
     "property1": "string",
     "property2": "string"
   },
-  "created_at": "2017-11-15T06:37:15Z"
-}
+  "created_at": "2017-11-26T08:05:05Z"
+} 
 ```
 
 ### Properties
@@ -1896,7 +1914,7 @@ charge_policy|SENDER|
 ```json
 {
   "items": "string"
-}
+} 
 ```
 
 ### Properties
@@ -1934,7 +1952,7 @@ items|string|false|Countains the list of transactions.
   "code": "string",
   "message": "string",
   "fields": "string"
-}
+} 
 ```
 
 ### Properties

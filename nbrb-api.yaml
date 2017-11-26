@@ -211,12 +211,13 @@ components:
         enum:
           - application/json
     ApiVersionParameter:
-      name: Api-Version
+      name: X-Api-Version
       in: header
       description: API version (default latest).
       required: false
       schema:
         type: string
+        example: 1.0.0
     LocalisationParameter:
       name: lang
       in: query
@@ -224,3 +225,9 @@ components:
       required: false
       schema:
         type: string
+        format: iso-639-1
+        enum:
+          - be
+          - ru
+          - en-US
+        example: be

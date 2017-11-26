@@ -681,13 +681,6 @@ components:
         type: string
         enum:
           - application/json
-    ApiVersionParameter:
-      name: Api-Version
-      in: header
-      description: API version (default latest).
-      required: false
-      schema:
-        type: string
     AuthorizationParameter:
       name: Authorization
       in: header
@@ -695,7 +688,16 @@ components:
       required: true
       schema:
         type: string
-        pattern: Bearer [a-z0-9]{12}
+        pattern: Bearer [a-z0-9]{40}
+        example: Bearer wism73ydof4spe8o92x705t36wbfx41av8bltyys
+    ApiVersionParameter:
+      name: X-Api-Version
+      in: header
+      description: API version (default latest).
+      required: false
+      schema:
+        type: string
+        example: 1.0.0
     IdempotencyKeyParameter:
       name: X-Idempotency-Key
       in: header
@@ -711,3 +713,8 @@ components:
       schema:
         type: string
         format: iso-639-1
+        enum:
+          - be
+          - ru
+          - en-US
+        example: be
