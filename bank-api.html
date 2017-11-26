@@ -1532,8 +1532,8 @@ StringBuffer response = <span class="hljs-keyword">new</span> StringBuffer();
 in.close();
 System.out.println(response.toString());
 </code></pre>
-<p><em>Operations History</em></p>
-<p>Operations history.</p>
+<p><em>Transactions History</em></p>
+<p>Transactions history.</p>
 <h3 id="GET-/account/{account_id}/transactions-parameters">Parameters</h3>
 <table>
 <thead>
@@ -1645,7 +1645,7 @@ System.out.println(response.toString());
       <span class="hljs-attr">"metadata"</span>: {
         <span class="hljs-attr">"customer_id"</span>: <span class="hljs-string">"52feca613b844ae8b7ddd627d1fdf58b"</span>
       },
-      <span class="hljs-attr">"created_at"</span>: <span class="hljs-string">"2017-11-26T10:36:00Z"</span>
+      <span class="hljs-attr">"created_at"</span>: <span class="hljs-string">"2017-11-26T10:40:15Z"</span>
     }
   ]
 }
@@ -1700,7 +1700,7 @@ System.out.println(response.toString());
 <tr>
 <td>200</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.1">OK</a></td>
-<td>An array of operations.</td>
+<td>An array of transactions.</td>
 <td><a href="#schematransactionlist">TransactionList</a></td>
 </tr>
 <tr>
@@ -1881,8 +1881,8 @@ StringBuffer response = <span class="hljs-keyword">new</span> StringBuffer();
 in.close();
 System.out.println(response.toString());
 </code></pre>
-<p><em>Make Operation</em></p>
-<p>Make operation.</p>
+<p><em>Make Transaction</em></p>
+<p>Make transaction.</p>
 <blockquote>
 <p>Body parameter</p>
 </blockquote>
@@ -2024,7 +2024,7 @@ System.out.println(response.toString());
   <span class="hljs-attr">"metadata"</span>: {
     <span class="hljs-attr">"customer_id"</span>: <span class="hljs-string">"52feca613b844ae8b7ddd627d1fdf58b"</span>
   },
-  <span class="hljs-attr">"created_at"</span>: <span class="hljs-string">"2017-11-26T10:36:00Z"</span>
+  <span class="hljs-attr">"created_at"</span>: <span class="hljs-string">"2017-11-26T10:40:15Z"</span>
 }
 </code></pre>
 <pre class="highlight tab tab-json"><code>{
@@ -2077,7 +2077,7 @@ System.out.println(response.toString());
 <tr>
 <td>201</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.2">Created</a></td>
-<td>Operation.</td>
+<td>Transaction.</td>
 <td><a href="#schematransaction">Transaction</a></td>
 </tr>
 <tr>
@@ -3264,7 +3264,7 @@ oauth2 ( Scopes: create:transactions )
   <span class="hljs-attr">"metadata"</span>: {
     <span class="hljs-attr">"customer_id"</span>: <span class="hljs-string">"52feca613b844ae8b7ddd627d1fdf58b"</span>
   },
-  <span class="hljs-attr">"created_at"</span>: <span class="hljs-string">"2017-11-26T10:36:00Z"</span>
+  <span class="hljs-attr">"created_at"</span>: <span class="hljs-string">"2017-11-26T10:40:15Z"</span>
 } 
 </code></pre>
 <h3 id="properties">Properties</h3>
@@ -3416,7 +3416,7 @@ oauth2 ( Scopes: create:transactions )
       <span class="hljs-attr">"metadata"</span>: {
         <span class="hljs-attr">"customer_id"</span>: <span class="hljs-string">"52feca613b844ae8b7ddd627d1fdf58b"</span>
       },
-      <span class="hljs-attr">"created_at"</span>: <span class="hljs-string">"2017-11-26T10:36:00Z"</span>
+      <span class="hljs-attr">"created_at"</span>: <span class="hljs-string">"2017-11-26T10:40:15Z"</span>
     }
   ]
 } 
@@ -3559,7 +3559,7 @@ oauth2 ( Scopes: create:transactions )
   <span class="hljs-attr">"type"</span>: <span class="hljs-string">"account.created"</span>,
   <span class="hljs-attr">"id"</span>: <span class="hljs-string">"event_0c7b5bee7b684040939e1a3fb284a87a"</span>,
   <span class="hljs-attr">"api_version"</span>: <span class="hljs-string">"1.0.0"</span>,
-  <span class="hljs-attr">"created_at"</span>: <span class="hljs-string">"2017-11-26T10:36:00Z"</span>,
+  <span class="hljs-attr">"created_at"</span>: <span class="hljs-string">"2017-11-26T10:40:15Z"</span>,
   <span class="hljs-attr">"data"</span>: {
     <span class="hljs-attr">"type"</span>: <span class="hljs-string">"Account"</span>,
     <span class="hljs-attr">"id"</span>: <span class="hljs-string">"account_d87e183c49b84cbd9ac2e585bdd93896"</span>,
