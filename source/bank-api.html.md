@@ -882,6 +882,12 @@ Status|Meaning|Description|Schema
 429|[Too Many Requests](https://tools.ietf.org/html/rfc6585#section-4)|Too Many Requests|[Error](#schemaerror)
 default|Default|Unexpected error|[Error](#schemaerror)
 
+### Response Headers
+
+Status|Header|Type|Format|Description
+---|---|---|---|---|
+200|X-Request-Id|string||Request identifiactor.
+
 <aside class="warning">
 To perform this operation, you must be authenticated by means of one of the following methods:
 oauth2 ( Scopes: read:accounts )
@@ -1062,7 +1068,7 @@ lang|en-US|
       "metadata": {
         "customer_id": "52feca613b844ae8b7ddd627d1fdf58b"
       },
-      "created_at": "2017-11-26T10:43:35Z"
+      "created_at": "2017-11-26T11:53:09Z"
     }
   ]
 }
@@ -1120,6 +1126,12 @@ Status|Meaning|Description|Schema
 404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Not Found|[Error](#schemaerror)
 429|[Too Many Requests](https://tools.ietf.org/html/rfc6585#section-4)|Too Many Requests|[Error](#schemaerror)
 default|Default|Unexpected error|[Error](#schemaerror)
+
+### Response Headers
+
+Status|Header|Type|Format|Description
+---|---|---|---|---|
+200|X-Request-Id|string||Request identifiactor.
 
 <aside class="warning">
 To perform this operation, you must be authenticated by means of one of the following methods:
@@ -1345,7 +1357,7 @@ lang|en-US|
   "metadata": {
     "customer_id": "52feca613b844ae8b7ddd627d1fdf58b"
   },
-  "created_at": "2017-11-26T10:43:35Z"
+  "created_at": "2017-11-26T11:53:09Z"
 }
 ```
 ```json
@@ -1401,6 +1413,13 @@ Status|Meaning|Description|Schema
 404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|Not Found|[Error](#schemaerror)
 429|[Too Many Requests](https://tools.ietf.org/html/rfc6585#section-4)|Too Many Requests|[Error](#schemaerror)
 default|Default|Unexpected error|[Error](#schemaerror)
+
+### Response Headers
+
+Status|Header|Type|Format|Description
+---|---|---|---|---|
+201|X-Request-Id|string|object-uuid|Request identifiactor.
+201|X-Idempotency-Key|string||Idempotency key.
 
 <aside class="warning">
 To perform this operation, you must be authenticated by means of one of the following methods:
@@ -1937,7 +1956,7 @@ charge_policy|SENDER|
   "metadata": {
     "customer_id": "52feca613b844ae8b7ddd627d1fdf58b"
   },
-  "created_at": "2017-11-26T10:43:35Z"
+  "created_at": "2017-11-26T11:53:09Z"
 } 
 ```
 
@@ -1997,7 +2016,7 @@ charge_policy|SENDER|
       "metadata": {
         "customer_id": "52feca613b844ae8b7ddd627d1fdf58b"
       },
-      "created_at": "2017-11-26T10:43:35Z"
+      "created_at": "2017-11-26T11:53:09Z"
     }
   ]
 } 
@@ -2043,7 +2062,7 @@ items|[[Transaction](#schematransaction)]|false|Countains the list of transactio
   "type": "account.created",
   "id": "event_0c7b5bee7b684040939e1a3fb284a87a",
   "api_version": "1.0.0",
-  "created_at": "2017-11-26T10:43:35Z",
+  "created_at": "2017-11-26T11:53:09Z",
   "data": {
     "type": "Account",
     "id": "account_d87e183c49b84cbd9ac2e585bdd93896",

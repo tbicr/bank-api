@@ -1417,6 +1417,27 @@ System.out.println(response.toString());
 </tr>
 </tbody>
 </table>
+<h3 id="response-headers">Response Headers</h3>
+<table>
+<thead>
+<tr>
+<th>Status</th>
+<th>Header</th>
+<th>Type</th>
+<th>Format</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td>X-Request-Id</td>
+<td>string</td>
+<td></td>
+<td>Request identifiactor.</td>
+</tr>
+</tbody>
+</table>
 <aside class="warning">
 To perform this operation, you must be authenticated by means of one of the following methods:
 oauth2 ( Scopes: read:accounts )
@@ -1645,7 +1666,7 @@ System.out.println(response.toString());
       <span class="hljs-attr">"metadata"</span>: {
         <span class="hljs-attr">"customer_id"</span>: <span class="hljs-string">"52feca613b844ae8b7ddd627d1fdf58b"</span>
       },
-      <span class="hljs-attr">"created_at"</span>: <span class="hljs-string">"2017-11-26T10:43:35Z"</span>
+      <span class="hljs-attr">"created_at"</span>: <span class="hljs-string">"2017-11-26T11:53:09Z"</span>
     }
   ]
 }
@@ -1738,6 +1759,27 @@ System.out.println(response.toString());
 <td>Default</td>
 <td>Unexpected error</td>
 <td><a href="#schemaerror">Error</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="response-headers">Response Headers</h3>
+<table>
+<thead>
+<tr>
+<th>Status</th>
+<th>Header</th>
+<th>Type</th>
+<th>Format</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td>X-Request-Id</td>
+<td>string</td>
+<td></td>
+<td>Request identifiactor.</td>
 </tr>
 </tbody>
 </table>
@@ -2024,7 +2066,7 @@ System.out.println(response.toString());
   <span class="hljs-attr">"metadata"</span>: {
     <span class="hljs-attr">"customer_id"</span>: <span class="hljs-string">"52feca613b844ae8b7ddd627d1fdf58b"</span>
   },
-  <span class="hljs-attr">"created_at"</span>: <span class="hljs-string">"2017-11-26T10:43:35Z"</span>
+  <span class="hljs-attr">"created_at"</span>: <span class="hljs-string">"2017-11-26T11:53:09Z"</span>
 }
 </code></pre>
 <pre class="highlight tab tab-json"><code>{
@@ -2115,6 +2157,34 @@ System.out.println(response.toString());
 <td>Default</td>
 <td>Unexpected error</td>
 <td><a href="#schemaerror">Error</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="response-headers">Response Headers</h3>
+<table>
+<thead>
+<tr>
+<th>Status</th>
+<th>Header</th>
+<th>Type</th>
+<th>Format</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>201</td>
+<td>X-Request-Id</td>
+<td>string</td>
+<td>object-uuid</td>
+<td>Request identifiactor.</td>
+</tr>
+<tr>
+<td>201</td>
+<td>X-Idempotency-Key</td>
+<td>string</td>
+<td></td>
+<td>Idempotency key.</td>
 </tr>
 </tbody>
 </table>
@@ -3264,7 +3334,7 @@ oauth2 ( Scopes: create:transactions )
   <span class="hljs-attr">"metadata"</span>: {
     <span class="hljs-attr">"customer_id"</span>: <span class="hljs-string">"52feca613b844ae8b7ddd627d1fdf58b"</span>
   },
-  <span class="hljs-attr">"created_at"</span>: <span class="hljs-string">"2017-11-26T10:43:35Z"</span>
+  <span class="hljs-attr">"created_at"</span>: <span class="hljs-string">"2017-11-26T11:53:09Z"</span>
 } 
 </code></pre>
 <h3 id="properties">Properties</h3>
@@ -3416,7 +3486,7 @@ oauth2 ( Scopes: create:transactions )
       <span class="hljs-attr">"metadata"</span>: {
         <span class="hljs-attr">"customer_id"</span>: <span class="hljs-string">"52feca613b844ae8b7ddd627d1fdf58b"</span>
       },
-      <span class="hljs-attr">"created_at"</span>: <span class="hljs-string">"2017-11-26T10:43:35Z"</span>
+      <span class="hljs-attr">"created_at"</span>: <span class="hljs-string">"2017-11-26T11:53:09Z"</span>
     }
   ]
 } 
@@ -3559,7 +3629,7 @@ oauth2 ( Scopes: create:transactions )
   <span class="hljs-attr">"type"</span>: <span class="hljs-string">"account.created"</span>,
   <span class="hljs-attr">"id"</span>: <span class="hljs-string">"event_0c7b5bee7b684040939e1a3fb284a87a"</span>,
   <span class="hljs-attr">"api_version"</span>: <span class="hljs-string">"1.0.0"</span>,
-  <span class="hljs-attr">"created_at"</span>: <span class="hljs-string">"2017-11-26T10:43:35Z"</span>,
+  <span class="hljs-attr">"created_at"</span>: <span class="hljs-string">"2017-11-26T11:53:09Z"</span>,
   <span class="hljs-attr">"data"</span>: {
     <span class="hljs-attr">"type"</span>: <span class="hljs-string">"Account"</span>,
     <span class="hljs-attr">"id"</span>: <span class="hljs-string">"account_d87e183c49b84cbd9ac2e585bdd93896"</span>,

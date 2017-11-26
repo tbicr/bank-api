@@ -135,6 +135,12 @@ paths:
       responses:
         '200':
           description: An array of accounts.
+          headers:
+            X-Request-Id:
+              description: Request identifiactor.
+              required: true
+              schema:
+                type: string
           content:
             application/json:
               schema:
@@ -206,6 +212,12 @@ paths:
       responses:
         '200':
           description: An array of transactions.
+          headers:
+            X-Request-Id:
+              description: Request identifiactor.
+              required: true
+              schema:
+                type: string
           content:
             application/json:
               schema:
@@ -291,6 +303,18 @@ paths:
       responses:
         '201':
           description: Transaction.
+          headers:
+            X-Request-Id:
+              description: Request identifiactor.
+              required: true
+              schema:
+                type: string
+                format: object-uuid
+            X-Idempotency-Key:
+              description: Idempotency key.
+              required: false
+              schema:
+                type: string
           content:
             application/json:
               schema:
