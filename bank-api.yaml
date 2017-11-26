@@ -754,10 +754,6 @@ components:
           format: object-uuid
           description: Event identificator.
           example: "event_0c7b5bee7b684040939e1a3fb284a87a"
-        api_version:
-          type: string
-          description: Default API version.
-          example: 1.0.0
         created_at:
           type: string
           format: date-time

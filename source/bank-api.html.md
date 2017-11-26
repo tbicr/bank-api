@@ -1068,7 +1068,7 @@ lang|en-US|
       "metadata": {
         "customer_id": "52feca613b844ae8b7ddd627d1fdf58b"
       },
-      "created_at": "2017-11-26T11:53:09Z"
+      "created_at": "2017-11-26T20:11:28Z"
     }
   ]
 }
@@ -1357,7 +1357,7 @@ lang|en-US|
   "metadata": {
     "customer_id": "52feca613b844ae8b7ddd627d1fdf58b"
   },
-  "created_at": "2017-11-26T11:53:09Z"
+  "created_at": "2017-11-26T20:11:28Z"
 }
 ```
 ```json
@@ -1956,7 +1956,7 @@ charge_policy|SENDER|
   "metadata": {
     "customer_id": "52feca613b844ae8b7ddd627d1fdf58b"
   },
-  "created_at": "2017-11-26T11:53:09Z"
+  "created_at": "2017-11-26T20:11:28Z"
 } 
 ```
 
@@ -2016,7 +2016,7 @@ charge_policy|SENDER|
       "metadata": {
         "customer_id": "52feca613b844ae8b7ddd627d1fdf58b"
       },
-      "created_at": "2017-11-26T11:53:09Z"
+      "created_at": "2017-11-26T20:11:28Z"
     }
   ]
 } 
@@ -2061,8 +2061,7 @@ items|[[Transaction](#schematransaction)]|false|Countains the list of transactio
 {
   "type": "account.created",
   "id": "event_0c7b5bee7b684040939e1a3fb284a87a",
-  "api_version": "1.0.0",
-  "created_at": "2017-11-26T11:53:09Z",
+  "created_at": "2017-11-26T20:11:28Z",
   "data": {
     "type": "Account",
     "id": "account_d87e183c49b84cbd9ac2e585bdd93896",
@@ -2080,7 +2079,6 @@ Name|Type|Required|Description
 ---|---|---|---|
 type|string|false|Event type.
 id|string(object-uuid)|false|Event identificator.
-api_version|string|false|Default API version.
 created_at|string(date-time)|false|Time when event was created.
 data|object|false|Related object data.
 » type|string|false|Type `Account`
