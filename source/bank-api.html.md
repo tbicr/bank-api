@@ -1062,7 +1062,7 @@ lang|en-US|
       "metadata": {
         "customer_id": "52feca613b844ae8b7ddd627d1fdf58b"
       },
-      "created_at": "2017-11-26T10:40:15Z"
+      "created_at": "2017-11-26T10:43:35Z"
     }
   ]
 }
@@ -1309,7 +1309,7 @@ Authorization|header|string|true|Authorization (OAuth2 Bearer).
 X-Api-Version|header|string|false|API version (default latest).
 X-Idempotency-Key|header|string|false|Idempotency key.
 lang|query|string(iso-639-1)(iso-639-1)(iso-639-1)(iso-639-1)(iso-639-1)(iso-639-1)|false|Language of text data (default belarusan).
-account_id|path|string(object-uuid)|true|No description
+account_id|path|string(object-uuid)|true|Account identificator.
 body|body|[TransactionCreate](#schematransactioncreate)|true|Make opeation.
 
 
@@ -1345,7 +1345,7 @@ lang|en-US|
   "metadata": {
     "customer_id": "52feca613b844ae8b7ddd627d1fdf58b"
   },
-  "created_at": "2017-11-26T10:40:15Z"
+  "created_at": "2017-11-26T10:43:35Z"
 }
 ```
 ```json
@@ -1937,7 +1937,7 @@ charge_policy|SENDER|
   "metadata": {
     "customer_id": "52feca613b844ae8b7ddd627d1fdf58b"
   },
-  "created_at": "2017-11-26T10:40:15Z"
+  "created_at": "2017-11-26T10:43:35Z"
 } 
 ```
 
@@ -1997,7 +1997,7 @@ charge_policy|SENDER|
       "metadata": {
         "customer_id": "52feca613b844ae8b7ddd627d1fdf58b"
       },
-      "created_at": "2017-11-26T10:40:15Z"
+      "created_at": "2017-11-26T10:43:35Z"
     }
   ]
 } 
@@ -2043,7 +2043,7 @@ items|[[Transaction](#schematransaction)]|false|Countains the list of transactio
   "type": "account.created",
   "id": "event_0c7b5bee7b684040939e1a3fb284a87a",
   "api_version": "1.0.0",
-  "created_at": "2017-11-26T10:40:15Z",
+  "created_at": "2017-11-26T10:43:35Z",
   "data": {
     "type": "Account",
     "id": "account_d87e183c49b84cbd9ac2e585bdd93896",

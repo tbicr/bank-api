@@ -277,6 +277,7 @@ paths:
         - name: account_id
           in: path
           required: true
+          description: Account identificator.
           schema:
             type: string
             format: object-uuid
