@@ -169,10 +169,23 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/Error"
+      callbacks:
+        webhook:
+          'https://3th-party-provider.by/webhooks':
+            post:
+              requestBody:
+                description: Webhook payload.
+                content:
+                  applicaiton/json:
+                    schema:
+                      $ref: "#/components/schemas/Event"
+              responses:
+                '200':
+                  description: Webhook successfully processed.
   /account/{account_id}/transactions:
     get:
-      summary: Operations History
-      description: Operations history.
+      summary: Transactions History
+      description: Transactions history.
       tags:
         - Account
       security:
@@ -192,82 +205,11 @@ paths:
             format: object-uuid
       responses:
         '200':
-          description: An array of operations.
+          description: An array of transactions.
           content:
             application/json:
               schema:
                 $ref: "#/components/schemas/TransactionList"
-        '400':
-          description: Bad Request
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/Error"
-        '401':
-          description: Unauthorized
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/Error"
-        '403':
-          description: Forbidden
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/Error"
-        '404':
-          description: Not Found
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/Error"
-        '429':
-          description: Too Many Requests
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/Error"
-        default:
-          description: Unexpected error
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/Error"
-    post:
-      summary: Make Operation
-      description: Make operation.
-      tags:
-        - Payment
-      security:
-        - oauth2:
-          - create:transactions
-      parameters:
-        - $ref: '#/components/parameters/AcceptParameter'
-        - $ref: '#/components/parameters/ContentTypeParameter'
-        - $ref: '#/components/parameters/AuthorizationParameter'
-        - $ref: '#/components/parameters/ApiVersionParameter'
-        - $ref: '#/components/parameters/IdempotencyKeyParameter'
-        - $ref: '#/components/parameters/LocalisationParameter'
-        - name: account_id
-          in: path
-          required: true
-          schema:
-            type: string
-            format: object-uuid
-      requestBody:
-        description: Make opeation.
-        required: true
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/TransactionCreate'
-      responses:
-        '201':
-          description: Operation.
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/Transaction"
         '400':
           description: Bad Request
           content:
@@ -313,10 +255,81 @@ paths:
                 content:
                   applicaiton/json:
                     schema:
-                      $ref: "#/components/schemas/Transaction"
+                      $ref: "#/components/schemas/Event"
               responses:
                 '200':
                   description: Webhook successfully processed.
+    post:
+      summary: Make Transaction
+      description: Make transaction.
+      tags:
+        - Payment
+      security:
+        - oauth2:
+          - create:transactions
+      parameters:
+        - $ref: '#/components/parameters/AcceptParameter'
+        - $ref: '#/components/parameters/ContentTypeParameter'
+        - $ref: '#/components/parameters/AuthorizationParameter'
+        - $ref: '#/components/parameters/ApiVersionParameter'
+        - $ref: '#/components/parameters/IdempotencyKeyParameter'
+        - $ref: '#/components/parameters/LocalisationParameter'
+        - name: account_id
+          in: path
+          required: true
+          schema:
+            type: string
+            format: object-uuid
+      requestBody:
+        description: Make opeation.
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TransactionCreate'
+      responses:
+        '201':
+          description: Transaction.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Transaction"
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        '429':
+          description: Too Many Requests
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        default:
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
 components:
   securitySchemes:
     oauth2:
@@ -658,7 +671,7 @@ components:
         id:
           type: string
           format: object-uuid
-          description: Operation identificator.
+          description: Transaction identificator.
           example: "transaction_85c4b3e76d064fbcb6cebbc38629733d"
         from:
           $ref: "#/components/schemas/TransactionSender"
@@ -705,6 +718,39 @@ components:
           type: array
           items:
             $ref: "#/components/schemas/Transaction"
+    Event:
+      properties:
+        type:
+          type: string
+          description: Type `Event`
+          example: "Event"
+        id:
+          type: string
+          format: object-uuid
+          description: Event identificator.
+          example: "event_0c7b5bee7b684040939e1a3fb284a87a"
+        api_version:
+          type: string
+          description: Default API version.
+          example: 1.0.0
+        created_at:
+          type: string
+          format: date-time
+          description: Time when event was created.
+        data:
+          type: object
+          oneOf:
+            - $ref: "#/components/schemas/Account"
+            - $ref: "#/components/schemas/Transaction"
+          discriminator:
+            propertyName: type
+          description: Related object data.
+        type:
+          type: string
+          description: Event type.
+          enum:
+            - account.created
+            - transaction.created
     Error:
       properties:
         code:

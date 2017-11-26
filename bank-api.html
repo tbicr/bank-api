@@ -241,6 +241,11 @@ window.onpopstate = function() {
                   </li>
                 
                   <li>
+                    <a href="#event" class="toc-h2 toc-link" data-title="Event">Event</a>
+                    
+                  </li>
+                
+                  <li>
                     <a href="#error" class="toc-h2 toc-link" data-title="Error">Error</a>
                     
                   </li>
@@ -1640,7 +1645,7 @@ System.out.println(response.toString());
       <span class="hljs-attr">"metadata"</span>: {
         <span class="hljs-attr">"customer_id"</span>: <span class="hljs-string">"52feca613b844ae8b7ddd627d1fdf58b"</span>
       },
-      <span class="hljs-attr">"created_at"</span>: <span class="hljs-string">"2017-11-26T09:39:04Z"</span>
+      <span class="hljs-attr">"created_at"</span>: <span class="hljs-string">"2017-11-26T10:36:00Z"</span>
     }
   ]
 }
@@ -2019,7 +2024,7 @@ System.out.println(response.toString());
   <span class="hljs-attr">"metadata"</span>: {
     <span class="hljs-attr">"customer_id"</span>: <span class="hljs-string">"52feca613b844ae8b7ddd627d1fdf58b"</span>
   },
-  <span class="hljs-attr">"created_at"</span>: <span class="hljs-string">"2017-11-26T09:39:04Z"</span>
+  <span class="hljs-attr">"created_at"</span>: <span class="hljs-string">"2017-11-26T10:36:00Z"</span>
 }
 </code></pre>
 <pre class="highlight tab tab-json"><code>{
@@ -3259,7 +3264,7 @@ oauth2 ( Scopes: create:transactions )
   <span class="hljs-attr">"metadata"</span>: {
     <span class="hljs-attr">"customer_id"</span>: <span class="hljs-string">"52feca613b844ae8b7ddd627d1fdf58b"</span>
   },
-  <span class="hljs-attr">"created_at"</span>: <span class="hljs-string">"2017-11-26T09:39:04Z"</span>
+  <span class="hljs-attr">"created_at"</span>: <span class="hljs-string">"2017-11-26T10:36:00Z"</span>
 } 
 </code></pre>
 <h3 id="properties">Properties</h3>
@@ -3283,7 +3288,7 @@ oauth2 ( Scopes: create:transactions )
 <td>id</td>
 <td>string(object-uuid)</td>
 <td>false</td>
-<td>Operation identificator.</td>
+<td>Transaction identificator.</td>
 </tr>
 <tr>
 <td>from</td>
@@ -3411,7 +3416,7 @@ oauth2 ( Scopes: create:transactions )
       <span class="hljs-attr">"metadata"</span>: {
         <span class="hljs-attr">"customer_id"</span>: <span class="hljs-string">"52feca613b844ae8b7ddd627d1fdf58b"</span>
       },
-      <span class="hljs-attr">"created_at"</span>: <span class="hljs-string">"2017-11-26T09:39:04Z"</span>
+      <span class="hljs-attr">"created_at"</span>: <span class="hljs-string">"2017-11-26T10:36:00Z"</span>
     }
   ]
 } 
@@ -3443,7 +3448,7 @@ oauth2 ( Scopes: create:transactions )
 <td>» id</td>
 <td>string(object-uuid)</td>
 <td>false</td>
-<td>Operation identificator.</td>
+<td>Transaction identificator.</td>
 </tr>
 <tr>
 <td>» from</td>
@@ -3534,6 +3539,223 @@ oauth2 ( Scopes: create:transactions )
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>» charge_policy</td>
+<td>SHARED</td>
+</tr>
+<tr>
+<td>» charge_policy</td>
+<td>RECEIVER</td>
+</tr>
+<tr>
+<td>» charge_policy</td>
+<td>SENDER</td>
+</tr>
+</tbody>
+</table>
+<h2 id="event">Event</h2>
+<p><a name="schemaevent"></a></p>
+<pre class="highlight tab tab-json"><code>{
+  <span class="hljs-attr">"type"</span>: <span class="hljs-string">"account.created"</span>,
+  <span class="hljs-attr">"id"</span>: <span class="hljs-string">"event_0c7b5bee7b684040939e1a3fb284a87a"</span>,
+  <span class="hljs-attr">"api_version"</span>: <span class="hljs-string">"1.0.0"</span>,
+  <span class="hljs-attr">"created_at"</span>: <span class="hljs-string">"2017-11-26T10:36:00Z"</span>,
+  <span class="hljs-attr">"data"</span>: {
+    <span class="hljs-attr">"type"</span>: <span class="hljs-string">"Account"</span>,
+    <span class="hljs-attr">"id"</span>: <span class="hljs-string">"account_d87e183c49b84cbd9ac2e585bdd93896"</span>,
+    <span class="hljs-attr">"iban"</span>: <span class="hljs-string">"BY90UNBS30120919200220000840"</span>,
+    <span class="hljs-attr">"bic"</span>: <span class="hljs-string">"IRJSBY22"</span>,
+    <span class="hljs-attr">"balance"</span>: <span class="hljs-string">"1252.00"</span>,
+    <span class="hljs-attr">"currency"</span>: <span class="hljs-string">"BYN"</span>
+  }
+} 
+</code></pre>
+<h3 id="properties">Properties</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>type</td>
+<td>string</td>
+<td>false</td>
+<td>Event type.</td>
+</tr>
+<tr>
+<td>id</td>
+<td>string(object-uuid)</td>
+<td>false</td>
+<td>Event identificator.</td>
+</tr>
+<tr>
+<td>api_version</td>
+<td>string</td>
+<td>false</td>
+<td>Default API version.</td>
+</tr>
+<tr>
+<td>created_at</td>
+<td>string(date-time)</td>
+<td>false</td>
+<td>Time when event was created.</td>
+</tr>
+<tr>
+<td>data</td>
+<td>object</td>
+<td>false</td>
+<td>Related object data.</td>
+</tr>
+<tr>
+<td>» type</td>
+<td>string</td>
+<td>false</td>
+<td>Type <code>Account</code></td>
+</tr>
+<tr>
+<td>» id</td>
+<td>string(object-uuid)</td>
+<td>false</td>
+<td>Account identificator.</td>
+</tr>
+<tr>
+<td>» iban</td>
+<td>string(iban)</td>
+<td>false</td>
+<td>IBAN.</td>
+</tr>
+<tr>
+<td>» bic</td>
+<td>string(bic)</td>
+<td>false</td>
+<td>BIC.</td>
+</tr>
+<tr>
+<td>» balance</td>
+<td>string(decimal)</td>
+<td>false</td>
+<td>Balance.</td>
+</tr>
+<tr>
+<td>» currency</td>
+<td>string(iso-4217)</td>
+<td>false</td>
+<td>Currency ISO 4217 code.</td>
+</tr>
+<tr>
+<td>» type</td>
+<td>string</td>
+<td>false</td>
+<td>Type <code>Transaction</code></td>
+</tr>
+<tr>
+<td>» id</td>
+<td>string(object-uuid)</td>
+<td>false</td>
+<td>Transaction identificator.</td>
+</tr>
+<tr>
+<td>» from</td>
+<td><a href="#schematransactionsender">TransactionSender</a></td>
+<td>false</td>
+<td>No description</td>
+</tr>
+<tr>
+<td>»» iban</td>
+<td>string(iban)</td>
+<td>false</td>
+<td>IBAN.</td>
+</tr>
+<tr>
+<td>»» name</td>
+<td>string</td>
+<td>false</td>
+<td>Full name.</td>
+</tr>
+<tr>
+<td>» to</td>
+<td><a href="#schematransactionrecipient">TransactionRecipient</a></td>
+<td>false</td>
+<td>No description</td>
+</tr>
+<tr>
+<td>»» iban</td>
+<td>string(iban)</td>
+<td>false</td>
+<td>IBAN.</td>
+</tr>
+<tr>
+<td>»» bic</td>
+<td>string(bic)</td>
+<td>false</td>
+<td>BIC.</td>
+</tr>
+<tr>
+<td>»» name</td>
+<td>string</td>
+<td>false</td>
+<td>Full name.</td>
+</tr>
+<tr>
+<td>» amount</td>
+<td>string(decimal)</td>
+<td>false</td>
+<td>Transaction amount</td>
+</tr>
+<tr>
+<td>» currency</td>
+<td>string(iso-4217)</td>
+<td>false</td>
+<td>Currency ISO 4217 code.</td>
+</tr>
+<tr>
+<td>» charge_policy</td>
+<td>string</td>
+<td>false</td>
+<td>Charge policy.</td>
+</tr>
+<tr>
+<td>» description</td>
+<td>string</td>
+<td>false</td>
+<td>Description.</td>
+</tr>
+<tr>
+<td>» metadata</td>
+<td>object</td>
+<td>false</td>
+<td>Metadata.</td>
+</tr>
+<tr>
+<td>» created_at</td>
+<td>string(date-time)</td>
+<td>false</td>
+<td>Time when transaction was created.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="enumerated-values">Enumerated Values</h4>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>type</td>
+<td>account.created</td>
+</tr>
+<tr>
+<td>type</td>
+<td>transaction.created</td>
+</tr>
 <tr>
 <td>» charge_policy</td>
 <td>SHARED</td>

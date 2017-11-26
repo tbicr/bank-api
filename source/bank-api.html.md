@@ -1012,9 +1012,9 @@ in.close();
 System.out.println(response.toString());
 ```
 
-*Operations History*
+*Transactions History*
 
-Operations history.
+Transactions history.
 
 <h3 id="GET-/account/{account_id}/transactions-parameters">Parameters</h3>
 
@@ -1062,7 +1062,7 @@ lang|en-US|
       "metadata": {
         "customer_id": "52feca613b844ae8b7ddd627d1fdf58b"
       },
-      "created_at": "2017-11-26T09:39:04Z"
+      "created_at": "2017-11-26T10:40:15Z"
     }
   ]
 }
@@ -1113,7 +1113,7 @@ lang|en-US|
 
 Status|Meaning|Description|Schema
 ---|---|---|---|
-200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|An array of operations.|[TransactionList](#schematransactionlist)
+200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|An array of transactions.|[TransactionList](#schematransactionlist)
 400|[Bad Request](https://tools.ietf.org/html/rfc7231#section-6.5.1)|Bad Request|[Error](#schemaerror)
 401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|[Error](#schemaerror)
 403|[Forbidden](https://tools.ietf.org/html/rfc7231#section-6.5.3)|Forbidden|[Error](#schemaerror)
@@ -1277,9 +1277,9 @@ in.close();
 System.out.println(response.toString());
 ```
 
-*Make Operation*
+*Make Transaction*
 
-Make operation.
+Make transaction.
 
 > Body parameter
 
@@ -1345,7 +1345,7 @@ lang|en-US|
   "metadata": {
     "customer_id": "52feca613b844ae8b7ddd627d1fdf58b"
   },
-  "created_at": "2017-11-26T09:39:04Z"
+  "created_at": "2017-11-26T10:40:15Z"
 }
 ```
 ```json
@@ -1394,7 +1394,7 @@ lang|en-US|
 
 Status|Meaning|Description|Schema
 ---|---|---|---|
-201|[Created](https://tools.ietf.org/html/rfc7231#section-6.3.2)|Operation.|[Transaction](#schematransaction)
+201|[Created](https://tools.ietf.org/html/rfc7231#section-6.3.2)|Transaction.|[Transaction](#schematransaction)
 400|[Bad Request](https://tools.ietf.org/html/rfc7231#section-6.5.1)|Bad Request|[Error](#schemaerror)
 401|[Unauthorized](https://tools.ietf.org/html/rfc7235#section-3.1)|Unauthorized|[Error](#schemaerror)
 403|[Forbidden](https://tools.ietf.org/html/rfc7231#section-6.5.3)|Forbidden|[Error](#schemaerror)
@@ -1937,7 +1937,7 @@ charge_policy|SENDER|
   "metadata": {
     "customer_id": "52feca613b844ae8b7ddd627d1fdf58b"
   },
-  "created_at": "2017-11-26T09:39:04Z"
+  "created_at": "2017-11-26T10:40:15Z"
 } 
 ```
 
@@ -1946,7 +1946,7 @@ charge_policy|SENDER|
 Name|Type|Required|Description
 ---|---|---|---|
 type|string|false|Type `Transaction`
-id|string(object-uuid)|false|Operation identificator.
+id|string(object-uuid)|false|Transaction identificator.
 from|[TransactionSender](#schematransactionsender)|false|No description
 » iban|string(iban)|false|IBAN.
 » name|string|false|Full name.
@@ -1997,7 +1997,7 @@ charge_policy|SENDER|
       "metadata": {
         "customer_id": "52feca613b844ae8b7ddd627d1fdf58b"
       },
-      "created_at": "2017-11-26T09:39:04Z"
+      "created_at": "2017-11-26T10:40:15Z"
     }
   ]
 } 
@@ -2009,7 +2009,7 @@ Name|Type|Required|Description
 ---|---|---|---|
 items|[[Transaction](#schematransaction)]|false|Countains the list of transactions.
 » type|string|false|Type `Transaction`
-» id|string(object-uuid)|false|Operation identificator.
+» id|string(object-uuid)|false|Transaction identificator.
 » from|[TransactionSender](#schematransactionsender)|false|No description
 »» iban|string(iban)|false|IBAN.
 »» name|string|false|Full name.
@@ -2029,6 +2029,70 @@ items|[[Transaction](#schematransaction)]|false|Countains the list of transactio
 
 |Property|Value|
 |---|---|
+» charge_policy|SHARED|
+» charge_policy|RECEIVER|
+» charge_policy|SENDER|
+
+
+## Event
+
+<a name="schemaevent"></a>
+
+```json
+{
+  "type": "account.created",
+  "id": "event_0c7b5bee7b684040939e1a3fb284a87a",
+  "api_version": "1.0.0",
+  "created_at": "2017-11-26T10:40:15Z",
+  "data": {
+    "type": "Account",
+    "id": "account_d87e183c49b84cbd9ac2e585bdd93896",
+    "iban": "BY90UNBS30120919200220000840",
+    "bic": "IRJSBY22",
+    "balance": "1252.00",
+    "currency": "BYN"
+  }
+} 
+```
+
+### Properties
+
+Name|Type|Required|Description
+---|---|---|---|
+type|string|false|Event type.
+id|string(object-uuid)|false|Event identificator.
+api_version|string|false|Default API version.
+created_at|string(date-time)|false|Time when event was created.
+data|object|false|Related object data.
+» type|string|false|Type `Account`
+» id|string(object-uuid)|false|Account identificator.
+» iban|string(iban)|false|IBAN.
+» bic|string(bic)|false|BIC.
+» balance|string(decimal)|false|Balance.
+» currency|string(iso-4217)|false|Currency ISO 4217 code.
+» type|string|false|Type `Transaction`
+» id|string(object-uuid)|false|Transaction identificator.
+» from|[TransactionSender](#schematransactionsender)|false|No description
+»» iban|string(iban)|false|IBAN.
+»» name|string|false|Full name.
+» to|[TransactionRecipient](#schematransactionrecipient)|false|No description
+»» iban|string(iban)|false|IBAN.
+»» bic|string(bic)|false|BIC.
+»» name|string|false|Full name.
+» amount|string(decimal)|false|Transaction amount
+» currency|string(iso-4217)|false|Currency ISO 4217 code.
+» charge_policy|string|false|Charge policy.
+» description|string|false|Description.
+» metadata|object|false|Metadata.
+» created_at|string(date-time)|false|Time when transaction was created.
+
+
+#### Enumerated Values
+
+|Property|Value|
+|---|---|
+type|account.created|
+type|transaction.created|
 » charge_policy|SHARED|
 » charge_policy|RECEIVER|
 » charge_policy|SENDER|
